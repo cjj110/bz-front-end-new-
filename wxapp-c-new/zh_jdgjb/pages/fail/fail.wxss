@@ -1,0 +1,50 @@
+.success {
+  margin: 0 auto;
+  width: 80%;
+  background: #fff;
+  text-align: center;
+  border-radius: 16rpx;
+  padding-top: 28rpx;
+  padding-bottom: 60rpx;
+  margin-top: 70rpx;
+  font-size: 28rpx;
+  line-height: 70rpx;
+}
+
+.Group {
+  width: 154rpx;
+  height: 154rpx;
+}
+
+.success_a {
+  padding-bottom: 20rpx;
+  font-size: 36rpx;
+}
+
+.Progressbg {
+  height: 200rpx;
+  width: 200rpx;
+}
+
+.success_tip {
+  font-size: 32rpx;
+  color: #919191;
+}
+
+.success_tips {
+  color: #999;
+}
+
+.btn {
+  background: #ec6464;
+  color: #fff;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 70rpx;
+}

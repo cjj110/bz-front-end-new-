@@ -1,0 +1,374 @@
+<view class='title'>
+  {{title}}
+</view>
+
+<form bindreset="formReset" bindsubmit="formSubmit" reportSubmit="true">
+  <view class="home">
+    <!-- bindtap="hotel_in" -->
+    <view data-id='{{hotel_detail.id}}' class="header">
+      <!-- <image class='hotel_inimg' src='{{hotel.ewm_logo}}'></image> -->
+      <swiper autoplay="auto" class="swiper" current="{{swiperCurrent1}}" duration="500" interval="5000" indicator-dots="false">
+        <swiper-item wx:if="{{hotel.img.length>0}}" wx:for="{{hotel.img}}" wx:key="{{item.value}}">
+          <image bindtap='hotel_in' data-id="{{hotel.id}}" class="swiperimg" data-index="{{index}}" mode="aspectFill" src="{{item}}"></image>
+        </swiper-item>
+      </swiper>
+
+      <view class='flex-row hotel_j '>
+        <view class='flex-grow-1'>
+          <view class="hcfont1">{{hotel.name}}</view>
+        </view>
+        <view class='flex-grow-0 flex'>
+          <button class='sc' open-type='share'>
+            <text class='iconfont icon-fenxiang'></text>
+          </button>
+        </view>
+      </view>
+      <!-- 
+      <view class="hcontent">
+        <view class="hconbox"> 
+          <view>
+            <view class="hcfont1">{{hotel.name}}</view>
+            <view bindtap="sele_address" class="hcfont2">
+              <image class="conimg" src="../img/didian.png"></image>
+              <view>地址：{{hotel.address}}</view>
+            </view>
+            <view bindtap="call_phone" class="hcfont3 flex_center">
+              <image class="conimg" src="../img/dianhua.png"></image>
+              <view>电话：{{hotel.tel}}</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="icontent">
+          <view class="flex3 iconleft">
+            <view class="iconfont1">checkInDate
+              <picker bindchange="bindDateChange1" end="{{end}}" mode="date" start="{{start}}">
+                <view class="iconfont1" style="color:{{color}}">{{datein}}</view>
+              </picker>
+            </view>
+            <view>入住日期</view>
+            <view class="iconnum">{{time}}天</view>
+          </view>
+
+          <view class="flex3 iconrit">
+            <view class="iconfont1">
+              <picker bindchange="bindDateChange2" end="{{end}}" mode="date" start="{{start}}">
+                <view class="iconfont1" style="color:{{color}}">{{dateout}}</view>
+              </picker>
+            </view>
+            <view>退房日期</view>
+          </view>
+        </view>
+      </view> -->
+    </view>
+
+    <view class='flex hotel_p'>
+      <view class='flex-grow-1 lesp'>
+        <image class='xing' wx:if="{{hotel_detail.hj>'0'}}" src='../img/images/xingxing.png'></image>
+        <image class='xing' wx:if="{{hotel_detail.hj>'1'}}" src='../img/images/xingxing.png'></image>
+        <image class='xing' wx:if="{{hotel_detail.hj>'2'}}" src='../img/images/xingxing.png'></image>
+        <image class='xing' wx:if="{{hotel_detail.hj>'3'}}" src='../img/images/xingxing.png'></image>
+        <image class='xing' wx:if="{{hotel_detail.hj>'4'}}" src='../img/images/xingxing.png'></image>
+        <text style='margin-left: 20rpx;'>{{hotel_detail.star}}</text>
+      </view>
+
+      <view class='flex-grow-0' bindtap='all_comment'>
+        <text>全部评价</text>
+        <image class='jiantou_right' src='../img/images/jiantou_right.png'></image>
+      </view>
+    </view>
+
+    <view class='flex hotel_add' bindtap='map' data-name='{{hotel_detail.name}}' data-address='{{hotel_detail.address}}' data-text='{{hotel_detail.coordinates}}'>
+      <view class='flex-grow-1' style='padding-right:55px;font-size:24rpx;'>
+        {{hotel_detail.address}}
+      </view>
+      <view class='flex-grow-0'>
+        <image class='img' src='../img/mapss.png'></image>
+      </view>
+    </view>
+
+    <view class="osection">
+      <view class="marry">
+        <view class="proitem  flex-row">
+          <view class='flex-grow-1 flex-x-center'>
+            <view bindtap="tabClick" class='name1' id="2" style="color:#3F3F47;border-bottom:4rpx solid #3F3F47" wx:if="{{activeIndex==2}}">用户评价</view>
+            <view bindtap="tabClick" id="2" class='name1' wx:if="{{activeIndex==1||activeIndex==0}}">用户评价</view>
+          </view>
+          <view class='flex-grow-1 flex-x-center'>
+            <view bindtap="tabClick" id="0" class='name1' style="color:#3F3F47;border-bottom:4rpx solid #3F3F47" wx:if="{{activeIndex==0}}">预定酒店</view>
+            <view bindtap="tabClick" id="0" class='name1' wx:if="{{activeIndex==1||activeIndex==2}}">预定酒店</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+    <block wx:if="{{activeIndex==0}}">
+
+      <view wx:if='{{jiestatus==0||jiestatus==1}}'>
+        <view class="headerddd">
+          <image bindtap='go' wx:if='{{GetADImg.status==1}}' class="swiperimg" data-index="{{index}}" src="{{GetADImg.logo}}"></image>
+          <!-- <image bindtap='go' class="swiperimg" data-index="{{index}}" src="../img/ban2.png"></image> -->
+        </view>
+      </view>
+
+
+      <view class='flex' data-k='{{room}}' bindtap="{{room.length<=0||room==undefined?'':'checkInDate'}}" style='padding:0 40rpx;font-size:24rpx;'>
+        <view class='flex-grow-1 flex-y-center'>
+          <image class='date' src='../img/images/date.png'></image>
+          <text>{{checkInDate}} 至 {{checkOutDate}}</text>
+        </view>
+        <view class='flex-grow-0'>
+          <text wx:if='{{room.length<=0||room==undefined}}'>暂无房间</text>
+          <text wx:else>共{{time}}晚</text>
+          <image class='jiantou_right' src='../img/images/jiantou_right.png'></image>
+        </view>
+      </view>
+
+
+
+
+      <view class="roomlist" wx:for="{{room}}">
+        <view class="roombox">
+          <image bindtap="room_info" class="roomleft" data-id="{{item.id}}" data-price="{{item.price}}" mode="aspectFill" src="{{item.logo}}"></image>
+          <view class="roomright ">
+            <view class='flex'>
+              <view class='flex-grow-1'>
+                <view class="flex_bet roomtop">
+                  <view class="roomname">{{item.name}}</view>
+                </view>
+                <view class="roombot">
+                  <view>
+                    <view>床型 {{item.size}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class='flex-grow-0'>
+                <view class="roomfont1" style="">¥{{item.cost}}</view>
+                <view bindtap="order" class="roomyuding" wx:if="{{item.state==1}}">
+                  <button wx:if='{{item.room_num==0}}' class="users" data-classify="{{item.classify}}" data-cost="{{item.cost}}" data-id="{{item.id}}" data-rz_time="{{item.rz_time}}" style='background:#999'>无房</button>
+
+                  <button data-ddd='{{item.room_num}}' wx:else bindgetuserinfo="bindgetuserinfo" class="users" data-classify="{{item.classify}}" data-cost="{{item.cost}}" data-id="{{item.id}}" data-rz_time="{{item.rz_time}}" formType="submit" openType="getUserInfo">预订</button>
+
+                </view>
+
+                <view class="roomyuding" style="background:#ccc" wx:if="{{item.state==2}}">订满</view>
+              </view>
+            </view>
+            <view class='roombot'>
+              <view class='root_t'>促销</view>
+              <view class='root_t'>限时优惠</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+
+  <view class="none_order" wx:if="{{assess_list.length==0&&activeIndex==2}}">
+    <image mode="aspectFill" src="../img/meiyoupinglun.png"></image>
+    <view>暂无评论</view>
+  </view>
+
+  <block wx:if="{{activeIndex==2}}">
+    <view class='lll flex-y-center' wx:if="{{assess_list.length>0}}">
+      <view class='flex-grow-0 box_left flex-y-center'>
+        <view class='' style='margin:0 auto;'>
+          <view>{{info.score}}.0</view>
+          <view class='flex-y-center flex-x-center'>
+            <text class="{{ info.score>'0'? 'iconfont icon-star' : '' }}"></text>
+            <text class="{{ info.score>'1'? 'iconfont icon-star' : '' }}"></text>
+            <text class="{{ info.score>'2'? 'iconfont icon-star' : '' }}"></text>
+            <text class="{{ info.score>'3'? 'iconfont icon-star' : '' }}"></text>
+            <text class="{{ info.score>'4'? 'iconfont icon-star' : '' }}"></text>
+          </view>
+        </view>
+      </view>
+
+      <view class='flex-grow-1 box_right' wx:if="{{assess_list.length>=0}}">
+        <view class='box-pack-between'>
+          <text>{{info.name}}</text>
+          <!-- <text>热销</text> -->
+        </view>
+        <view class='box_right_two clamp3'>
+          {{info.content}}
+        </view>
+        <view class='flex-y-center evaluate_content2'>
+          <view class='evaluate_content3 flex-y-center' style='color: #ec6464;border:1rpx solid #ec6464;' bindtap='give_up' data-id='{{info.id}}' id='{{info.collection}}'>
+            <image src='../img/images/dz.png'></image>
+            <text>{{info.zan}}</text>
+          </view>
+
+          <view class='evaluate_content3 flex-y-center' style='color: #fff;border:1rpx solid #fff;' bindtap='give_out' data-id='{{info.id}}' id='{{info.id}}'>
+            <image src='../img/images/dz2.png'></image>
+            <text>{{info.nozan}}</text>
+          </view>
+        </view>
+      </view>
+
+
+    </view>
+
+
+
+    <view class="hotel_evaluate" wx:for="{{assess_list}}" wx:for-item="itemName">
+      <view class="evaluate_head">
+        <view class="rel flex-y-center">
+          <image class="ud" mode="aspectFill" src="{{itemName.logo}}"></image>
+        </view>
+        <view class="user">
+
+          <view class="gobyndsingle">{{itemName.name}}</view>
+
+          <view>{{itemName.time}}</view>
+        </view>
+      </view>
+      <view class='flex-y-center evaluate_head1'>
+        <view class='flex-grow-1'>
+          <image class='xing' wx:if='{{itemName.score>0}}' src='../img/images/xingxing.png'></image>
+          <image class='xing' wx:if='{{itemName.score>1}}' src='../img/images/xingxing.png'></image>
+          <image class='xing' wx:if='{{itemName.score>2}}' src='../img/images/xingxing.png'></image>
+          <image class='xing' wx:if='{{itemName.score>3}}' src='../img/images/xingxing.png'></image>
+          <image class='xing' wx:if='{{itemName.score>4}}' src='../img/images/xingxing.png'></image>
+        </view>
+
+        <view wx:if='{{itemName.score==1}}'>一般</view>
+        <view wx:if='{{itemName.score==2}}'>普通</view>
+        <view wx:if='{{itemName.score==3}}'>好</view>
+        <view wx:if='{{itemName.score==4}}'>很好</view>
+        <view wx:if='{{itemName.score==5}}'>非常好</view>
+      </view>
+
+      <view class="evaluate_content">
+        <text>{{itemName.content}}</text>
+      </view>
+
+      <view class="evaluate_content">
+        <view bindtap="previewImage" data-index="{{index}}" id="{{itemName.id}}" wx:for="{{itemName.img}}">
+          <image mode="aspectFill" src="{{item}}"></image>
+        </view>
+      </view>
+
+      <view class="evaluate_content" wx:if="{{itemName.reply!=''}}">
+        <text>商家回复：{{itemName.reply}}</text>
+      </view>
+
+      <view class='box-pack-between'>
+        <view></view>
+        <view class='flex-y-center evaluate_content2'>
+          <view class='evaluate_content3 flex-y-center' data-index='{{index}}' bindtap='assess_list_up' data-id='{{itemName.id}}' id='{{itemName.id}}'>
+            <image src='../img/images/dz.png'></image>
+            <text>{{itemName.zan}}</text>
+          </view>
+          <view class='evaluate_content3  flex-y-center' data-id='{{itemName.id}}' data-index='{{index}}' bindtap='assess_list_out' id='{{itemName.id}}'>
+            <image src='../img/images/dz1.png'></image>
+            <text>{{itemName.nozan}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view class='detail1' bindtap='hotel_in' data-id='{{hotel_detail.id}}'>
+    <view class='flex' style='padding:20rpx 0'>
+      <view class='flex-grow-1  flex-y-center'>
+        <image class='date' src='../img/images/feeds.png'></image>
+        <text>酒店服务</text>
+      </view>
+    </view>
+
+    <view class="hotel_policy clamp3">
+      <view class='flex box' style='font-size:28rpx;'>
+
+        <view class='hotel_equipment' wx:for='{{facilities}}' wx:if='{{item.check==1}}'>
+          <image wx:if='{{item.value==1}}' src='../img/imgb/jd1.png'></image>
+          <image wx:if='{{item.value==2}}' src='../img/imgb/jd2.png'></image>
+          <image wx:if='{{item.value==3}}' src='../img/imgb/jd3.png'></image>
+          <image wx:if='{{item.value==4}}' src='../img/imgb/jd4.png'></image>
+          <image wx:if='{{item.value==5}}' src='../img/imgb/jd5.png'></image>
+          <image wx:if='{{item.value==6}}' src='../img/imgb/jd6.png'></image>
+          <image wx:if='{{item.value==7}}' src='../img/imgb/jd7.png'></image>
+          <image wx:if='{{item.value==8}}' src='../img/imgb/jd8.png'></image>
+          <image wx:if='{{item.value==9}}' src='../img/imgb/jd9.png'></image>
+          <image wx:if='{{item.value==10}}' src='../img/imgb/jd10.png'></image>
+          <image wx:if='{{item.value==11}}' src='../img/imgb/jd11.png'></image>
+          <image wx:if='{{item.value==12}}' src='../img/imgb/jd12.png'></image>
+          <image wx:if='{{item.value==13}}' src='../img/imgb/jd13.png'></image>
+          <image wx:if='{{item.value==14}}' src='../img/imgb/jd14.png'></image>
+          <image wx:if='{{item.value==15}}' src='../img/imgb/jd15.png'></image>
+          <image wx:if='{{item.value==16}}' src='../img/imgb/jd16.png'></image>
+          <image wx:if='{{item.value==17}}' src='../img/imgb/jd17.png'></image>
+          <view>
+            {{item.name}}
+          </view>
+        </view>
+
+        <view class='hotel_equipment' wx:for='{{wifi}}' wx:if='{{item.check==1}}'>
+          <block>
+            <image wx:if='{{item.value==1}}' src='../img/imgb/wifi1.png'></image>
+            <image wx:if='{{item.value==2}}' src='../img/imgb/wifi2.png'></image>
+          </block>
+          <view>
+            {{item.name}}
+          </view>
+        </view>
+        <view class='hotel_equipment' wx:for='{{traffic}}' wx:if='{{item.check==1}}'>
+          <image wx:if='{{item.value==1}}' src='../img/imgb/jt1.png'></image>
+          <image wx:if='{{item.value==2}}' src='../img/imgb/jt2.png'></image>
+          <image wx:if='{{item.value==3}}' src='../img/imgb/jt3.png'></image>
+          <image wx:if='{{item.value==4}}' src='../img/imgb/jt4.png'></image>
+          <image wx:if='{{item.value==5}}' src='../img/imgb/jt5.png'></image>
+          <image wx:if='{{item.value==6}}' src='../img/imgb/jt6.png'></image>
+          <view>
+            {{item.name}}
+          </view>
+        </view>
+        <view class='hotel_equipment' wx:for='{{service}}' wx:if='{{item.check==1}}'>
+          <image wx:if='{{item.value==1}}' src='../img/imgb/js1.png'></image>
+          <image wx:if='{{item.value==2}}' src='../img/imgb/js2.png'></image>
+          <image wx:if='{{item.value==3}}' src='../img/imgb/js3.png'></image>
+          <image wx:if='{{item.value==4}}' src='../img/imgb/js4.png'></image>
+          <image wx:if='{{item.value==5}}' src='../img/imgb/jd15.png'></image>
+          <image wx:if='{{item.value==6}}' src='../img/imgb/jd11.png'></image>
+          <image wx:if='{{item.value==7}}' src='../img/imgb/js8.png'></image>
+          <image wx:if='{{item.value==8}}' src='../img/imgb/jd4.png'></image>
+          <image wx:if='{{item.value==9}}' src='../img/imgb/jd12.png'></image>
+          <view>
+            {{item.name}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+  <view class='detail1' bindtap='hotel_in' data-id='{{hotel_detail.id}}'>
+    <view class='flex' style='padding:20rpx 0'>
+      <view class='flex-grow-1  flex-y-center'>
+        <image class='date' src='../img/images/feeds.png'></image>
+        <text>酒店介绍</text>
+      </view>
+      <view class='flex-grow-0'>
+        <text>详情与设施</text>
+        <image class='jiantou_right' src='../img/images/jiantou_right.png'></image>
+      </view>
+    </view>
+    <view class="hotel_policy clamp3">
+      <rich-text nodes="{{hotel.introduction}}"></rich-text>
+    </view>
+  </view>
+
+
+
+
+  <view style='height:50rpx;'>
+  </view>
+
+  <!-- <view bindtap="all_comment" class="whole_evaluate" wx:if="{{activeIndex==2&&assess_list.length>=5}}">全部评论</view> -->
+
+  <!-- </view> -->
+
+
+</form>

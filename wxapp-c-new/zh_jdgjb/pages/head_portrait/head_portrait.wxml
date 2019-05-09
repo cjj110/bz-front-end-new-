@@ -1,0 +1,9 @@
+<view class='bg'>
+  <image class='' src='{{image_photo}}'></image>
+</view>
+
+<view>
+  <view class='btn' bindtap='choice_camera'>拍照</view>
+  <view class='btn' bindtap='choice'>从手机相册选择</view>
+  <view class='btns' bindtap='canves'>取消</view>
+</view>

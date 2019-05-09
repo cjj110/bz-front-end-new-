@@ -1,0 +1,12 @@
+<view class='success'>
+  <image class='Group' src='../img/images/Group.png'></image>
+  <view class='success_a'>
+    恭喜
+  </view>
+  <view style='font-size:28rpx;color:#999'>
+    数字资产钱包地址绑定成功
+  </view>
+  <view class='btn' bindtap='bf'>
+    确认
+  </view>
+</view>

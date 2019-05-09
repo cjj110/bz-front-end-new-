@@ -1,0 +1,104 @@
+.re_pic {
+  width: 65rpx;
+  height: 65rpx;
+  /* position: absolute;
+  left: 0;
+  top: 0; */
+}
+
+.register {
+  background: #fff;
+  margin: 0 30rpx;
+  border: 2rpx solid #ebebeb;
+  border-radius: 16rpx;
+}
+
+.top-handle {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 35rpx;
+  color: #ec6464;
+  margin: 0 60rpx;
+}
+
+.week {
+  height: 46rpx;
+  width: 600rpx;
+  margin: 0 auto;
+}
+
+.prev {
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  width: 50rpx;
+}
+
+.prev image {
+  width: 12rpx;
+  height: 20rpx;
+  margin-left: 20rpx;
+}
+
+.next {
+  display: flex;
+  align-items: center;
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.next image {
+  height: 20rpx;
+  width: 12rpx;
+  margin-left: 20rpx;
+}
+
+/* .today {
+
+} */
+
+.weeks-day {
+  width: 85rpx;
+  color: #909090;
+  font-size: 12px;
+  float: left;
+  display: flex;
+  justify-content: center;
+}
+
+.box-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  width: 600rpx;
+  margin: 0 auto;
+}
+
+.flex-item {
+  flex-flow: nowrap;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 85rpx;
+  height: 150rpx;
+}
+
+.item-content {
+  height: 97rpx;
+  color: #353535;
+  font-size: 14px;
+  text-align: center;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative; */
+}
+
+.item-content-current-day {
+  flex-grow: 2;
+}
+
+.bk-color-day {
+  background-color: #f7f7f7;
+}

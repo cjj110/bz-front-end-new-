@@ -1,0 +1,88 @@
+.hender_title {
+  padding: 0 30rpx;
+  /* padding-bottom: 10rpx; */
+  font-size: 52rpx;
+  font-weight: bold;
+}
+
+.invitation {
+  width: 372rpx;
+  height: 372rpx;
+  border-radius: 50%;
+  border: 6rpx solid #ec6464;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.invitation1 {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  padding: 30rpx 0;
+}
+
+.force {
+  font-size: 28rpx;
+}
+
+.num {
+  font-size: 80rpx;
+  margin-top: 20rpx;
+}
+
+.line {
+  background: #707070;
+  width: 3rpx;
+  height: 96rpx;
+  margin: 0 20rpx;
+}
+
+.profit {
+  font-size: 22rpx;
+}
+
+.profit1 {
+  text-align: right;
+}
+
+.profit2 {
+  text-align: left;
+}
+
+.code {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.jiantou_right {
+  width: 12rpx;
+  height: 22rpx;
+  margin-left: 20rpx;
+}
+
+.my_detailc .my_invita {
+  margin-top: 10rpx;
+}
+
+.my_detailc .my_invita:nth-child(1) {
+}
+
+.my_invita {
+  margin: 0 40rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  font-size: 28rpx;
+}
+
+.my_detailimg image {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  margin-right: 35rpx;
+}
+
+.my_detail view {
+}

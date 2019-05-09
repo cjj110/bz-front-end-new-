@@ -1,0 +1,96 @@
+<!--weixinmao_house/pages/person_information/person_information.wxml-->
+<view class='henderxd_title'>
+  个人信息
+</view>
+
+<form bindsubmit="formSubmit" report-submit='true'>
+  <view class='main_warp'>
+    <view class='main_list'>
+      <view class='main flex flex-align-center flex-y-center box-pack-between'>
+        <view class='main_left'>头像</view>
+        <view class='main_right flex flex-y-center flex-x-center'>
+          <image src="{{user_info.img ? user_info.img:'../img/images/head_pic.png'}}" mode='aspectFit' class='head_pic' style='margin-right:40rpx' bindtap='chagePic' data-img='{{user_info.img}}'></image>
+          <image src='../img/images/my-xuanxiang-more-icon.png' mode='aspectFit' class='more'></image>
+        </view>
+      </view>
+
+      <view class='main flex flex-y-center box-pack-between'>
+        <view class='main_left'>昵称</view>
+        <view class='main_right flex flex-y-center'>
+          <input type='text' placeholder='请设置呢称' value='{{user_info.name}}' name="nickname"></input>
+          <image class='head_picc_right' src='../img/images/jiantou_right.png'></image>
+        </view>
+      </view>
+
+      <view class='main flex flex-align-center box-pack-between'>
+        <view class='main_left'>手机号码</view>
+        <view class='main_right flex flex-y-center'>
+          <input type='digit' name='phone' value='{{user_info.tel}}' wx:if="{{user_info.tel}}"></input>
+          <input type='digit' name='phone' value='' placeholder='请输入手机号码' wx:else></input>
+          <image class='head_picc_right' src='../img/images/jiantou_right.png'></image>
+        </view>
+      </view>
+
+      <view class='main flex flex-align-center box-pack-between' bindtap='invitation_ma'>
+        <view class='main_left'>我的邀请码</view>
+        <view class='main_right flex flex-y-center'>
+          <image class='head_picc' src='../img/images/codes.png'></image>
+          <image class='head_picc_right' src='../img/images/jiantou_right.png'></image>
+        </view>
+      </view>
+
+      <view class='main flex flex-y-center box-pack-between'>
+        <view class='main_left'>
+          性别
+        </view>
+        <view class='main_right flex flex-y-center'>
+          <picker mode="selector" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="picker" wx:if="{{array}}">
+              {{array[index]}}
+            </view>
+            <view class="picker" wx:else>
+              {{user_info.sex}}
+            </view>
+          </picker>
+          <image class='head_picc_right' src='../img/images/jiantou_right.png'></image>
+        </view>
+      </view>
+
+
+      <view class='main flex flex-align-center box-pack-between'>
+        <view class='main_left'>绑定微信</view>
+        <view class='main_right flex flex-y-center'>
+          <input type='text' name='wx' value='{{user_info.wx}}' wx:if="{{user_info.wx}}"></input>
+          <input type='text' name='wx' value='{{wxd}}' bindinput='bindwx' placeholder='请输入微信号' wx:else></input>
+          <text class='iconfont icon-gou-shi' style="color: {{user_info.wx||wxchenk==true?'#EC6464':'' }}"></text>
+        </view>
+      </view>
+
+
+      <navigator url='../cart_id/cart_id' class='main flex flex-y-center box-pack-between'>
+        <view class='main_left'>实名认证</view>
+        <view class='main_right flex flex-y-center'>
+          <text wx:if='{{user_info.card_code}}'>已认证身份</text>
+          <text wx:else>未认证身份</text>
+          <image class='head_picc_right' src='../img/images/jiantou_right.png'></image>
+        </view>
+      </navigator>
+
+
+      <view class='main flex flex-align-center box-pack-between' bindtap='password'>
+        <view class='main_left'>交易密码设置</view>
+        <view class='main_right flex flex-y-center'>
+          <!-- <image class='head_picc' src='../img/images/codes.png'></image> -->
+          <image class='head_picc_right' src='../img/images/jiantou_right.png'></image>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+
+  <view class='btns_warp'>
+    <button formType="submit">保存</button>
+  </view>
+
+</form>

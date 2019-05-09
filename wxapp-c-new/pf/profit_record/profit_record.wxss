@@ -1,0 +1,61 @@
+/**index.wxss**/
+
+page {
+  width: 100%;
+  height: 100%;
+}
+.hender_title {
+  padding: 0 30rpx;
+  /* padding-bottom: 10rpx; */
+  font-size: 52rpx;
+  font-weight: bold;
+}
+.profit_record {
+  width: 670rpx;
+  margin: 0 auto;
+  padding: 20rpx 0;
+}
+
+.deta {
+  font-size: 32rpx;
+}
+
+.lk {
+  border-radius: 40rpx;
+  background: #ec6464;
+  text-align: center;
+  color: #fff;
+  font-size: 20rpx;
+  padding: 8rpx 20rpx;
+}
+
+.container {
+  width: 100%;
+  height: 350rpx;
+}
+
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.profit_record1 {
+  width: 670rpx;
+  height: 120rpx;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 16rpx;
+  margin-bottom: 10rpx;
+}
+
+.profit_record2 {
+  padding: 0 20rpx;
+  width: 100%;
+  font-size: 24rpx;
+}
+
+.left image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}

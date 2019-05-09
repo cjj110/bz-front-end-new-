@@ -1,0 +1,11 @@
+<view class='invitation'>
+  <camera device-position="front" flash="off" binderror="error"></camera>
+</view>
+
+<view class='shex'>
+  面对摄像头，脸部在圆框内，眨眨眼睛，左右摇摇头
+</view>
+
+<view class='btn' bindtap='takePhoto'>
+  检测认证
+</view>

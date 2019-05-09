@@ -1,0 +1,237 @@
+<view class='hotel'>
+
+  <view class='hotel1' bindtap='hotel'>
+    编辑
+  </view>
+
+  <view class='hotel2'>
+    <view class='hotel_title'>
+      酒店名称
+    </view>
+    <view class='hotel_line'>
+      <text>{{sellerInfo.name}}</text>
+    </view>
+  </view>
+
+  <view class='hotel2'>
+    <view class='hotel_title'>
+      酒店星级
+    </view>
+
+    <view class='hotel_line'>
+      <view class='flex box-pack-between'>
+        <view wx:if='{{star<0}}'>
+          <text wx:if='{{sellerInfo.star>0}}' class='iconfont icon-xingxing'></text>
+          <text wx:if='{{sellerInfo.star>1}}' class='iconfont icon-xingxing'></text>
+          <text wx:if='{{sellerInfo.star>2}}' class='iconfont icon-xingxing'></text>
+          <text wx:if='{{sellerInfo.star>3}}' class='iconfont icon-xingxing'></text>
+          <text wx:if='{{sellerInfo.star>4}}' class='iconfont icon-xingxing'></text>
+        </view>
+        <view wx:else>
+          {{sellerInfo.star}}
+        </view>
+        <view class='hotel_line_rg'>
+          选填
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='hotel2'>
+    <view class='hotel_title'>
+      酒店介绍
+    </view>
+
+    <view class='hotel_line' style='font-size:28rpx;'>
+      <block wx:if="{{sellerInfo.introduction==''}}">
+        暂无介绍
+      </block>
+      <block wx:else>
+        {{sellerInfo.introduction}}
+      </block>
+    </view>
+  </view>
+
+
+  <view class='hotel2'>
+    <view class='hotel_title'>
+      客服号码
+    </view>
+
+    <view class='hotel_line box-pack-between'>
+      <text style='font-size:28rpx;' wx:if="{{sellerInfo.tel==''}}">暂无电话</text>
+      <text wx:else>{{sellerInfo.tel}}</text>
+      <view class='hotel_line_rg'>
+        选填
+      </view>
+    </view>
+
+    <view class='hotel_line box-pack-between'>
+      <text>{{sellerInfo.tel1}}</text>
+      <view class='hotel_line_rg'>
+        选填
+      </view>
+    </view>
+  </view>
+
+  <view class='hotel2'>
+    <view class='hotel_title'>
+      酒店营业执照
+    </view>
+    <view class='hotel_line' style='font-size:28rpx;'>
+      <block wx:if="{{sellerInfo.yy_img==''}}">
+        未上传
+      </block>
+      <block wx:else>
+        已上传
+      </block>
+    </view>
+  </view>
+
+  <!-- bizhu_img -->
+
+  <view class='hotel2'>
+
+    <view class='hotel_title'>
+      和贝住的合同快照
+    </view>
+
+    <view class='hotel_line' style='font-size:28rpx;'>
+      <block wx:if="{{sellerInfo.bizhu_img==''}}">
+        未上传
+      </block>
+      <block wx:else>
+        已上传
+      </block>
+    </view>
+  </view>
+
+  <view class='hotel2'>
+    <view class='hotel_title'>
+      对公账号绑定
+    </view>
+    <view class='hotel_line' style='font-size:28rpx;'>
+      {{sellerInfo.crad_bank}}{{sellerInfo.crad_account}}
+    </view>
+  </view>
+
+  <view class='hotel2'>
+    <view class='hotel_title'>
+      酒店地址
+    </view>
+
+    <view wx:if='{{sellerInfo.city}}' class='hotel_line' style='font-size:28rpx;'>
+      {{sellerInfo.country}} {{sellerInfo.province}} {{sellerInfo.city}} {{sellerInfo.district}} {{sellerInfo.address}}
+    </view>
+    <view class='hotel_line' wx:else style='font-size:28rpx;'>
+      暂无地址
+    </view>
+
+  </view>
+
+  <view class='hotel2'>
+    <view class='hotel_title'>
+      酒店服务设施
+    </view>
+
+    <view style='font-size:32rpx;color:#3f3f3f;margin:30rpx 0'>
+      酒店设施：
+    </view>
+
+    <view class='flex box' style='font-size:28rpx;'>
+      <view class='hotel_equipment' wx:for='{{facilities}}' wx:if='{{item.check==1}}'>
+        <image wx:if='{{item.value==1}}' src='../img/imgb/jd1.png'></image>
+        <image wx:if='{{item.value==2}}' src='../img/imgb/jd2.png'></image>
+        <image wx:if='{{item.value==3}}' src='../img/imgb/jd3.png'></image>
+        <image wx:if='{{item.value==4}}' src='../img/imgb/jd4.png'></image>
+        <image wx:if='{{item.value==5}}' src='../img/imgb/jd5.png'></image>
+        <image wx:if='{{item.value==6}}' src='../img/imgb/jd6.png'></image>
+        <image wx:if='{{item.value==7}}' src='../img/imgb/jd7.png'></image>
+        <image wx:if='{{item.value==8}}' src='../img/imgb/jd8.png'></image>
+        <image wx:if='{{item.value==9}}' src='../img/imgb/jd9.png'></image>
+        <image wx:if='{{item.value==10}}' src='../img/imgb/jd10.png'></image>
+        <image wx:if='{{item.value==11}}' src='../img/imgb/jd11.png'></image>
+        <image wx:if='{{item.value==12}}' src='../img/imgb/jd12.png'></image>
+        <image wx:if='{{item.value==13}}' src='../img/imgb/jd13.png'></image>
+        <image wx:if='{{item.value==14}}' src='../img/imgb/jd14.png'></image>
+        <image wx:if='{{item.value==15}}' src='../img/imgb/jd15.png'></image>
+        <image wx:if='{{item.value==16}}' src='../img/imgb/jd16.png'></image>
+        <image wx:if='{{item.value==17}}' src='../img/imgb/jd17.png'></image>
+        <view>
+          {{item.name}}
+        </view>
+      </view>
+    </view>
+
+    <view style='font-size:32rpx;color:#3f3f3f;margin:30rpx 0'>
+      网络：
+    </view>
+
+    <view class='flex box' style='font-size:28rpx;padding:0 30rpx;'>
+
+      <view class='hotel_equipment' wx:for='{{wifi}}' wx:if='{{item.check==1}}'>
+        <block>
+          <image wx:if='{{item.value==1}}' src='../img/imgb/wifi1.png'></image>
+          <image wx:if='{{item.value==2}}' src='../img/imgb/wifi2.png'></image>
+        </block>
+        <view>
+          {{item.name}}
+        </view>
+      </view>
+
+    </view>
+
+    <view style='font-size:32rpx;color:#3f3f3f;margin:30rpx 0'>
+      交通：
+    </view>
+
+    <view class='flex box' style='font-size:28rpx;padding:0 30rpx;'>
+      <view class='hotel_equipment' wx:for='{{traffic}}' wx:if='{{item.check==1}}'>
+        <image wx:if='{{item.value==1}}' src='../img/imgb/jt1.png'></image>
+        <image wx:if='{{item.value==2}}' src='../img/imgb/jt2.png'></image>
+        <image wx:if='{{item.value==3}}' src='../img/imgb/jt3.png'></image>
+        <image wx:if='{{item.value==4}}' src='../img/imgb/jt4.png'></image>
+        <image wx:if='{{item.value==5}}' src='../img/imgb/jt5.png'></image>
+        <image wx:if='{{item.value==6}}' src='../img/imgb/jt6.png'></image>
+        <view>
+          {{item.name}}
+        </view>
+      </view>
+    </view>
+
+    <view style='font-size:32rpx;color:#3f3f3f;margin:30rpx 0'>
+      酒店服务
+    </view>
+
+    <view class='flex box' style='font-size:28rpx;padding:0 30rpx;'>
+      <view class='hotel_equipment' wx:for='{{service}}' wx:if='{{item.check==1}}'>
+
+        <image wx:if='{{item.value==1}}' src='../img/imgb/js1.png'></image>
+        <image wx:if='{{item.value==2}}' src='../img/imgb/js2.png'></image>
+        <image wx:if='{{item.value==3}}' src='../img/imgb/js3.png'></image>
+        <image wx:if='{{item.value==4}}' src='../img/imgb/js4.png'></image>
+        <image wx:if='{{item.value==5}}' src='../img/imgb/jd15.png'></image>
+        <image wx:if='{{item.value==6}}' src='../img/imgb/jd11.png'></image>
+        <image wx:if='{{item.value==7}}' src='../img/imgb/js8.png'></image>
+        <image wx:if='{{item.value==8}}' src='../img/imgb/jd4.png'></image>
+        <image wx:if='{{item.value==9}}' src='../img/imgb/jd12.png'></image>
+
+        <view>
+          {{item.name}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='hotel2'>
+    <view class='hotel_title' style='padding-bottom:30rpx;'>
+      房源图片上传
+    </view>
+    <view class='' style='font-size:28rpx;'>
+      <image class='hotel_room' wx:for='{{list_img}}' src='{{item}}'></image>
+    </view>
+  </view>
+
+
+</view>

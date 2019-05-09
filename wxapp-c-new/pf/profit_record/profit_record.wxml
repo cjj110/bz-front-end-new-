@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class='hender_title'>
+  挖贝记录
+</view>
+<view class='box-pack-between profit_record'>
+  <text class='deta'>7日挖贝收益</text>
+  <view>
+    <text class='lk' bindtap='go'>马上去花</text>
+  </view>
+</view>
+
+<view class="container">
+  <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+</view>
+
+
+
+<view class='profit_record1 flex-y-center' wx:for='{{mylog}}'>
+  <view class='profit_record2 flex-y-center box-pack-between'>
+    <view class='left flex-y-center'>
+      <image src='../images/wb.png'></image>
+      <text>挖贝</text>
+    </view>
+    <text>{{item.createtime}}</text>
+    <text>{{item.num}}家贝</text>
+  </view>
+</view>
+
+
+<view class='no' wx:if='{{mylog.length<0}}'>
+  ------没有更多了-----
+</view>

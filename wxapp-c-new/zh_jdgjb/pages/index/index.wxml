@@ -1,0 +1,218 @@
+<view class="home">
+ <!-- 轮播图 -->
+  <swiper class="indexdi imp" interval='4000' indicator-dots="true" autoplay='true' circular='true'>
+    <swiper-item wx:for="{{advertising}}" wx:key="{{item.type_id}}" wx:if="{{item.type_id==1}}"  data-link="{{item.link}}" bindtap="goAdv">
+      <view class='yours' >
+        <view class='intr'><text wx:if="{{item.title}}">{{item.title}}</text></view>
+        <button class='GoIn' bindtap='InHotel' data-link="{{item.link}}" style='{{item.entry_style}} font-weight:600;' wx:if="{{item.entry_type==1}}">{{item.entry_name}}</button>
+      </view>
+      <image mode="aspectFill" src="{{item.img_src}}"></image>
+    </swiper-item>
+  </swiper>
+  
+  <!-- <view class='partin'>
+    点击参与
+  </view> -->
+  <view class="indexup flex3">
+    <view class="indexbox">
+      <view class='flex box-pack-between '>
+        <!-- bindtap='indexbox1' -->
+        <!-- <view class="cate_box {{box1==0?'cate_box_back':''}}" data-id='' bindtap='adddress'>
+          国内
+        </view> -->
+        <!-- <view class="cate_box {{ box2?'cate_box_back':''}}" bindtap='indexbox2'>
+          国际
+        </view> -->
+        <view class='cate_box partin' data-sd='{{jiestatus}}' data-s='{{ad}}' wx:if='{{jiestatus==0||jiestatus==1}}' bindtap='gos' style='margin-right:38rpx;border-radius: 45rpx;background: #ec6464;color: #fff;opacity:0;'>
+          点击参与
+        </view>
+      </view>
+      <view class='address flex-y-center box-pack-between'>
+        <view bindtap='adddress' class='ellipsis flex-y-center flex-grow-1'>
+          {{address}}
+        </view>
+        <view class='flex-y-center flex-x-center flex-grow-0'>
+          <image class="isearchimg2" bindtap='myaddress' src="../img/images/address.png"></image>
+        </view>
+      </view>
+      <view class="icontent"> 
+        <view class="iconleft">
+          <view>{{weeks}}</view>
+          <view class="iconfont1" bindtap='checkInDate'>{{checkInDate}}</view>
+        </view>
+        <view class=" iconrit">
+          <view>{{week_out}}</view>
+          <view class="iconfont1" bindtap='checkInDate'> {{checkOutDate}}</view>
+        </view>
+      </view>
+      <view class="isearch">
+        <view class="flex_center isearchleft">
+          <input bindinput='search_input' placeholder="关键词/酒店/地址"></input>
+        </view>
+      </view>
+      <view class="iconbutton none flex">
+        <button class='half' bindtap="content" bindgetuserinfo="bindGetUserInfo">查找酒店</button>
+        <button class='half' bindtap="poss">看他人转让</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- <view class="footban"></view> -->
+  <!-- <view class="foot">
+    <view bindtap='home' class="footbox flex3">
+      <image src="../img/images/nav/Home1.png"></image>
+    </view>
+    <view bindtap='profit' class="footbox flex3">
+      <image src="../img/images/nav/Currency.png"></image>
+    </view>
+    <view bindtap="wode" class="footbox flex3">
+      <image src="../img/images/nav/my.png"></image>
+    </view>
+  </view> -->
+
+
+  <view class='foot_d'>
+    <view class='box-pack-between flex-y-center'>
+      <!-- <view></view>
+      <view class='may flex-y-center flex-x-center'>
+        <view class='flex-y-center flex-x-center'>
+          <image src='../img/may.png'></image>
+          产生收益中...
+        </view>
+        <view class='may_pos'>
+          <image src='../img/sanjiaoxing-down.png'></image>
+        </view>
+      </view>
+      <view></view> -->
+    </view>
+
+    <view class="foot">
+      <view bindtap='home' class="footbox flex3">
+        <image src="../img/images/nav/Home1.png"></image>
+      </view>
+      <view bindtap='profit' class="footbox flex3">
+        <image src="../img/images/nav/Currency.png"></image>
+      </view>
+      <view bindtap="wode" class="footbox flex3">
+        <image src="../img/images/nav/my.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+  <!-- 首页第二屏 -->
+<view class='second'>
+  <swiper class='SecondHead'  interval='4000' indicator-dots="false" autoplay='true' circular='true' bindtap='secondHotel'>
+    <swiper-item wx:for="{{advertising}}" wx:if="{{item.type_id==2}}" wx:key="{{item.type_id}}" data-link="{{item.link}}" bindtap="goAdv">
+      <image src='{{item.img_src}}'></image>
+    </swiper-item>
+  </swiper>
+  <view class='loding' wx:if="{{position && hotel4 == '' && hotel5 == ''}}">加载中... ...</view>
+  <block wx:for="{{advertising}}" wx:key="{{item.type_id}}">
+    <!-- 热门房源开始 -->
+    <block wx:for="{{hotel4}}" wx:for-item="h4item" wx:if="{{item.type_id==4 && h4item.code == '00' }}" wx:key="{{index}}">
+      <view class='HotTitle'>{{item.title}}</view>
+      <scroll-view class='HotelBanner' scroll-x>
+        <view class='EveryInfo'  wx:for="{{h4item.responseData}}" wx:for-item="hotels" data-hid="{{hotels.id}}" data-title="{{hotels.name}}" bindtap='goHotel'>
+          <view class='imgbox'><image src='{{hotels.ewm_logo}}' width="290" height="180"></image></view>
+            <view class='DeepInfo'>
+              <view class='D-place'>{{hotels.city_name}}{{hotels.district}}</view>
+              <view class='Hname'>{{hotels.name}}</view>
+              <view class='Hbottom'>
+                <view class='paid'>{{hotels.order_number}}人已付款</view>
+                <view class='price'>￥{{hotels.zd_money}} 起</view>
+              </view>
+            </view>
+          </view>
+        <view style='width:50rpx;display:inline-block'></view>
+      </scroll-view>
+    </block>
+    <!-- 热门房源结束 -->
+
+    <!-- 猜你喜欢开始 -->
+    <block wx:if="{{item.type_id==5}}"  wx:key="{{item.type_id}}">
+      <block wx:for="{{hotel5}}" wx:for-item="h5item"  wx:if="{{h5item.code=='00'}}">
+        <view class='HotTitle'>{{item.title}}</view>
+        <view class='YouLike'>
+          <view class='EveryLike' wx:for="{{h5item.responseData}}" wx:for-item="hotels5" data-hid="{{hotels5.id}}" data-title="{{hotels5.name}}" bindtap='goHotel'>
+            <view class='L-img'><image src='{{hotels5.ewm_logo}}' ></image></view>
+            <view class='L-info'>
+              <view class='L-place'>{{hotels5.city_name}}{{hotels5.district}}</view>
+              <view class='L-name'>{{hotels5.name}}</view>
+              <view class='L-bottom' >
+                <view class='flex-grow-1' wx:if="{{hotels5.xing}}">
+                  <image class='xing' wx:if='{{hotels5.xing>=1}}' src='../img/images/xingxing.png'></image>
+                  <image class='xing' wx:if='{{hotels5.xing>=2}}' src='../img/images/xingxing.png'></image>
+                  <image class='xing' wx:if='{{hotels5.xing>=3}}' src='../img/images/xingxing.png'></image>
+                  <image class='xing' wx:if='{{hotels5.xing>=4}}' src='../img/images/xingxing.png'></image>
+                  <image class='xing' wx:if='{{hotels5.xing>=5}}' src='../img/images/xingxing.png'></image>
+
+                  <!-- <text style='font-size:20rpx;color:#999'>{{hotels5.pl_count}}评论</text> -->
+                    
+                </view>
+                <view class='paid' wx:if="{{!hotels5.xing}}">{{hotels5.order_number}}人已付款</view>
+                <view class='L-price'>¥{{hotels5.zd_money}}起</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+  </block>
+</view>
+<!-- 猜你喜欢结束 -->
+<!--第二屏完-->
+
+
+
+<!-- <block>
+  <view class='pos flex-y-center' wx:if='{{jiestatus==0}}'>
+    <view class='pos_bg'>
+      <view class='posimg'>
+        <image mode='widthFix' src='{{url}}{{ad}}'></image>
+      </view>
+      <view class='postitle'>
+        <view class='poscha' bindtap='chas'>
+          <image src='../img/cha.png'></image>
+        </view> -->
+        <!-- <view class='poscontainer'>
+          <view style='padding-right:60rpx;'>
+            发起接力劵
+          </view>
+          <view>
+            领走
+            <text style='padding:0 20rpx'>100</text> 元！
+          </view>
+          <view style='font-size:32rpx;'>
+            *无门槛抵用劵
+          </view>
+        </view> -->
+      <!-- </view>
+      <view class='goless flex-y-center flex-x-center'>
+        <button bindtap='go' class='go'> -->
+          <!-- {{rightdata.jieli_name}} -->
+          <!-- <text style='font-weight: bold'>168元</text> -->
+        <!-- </button>
+      </view>
+    </view>
+  </view>
+</block> -->
+<!-- wx:if='{{jiestatus==1}}' -->
+<!-- <view class='pad' bindtap='fripe' wx:if='{{jiestatus==1}}'>
+  <image src='{{rightdata.homepic}}'></image>
+</view> -->
+
+<!-- model -->
+<!-- <view class='pos flex-y-center' wx:if='{{model}}'>
+  <view class='pos_bg'>
+    <view style='padding:40rpx 0'>
+      <view class=''>授权提醒</view>
+      <view style='padding:40rpx 0;color:#ec6464'>将获取你的手机号码</view>
+      <view class='flex-x-center ' style='margin:0 60rpx;'>
+        <button class='btm' open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber"> 确认</button>
+      </view>
+    </view>
+  </view>
+</view> -->
+
+<button class='continerd' wx:if='{{model}}' open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber"></button>

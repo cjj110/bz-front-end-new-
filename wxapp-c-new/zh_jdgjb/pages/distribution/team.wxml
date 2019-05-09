@@ -1,0 +1,16 @@
+<view class="head">
+    <view bindtap="whole2" class="border" style="border-bottom:2rpx solid {{color}}" wx:if="{{index==0}}">一级</view>
+    <view bindtap="whole2" wx:else>一级</view>
+    <view bindtap="whole3" class="border" style="border-bottom:2rpx solid {{color}}" wx:if="{{index==1}}">二级</view>
+    <view bindtap="whole3" wx:else>二级</view>
+</view>
+<view class="body">
+    <view class="rel" wx:for="{{list}}">
+        <image mode="aspectFill" src="{{item.img}}"></image>
+        <view>
+            {{item.name}}
+        </view>
+        <view>加入：2018-04-24</view>
+        <view class="ab">级别：一级下线</view>
+    </view>
+</view>

@@ -1,0 +1,32 @@
+<view class='headr'>
+
+  <view style="position:fixed;top:0;width:100%;background:#fff;">
+    <view class='hender_title'>
+      入驻离店日期
+    </view>
+
+
+    <view class="layout-flex row head flex-y-center">
+
+      <text class="date-week" style="width:{{systemInfo.windowWidth/7-20}}px;" wx:for="{{weekStr}}" wx:key="{{index}}">
+      <text wx:if="{{item !=='日' && item !=='六'}}">{{item}}</text>
+      <text wx:if="{{item ==='日' || item ==='六'}}" class="">{{item}}</text>
+      </text>
+    </view>
+  </view>
+
+  <view style="margin-top:120rpx"></view>
+  <view class='dateList' wx:for="{{dateList}}" wx:key="{{index}}" wx:for-item="dateItem" style="padding:30rpx 0">
+    <view class="date-year-month" style="">{{dateItem.year}}年{{dateItem.month}}月</view>
+    <view class="layout-flex row" style="flex-wrap: wrap;margin-top:30rpx;">
+      <view class="date-day {{item.day<=0?'bgwhite':item.class}}" style="width:{{systemInfo.windowWidth/7-20}}px;height:{{systemInfo.windowWidth/7}}px;" data-year="{{dateItem.year}}" data-month="{{dateItem.month}}" data-day="{{item.day}}" bindtap="onPressDate"
+        wx:for="{{dateItem.days}}" wx:key="{{index}}">
+        <view class='item-days'>
+          <vew class='day' style=''>{{item.day>0?(item.daytext?item.daytext:item.day):''}}</vew>
+          <text style='font-size:20rpx;color:#ec6464' wx:if="{{item.inday}}">入住</text>
+          <text style='font-size:20rpx;color:#ec6464' wx:if="{{item.outday}}">离店</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,158 @@
+<form bindreset="formReset" bindsubmit="formSubmit" reportSubmit="true">
+  <view class="container">
+    <view class="hotel">
+      <view class="hotel_name ellipsis">{{order_info.seller_name}}{{order_info.room_type}}</view>
+      <view class="hotel_info">
+        <view class="hotel_time flex">
+          <text>入离时间：</text>
+          <text>{{order_info.arrival_time}}至</text>
+          <text>{{order_info.departure_time}}</text>
+          <text> | 共{{order_info.days}}晚</text>
+        </view>
+      </view>
+      <view class="hotel_info">
+        <view>
+          <text>{{order_info.room_type}} | </text>
+          <text>{{order_info.bed_type}}</text>
+          <!-- <text wx:if="{{room.breakfast==1}}"> | 早餐：有</text>
+          <text wx:if="{{room.breakfast==2}}"> | 早餐：无</text> -->
+        </view>
+      </view>
+    </view>
+
+    <view class='tip'>
+      ·因价格较优惠，预定后不可取消或任意变更
+    </view>
+
+    <view class="form_info">
+      <view class="form_info_child">
+        <view>房间数</view>
+        <view class="home_num">
+          <!-- <view bindtap="reduce_num">
+            <image mode="aspectFill" src="../img/jian.png"></image>
+          </view> -->
+          <view>{{order_info.num}}间</view>
+          <!-- <view bindtap="add_num">
+            <image mode="aspectFill" src="../img/addimg.png"></image>
+          </view> -->
+        </view>
+      </view>
+      <view class="form_info_child flex">
+        <view class='flex-y-center'>
+          <text>入住人</text>
+        </view>
+        <view>
+          <input disabled='true' name="people" placeholder="{{order_info.name}}" value="{{userInfo.name}}"></input>
+        </view>
+      </view>
+      <view class="form_info_child">
+        <view>手机号</view>
+        <view>
+          <input name="tel" disabled='true' placeholder="{{order_info.tel}}" type="number" value="{{userInfo.tel}}"></input>
+        </view>
+      </view>
+    </view>
+
+    <view class='form_info' style='margin-top:20rpx' bindtap='tel' data-tel='{{order_info.seller.tel}}'>
+      <view class="form_info_child flex">
+        <view>发票</view>
+        <view>
+          酒店前台索取
+        </view>
+        <view class='tel'>
+          <image src='../img/tel.png'></image>
+        </view>
+      </view>
+    </view>
+
+
+    <view class='fomr_tie'>
+      由于酒店当前房间紧张,需支付当日订单为您预留房间,到店后不需前台支付房费,在必住审核您入住后立即返家贝给用户。酒店通常在10点开始办理入住,早到店可能需要等待。
+    </view>
+
+    <view class='fomr_dd'>
+      我们保障快速确认、到店有房、资金安全,请放心预定哦。
+    </view>
+
+    <!-- <view class='fomr_tie down_tie' style='margin-right:48rpx' bindtap='coupon_chiose'>
+      <view class='flex-y-center box-pack-between'>
+        <view class='fome_name'>
+          优惠劵
+        </view>
+        <view>
+          {{coupontext}}
+        </view>
+        <view class='down flex-y-bottom flex-x-center'>
+          <image src='../img/images/xia.png'></image>
+        </view>
+      </view>
+    </view> -->
+
+    <view class='down_hoice' wx:if='{{cp_hidden}}'>
+      <view class='down_h box-pack-between' wx:for='{{cp}}' data-index='{{index}}' bindtap='coupon'>
+        <text>{{item.name}}</text>
+        <image wx:if='{{item.chenk}}' src='../img/images/list_gou.png'></image>
+      </view>
+    </view>
+
+    <view class='flex-y-center box-pack-between fomr_tie' hidden='{{jb==0}}' style='margin-right:48rpx'>
+      <view class='fome_name'>
+        使用{{order_info.score}}家贝抵扣（结算时抵扣
+        <block wx:if='{{jb_cost!=0}}'>{{order_info.score_cost}}</block>
+        <block wx:else>0</block>元）
+      </view>
+      <!-- <switch type='switch' color='#EC6464' bindchange="switch1Change" /> -->
+    </view>
+
+    <view style='height:130rpx'>
+    </view>
+
+    <view class="bottom_price">
+      <view bindtap="see_price" class="rel heji">
+        <view>
+          <view>支付订单</view>
+        </view>
+        <view>￥{{order_info.total_cost}}</view>
+      </view>
+      <view class='flex-y-center flex-x-center' style='background:#fff'>
+        <button formType="submit" bindtap="pay_mode" class="button1" style="background:#EC6464">去支付 </button>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- <view bindtap="see_price" class="back" wx:if="{{see_price==true}}"></view>
+  <view class="fixed" wx:if="{{pay_mode==true}}">
+    <view bindtap="pay_mode" class="ab"></view>
+    <view class="pay_mode ">
+      <view style='padding:80rpx;'>
+        <view bindtap="mode1" class="rel mode">
+          <text>入住时间：{{order_info.arrival_time}}至{{order_info.departure_time}}
+          <text> 共{{order_info.days}}晚</text>
+          </text>
+          <icon wx:if='{{aaa}}' class="ab ud" size='15' color='#EC6464' type="{{mode1}}"></icon>
+        </view>
+
+        <view class="rel mode">
+          <text>入住人姓名：{{order_info.name}}</text>
+          <icon wx:if='{{bbb}}' class="ab ud" size='15' color='#EC6464' type="{{mode1}}"></icon>
+        </view>
+
+        <view class="rel mode">
+          <text>入住人电话：{{order_info.tel}}</text>
+          <icon wx:if='{{ccc}}' class="ab ud" size='15' color='#EC6464' type="{{mode1}}"></icon>
+        </view>
+
+        <button formType="submit" hover-class='none' style='text-align:center; background: #fff;'>
+          <view class='btn button1'>
+            请核对
+          </view>
+        </button>
+        <view class='rel mode'>15分钟未支付则关闭</view>
+      </view>
+    </view>
+  </view> -->
+
+
+
+</form>

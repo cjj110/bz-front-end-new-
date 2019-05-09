@@ -1,0 +1,16 @@
+<view class='success'>
+
+  <image class='Group' src='../img/images/Group.png'></image>
+
+  <view class='success_a'>
+    认证成功！
+  </view>
+
+  <view style='font-size:24rpx;'>
+    身份认证已经成功，请回到首页继续使用
+  </view>
+
+  <view class='btn' bindtap='indexs'>
+    确认
+  </view>
+</view>

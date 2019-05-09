@@ -1,0 +1,218 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.5.0",
+	"appid": "wx500548447737415b",
+	"projectname": "%E8%B4%9D%E4%BD%8F1-5.",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 27,
+			"list": [
+				{
+					"id": 0,
+					"name": "首页",
+					"pathName": "zh_jdgjb/pages/index/index",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "登陆",
+					"pathName": "zh_jdgjb/pages/land/land",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "zh_jdgjb/pages/logs/logs",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "zh_jdgjb/pages/order/orderinfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "zh_jdgjb/pages/order/order",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "酒店列表",
+					"pathName": "zh_jdgjb/pages/hotel_list/hotel_list",
+					"query": "city=深圳市&sort=1",
+					"scene": "1007"
+				},
+				{
+					"id": -1,
+					"name": "钱包",
+					"pathName": "pf/my_profit/my_profit",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "酒店列表",
+					"pathName": "zh_jdgjb/pages/hotel_list/hotel_list",
+					"query": "city=深圳市&nearby=0",
+					"scene": "1007"
+				},
+				{
+					"id": -1,
+					"name": "我的工作台",
+					"pathName": "zh_jdgjb/pages/logs/Workbench",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "房型管理",
+					"pathName": "zh_jdgjb/pages/logs/house",
+					"query": "city=深圳市"
+				},
+				{
+					"id": -1,
+					"name": "添加房间",
+					"pathName": "zh_jdgjb/pages/logs/house_info",
+					"query": "city=深圳市"
+				},
+				{
+					"id": -1,
+					"name": "添加房间图片",
+					"pathName": "zh_jdgjb/pages/logs/maintenance6",
+					"query": "city=深圳市"
+				},
+				{
+					"id": -1,
+					"name": "评论列表",
+					"pathName": "zh_jdgjb/pages/logs/reply",
+					"query": "city=深圳市"
+				},
+				{
+					"id": 13,
+					"name": "酒店上传图片",
+					"pathName": "zh_jdgjb/pages/maintenance/maintenance6",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "酒店设施选择",
+					"pathName": "zh_jdgjb/pages/maintenance/maintenance5",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单列表",
+					"pathName": "zh_jdgjb/pages/logs/Workbench_order",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商家订单详情",
+					"pathName": "zh_jdgjb/pages/logs/Workbench_order_info",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "二维码",
+					"pathName": "zh_jdgjb/pages/invitation_ma/invitation_ma",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商家登陆",
+					"pathName": "zh_jdgjb/pages/shop_land/shop_land",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "酒店详情",
+					"pathName": "zh_jdgjb/pages/hotel_list/hotel_info",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分红",
+					"pathName": "pf/a_bonus/a_bonus",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "优惠劵",
+					"pathName": "zh_jdgjb/pages/card_coupon/card_coupon",
+					"query": ""
+				},
+				{
+					"id": 22,
+					"name": "接力好友",
+					"pathName": "zh_jdgjb/pages/invite_friends/invite_friends",
+					"query": "ation_id=37",
+					"scene": "1007"
+				},
+				{
+					"id": 23,
+					"name": "接力好友",
+					"pathName": "zh_jdgjb/pages/invite_friends/invite_friends",
+					"query": "scene=37_10000222",
+					"scene": "1012"
+				},
+				{
+					"id": -1,
+					"name": "酒店详情",
+					"pathName": "zh_jdgjb/pages/hotel_list/hotel_info",
+					"query": "title=酒店&hotel_id=2"
+				},
+				{
+					"id": -1,
+					"name": "分红",
+					"pathName": "pf/a_tx/a_tx",
+					"query": "city=深圳市&nearby=0",
+					"scene": "1007"
+				},
+				{
+					"id": -1,
+					"name": "优惠劵",
+					"pathName": "zh_jdgjb/pages/card_coupon/card_coupon",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "000",
+					"pathName": "zh_jdgjb/pages/index/index",
+					"query": "scene=sellerid_94399"
+				}
+			]
+		}
+	}
+}

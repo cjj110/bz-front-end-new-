@@ -1,0 +1,61 @@
+/* weixinmao_house/pages/person_information/person_information.wxss */
+
+.head_pic {
+  height: 70rpx;
+  width: 70rpx;
+}
+
+.head_picc {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.more {
+  width: 14rpx;
+  height: 24rpx;
+}
+
+.icon-gou-shi {
+  color: #999;
+}
+
+.head_picc_right {
+  width: 14rpx;
+  height: 24rpx;
+  margin-left: 10rpx;
+}
+
+.main {
+  padding: 30rpx 20rpx;
+  background: #fff;
+  border-top: 1rpx solid #eaeaea;
+}
+
+.main_left {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.main_list {
+  padding-top: 6rpx;
+}
+
+.main_right input {
+  text-align: right;
+}
+
+.btns_warp {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.btns_warp button {
+  background: #ec6464;
+  padding: 14rpx 20rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 30rpx;
+  border-radius: 0;
+}

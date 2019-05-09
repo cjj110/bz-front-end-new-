@@ -1,0 +1,85 @@
+.success {
+  color: #fff;
+  background: #f88282;
+  text-align: center;
+  line-height: 90rpx;
+}
+
+.success1 {
+  width: 610rpx;
+  margin: 0 auto;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  padding-top: 26rpx;
+
+}
+
+.Group {
+  width: 134rpx;
+  height: 134rpx;
+  margin-top: 20rpx; 
+
+}
+
+.code {
+  text-align: center; 
+   padding-top: 26rpx;
+}
+
+.code image {
+  width: 250rpx;
+  height: 250rpx;
+}
+
+.poss_address {
+  width: 640rpx;
+  background: #fff;
+  font-size: 24rpx;
+  margin: 0 auto;
+  border-radius: 16rpx;
+  margin-top: 20rpx;
+}
+
+.poss_address1 {
+  padding: 20rpx;
+}
+
+.poss_address_left {
+  padding-right: 61rpx;
+}
+
+.poss_address_left image {
+  width: 32rpx;
+  height: 29rpx;
+  display: block;
+  margin-left: 38rpx;
+}
+
+.poss_address_right image {
+  width: 114rpx;
+  height: 100rpx;
+  display: block;
+}
+
+.bottom_price {
+  width: 100%;
+  height: 120rpx;
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+}
+
+.btn {
+  background: #ec4646;
+  color: #fff;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+}

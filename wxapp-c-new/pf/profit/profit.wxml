@@ -1,0 +1,158 @@
+<view class='hender_title'>
+  贝住挖贝
+</view>
+<view class='profit1 flex-y-center'>
+  <view class='profit11 flex'>
+    <view class='flex-grow-1' bindtap='my_profit'>
+      <view class='profit1_left'>
+        <text class='profit1_left_1'>约为{{user.rmb}}元</text>
+      </view>
+      <view class='profit1_left_center'>
+        <view class='profit1_left_center1'>
+          <text>{{user.score}}</text>
+          <text>家贝</text>
+        </view>
+        <view class='profit1_left_center2'>
+          我的家贝
+        </view>
+      </view>
+    </view>
+    <view class='flex-grow-1'>
+      <view class='profit1_left'>
+        <text class='profit1_left_1' bindtap='index'>马上去花</text>
+      </view>
+      <view class='profit1_left_center'>
+        <view class='profit1_left_center1' style='border-right:none'>
+          <text>{{user.jrscore}}</text>
+          <text>家贝</text>
+        </view>
+        <view class='profit1_left_center2'>
+          今日家贝
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='profit_center_text'>
+  算力{{suan}}x
+</view>
+
+<view class="container">
+  <view class="wave ripple danger">
+    <view class="circle"></view>
+    <view class="circle"></view>
+    <view class="circle"></view>
+    <view class="circle"></view>
+    <view class="circle"></view>
+    <view class="circle"></view>
+  </view>
+
+  <view class='profit_Record'>
+    <view catchtap='profit_Record' style='padding-right:20rpx;padding-top:20rpx;'>挖贝记录</view>
+  </view>
+
+  <view class="content flex-y-center">
+    <view class='flex' style='margin:0 auto;  position: relative;'>
+      <view class='content1'>
+        {{time}}
+      </view>
+      <view class='content22'>
+        <view class='content2 flex-y-center flex-x-center'>
+          挖贝中..
+        </view>
+      </view>
+      <view class='content3 '>
+        <view class='ellipsis'>{{jb}}家贝</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<navigator wx:if='{{stor.length>0}}' url=' ../profit_record/profit_record ' hover-class='nav_profit ' class='profit_page flex-y-center box-pack-between ' wx:for='{{stor}}' data-user='{{item.user_id}}' wx:for-index='index'>
+  <view style='display: flex;align-items: center;'>
+    <image src="{{item.user.img}}" class='hendimg'></image>
+    <text class='ellipsis'>{{item.user.name}}</text>
+  </view>
+  <view class='profit_page_right ' wx:if='{{index==0}} '>
+    <image src='../images/1.png '></image>
+    <view class='profit_page_num flex-y-center flex-x-center '>{{index+1}}</view>
+  </view>
+
+  <view class='profit_page_right2 ' wx:elif='{{index==1}} '>
+    <view class='profit_page_right3 '>
+      <image src='../images/2.png '></image>
+    </view>
+    <view class='flex-y-center flex-x-center profit_page_right4 '>{{index+1}}</view>
+  </view>
+
+  <view class='profit_page_right3 ' wx:else>
+    {{index+1}}
+  </view>
+</navigator>
+
+
+<view style='height:100rpx; '>
+
+</view>
+
+
+
+
+<view class='foot_d'>
+  <view class='box-pack-between flex-y-center'>
+    <view></view>
+    <view class='may flex-y-center flex-x-center'>
+      <view class='flex-y-center flex-x-center'>
+        <image src='../../zh_jdgjb/pages/img/may.png'></image>
+        产生收益中...
+      </view>
+      <view class='may_pos'>
+        <image src='../../zh_jdgjb/pages/img/sanjiaoxing-down.png'></image>
+      </view>
+    </view>
+    <view></view>
+  </view>
+  <view class="foot">
+    <view bindtap='home' class="footbox flex3">
+      <image src="../../zh_jdgjb/pages/img/images/nav/images/nav/Home1.png"></image>
+    </view>
+    <view bindtap='profit' class="footbox flex3">
+      <image src="../../zh_jdgjb/pages/img/images/nav/images/nav/Currency.png"></image>
+    </view>
+    <view bindtap="wode" class="footbox flex3">
+      <image src="../../zh_jdgjb/pages/img/images/nav/images/nav/my.png"></image>
+    </view>
+  </view>
+</view>
+
+<view class="foot">
+  <view bindtap='home' class="footbox flex3">
+    <image src="../../zh_jdgjb/pages/img/images/nav/Home.png"></image>
+  </view>
+  <view bindtap='profit' class="footbox flex3">
+    <image src="../../zh_jdgjb/pages/img/images/nav/Currency1.png"></image>
+  </view>
+
+  <view bindtap="wode" class="footbox flex3">
+    <image src="../../zh_jdgjb/pages/img/images/nav/my.png"></image>
+  </view>
+
+
+
+
+
+
+  <!-- 
+  <view bindtap='home ' class="footbox flex3">
+    <image src="../../zh_jdgjb/pages/img/images/nav/Home.png"></image>
+  </view>
+  <view class="footbox flex3">
+    <image src="../../zh_jdgjb/pages/img/images/nav/Currency1.png"></image>
+  </view>
+  <view bindtap="wode" class="footbox flex3">
+    <image src="../../zh_jdgjb/pages/img/images/nav/my.png"></image>
+  </view> -->
+
+
+</view>

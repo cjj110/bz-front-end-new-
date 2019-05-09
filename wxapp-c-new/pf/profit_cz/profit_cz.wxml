@@ -1,0 +1,44 @@
+<view class='hender_title'>
+  充值
+</view>
+
+<view>
+  <view class='address_one'>
+    <view class='address_one1 '>
+      <view class='flex-y-center address_one_page '>
+        <view class='flex-grow-1'>
+          <view>
+            ￥
+            <text style='font-size:60rpx;'>{{rmb}}</text>
+          </view>
+          <!-- <text></text> -->
+        </view>
+        <view class='flex-grow-0 adddres_center'>
+          <image src='../images/jt.png'></image>
+        </view>
+        <view class='flex-grow-1'>
+          <view>
+            <text style='font-size:60rpx;'>{{jb}}</text> 家贝
+          </view>
+          <!-- <text>≈8888.used</text> -->
+        </view>
+      </view>
+
+      <view class='cz_maney'>
+        <input bindinput='bindinput_cz' maxlength='4' type='number' placeholder='请在此输入您要充值的金额'></input>
+      </view>
+    </view>
+
+    <!-- <view class='address_one2'>
+      <text>将充值到你的以太坊钱包</text>
+    </view> -->
+    <!-- 
+    <view class='address_one3 flex-y-center'>
+      ERYFGDGSAA235478DGSD2326 DFGDH568DF854323FGSD2334 DFGDFHDFH2
+    </view> -->
+  </view>
+  <view class='btt' bindtap='pay'>
+    确认充值
+  </view>
+
+</view>

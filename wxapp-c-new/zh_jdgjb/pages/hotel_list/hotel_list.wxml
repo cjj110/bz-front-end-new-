@@ -1,0 +1,444 @@
+<view class='hender_title'>
+  {{city}}
+</view>
+
+<view class="container" style="overflow:{{recomimg==1||addressing==1||dit==1||price_sorting==1?'hidden':''}}">
+  <view class="bottom">
+    <view class="flex3">
+      <view class="indexbox flex-y-center">
+        <view class="icontent">
+          <view class="iconleft">
+            <view class="iconfont1" bindtap='checkInDate'>
+              <view class="">{{checkInDate}}</view>
+            </view>
+          </view>
+          <view class="iconrit">
+            <view class="iconfont1" bindtap='checkInDate'>
+              <view class="">{{checkOutDate}}</view>
+            </view>
+          </view>
+        </view>
+        <view class=''>
+          <view class="iconnum">{{time}}晚</view>
+        </view>
+        <view class="isearch  flex-y-center flex-x-center">
+          <!-- <view class="flex_center flex-y-center flex-x-center"> -->
+            <input class='iinput' bindconfirm='search' value='{{search_value}}' confirm-type='search' bindinput='search_input' placeholder="酒店名称/位置......" type="text"></input>
+          <!-- </view> -->
+        </view>
+      </view>
+    </view>
+    <!-- 排序 -->
+    <!-- <view class="{{top?'fixedd':'top_sort'}}"> -->
+    <view class="stickyClass">
+      <view class='top_sort2'>
+        <view bindtap="Recommend" data-select='{{select}}'>
+          <text wx:if="{{recomimg==0}}">{{list1}}<text class='iconfont icon-xiajiantou'></text>
+          </text>
+          <text wx:if="{{recomimg==1}}">{{list1}}<text class='iconfont icon-shangjiantou'></text>
+          </text>
+        </view>
+        <view bindtap="address" data-chenk='{{chenk}}'>
+          <text data-txt='{{address_num}}' wx:if="{{addressing==0}}"> {{shop_area}}<text class='iconfont icon-xiajiantou'></text></text>
+          <text wx:if="{{addressing==1}}">{{shop_area}}<text class='iconfont icon-shangjiantou'></text>
+          </text>
+        </view>
+        <view bindtap="price_sorting" data-sorting='{{sorting}}'>
+          <text wx:if="{{price_sorting==0}}">{{price_ranking}}<text class='iconfont icon-xiajiantou'></text> </text>
+          <text wx:if="{{price_sorting==1}}">{{price_ranking}}<text class='iconfont icon-shangjiantou'></text></text>
+        </view>
+        <view bindtap="dit_sorting" data-dit='{{diting}}'>
+          <text wx:if="{{dit==0}}">综合筛选<text class='iconfont icon-xiajiantou'></text> </text>
+          <text wx:if="{{dit==1}}">综合筛选<text class='iconfont icon-shangjiantou'></text></text>
+        </view>
+      </view>
+      <!-- 筛选 -->
+
+      <block>
+        <!-- 关闭层 -->
+        <view class='model' wx:if="{{recomimg==1||price_sorting==1||addressing==1||dit==1}}" bindtap='close'></view>
+        <!-- 关闭层end -->
+        <view class='recommend_list'>
+          <!-- 推荐排序 -->
+          <block wx:if='{{recomimg==1}}'>
+            <view style="display:{{recomimg==1?'block':'none'}}" class='recommend_list2' bindtap='pxlist' wx:for='{{list}}' data-sort='{{item.sort}}' data-index='{{index}}'>
+              <view class='box-pack-between sort_list'>
+                <view>
+                  {{item.name}}
+                </view>
+                <view class='sort_list2' wx:if='{{item.select}}'>
+                  <image src='../img/images/list_gou.png'></image>
+                </view>
+              </view>
+            </view>
+          </block>
+          <!-- 推荐排序end -->
+
+          <!-- 位置排序 -->
+          <block wx:if='{{addressing==1}}'>
+            <view style="display:{{addressing==1 ? 'block':'none' }}">
+              <view class='flex address_region'>
+                <view class='flex-grow-0 address_region1'>
+                  <scroll-view scroll-y style='height:500rpx;'>
+                    <view class="ar_region {{index==action?'address_left':''}}" wx:for='{{city_District}}' data-index='{{index}}' bindtap='region' data-name='{{item.name}}'>{{item.name}}</view>
+                  </scroll-view>
+                </view>
+                <scroll-view scroll-y style='height:500rpx;'>
+                  <view class='flex-grow-1 address_region2'>
+                    <view class='flex-y-center box-pack-between' data-name='{{item.shop_area}}' bindtap='Choice' data-id='{{index}}' wx:for='{{address_list}}' data-district='{{district}}' wx:if='{{item.shop_area}}'>
+                      <text wx:if='{{item.shop_area}}'>{{item.shop_area}}</text>
+                      <view class='rond flex-y-center flex-x-center'>
+                        <text class='iconfont icon-gou' wx:if='{{index==total}}'></text>
+                      </view>
+                    </view>
+                  </view>
+                </scroll-view>
+              </view>
+            </view>
+          </block>
+          <!-- 位置排序 end-->
+
+          <!-- 价格排序 -->
+          <block wx:if='{{price_sorting==1}}'>
+            <view style="display:{{price_sorting==1?'block':'none'}} " class='Price' style='padding:0 40rpx;'>
+              <text>价格<text style='color:#ec6464'>￥<block wx:if='{{max_price>850}}'>850以上</block>
+<block wx:else>{{min_price}}-{{max_price}}</block>
+
+              </text>
+              </text>
+              <view class='flex'>
+                <view class='flex-grow-1'>
+                  <view class='box-pack-between'>
+                    <text>0</text>
+                    <text>850以上</text>
+                  </view>
+                  <view class='sliderView flex'>
+                    <slider activeColor='#cecacb' backgroundColor='#f26a36' class='left' disabled='{{is_slider}}' style='margin:0;z-index:{{pindex}}' value='{{min_price}}' block-size='20' bindchange="Price_range" min="0" max="425" />
+
+                    <slider class='right' bindchange="rightChange" disabled='{{is_slider}}' style='margin:0;z-index:{{bindex}}' value='{{max_price}}' block-size='20' activeColor='#f26a36' backgroundColor='#cecacb' bindchange="rightChange" min="426" max="851" />
+                    <!-- <slider class='right' block-color='orange' bindchange="rightSchange" min='{{rightMin}}' max='{{rightMax}}' value='{{rightValue}}' activeColor='rgb(243,242,247)' backgroundColor='rgb(243,242,247)' block-size='14' /> -->
+                  </view>
+                </view>
+              </view>
+              <!-- 价格 选择-->
+              <view class='' style='margin-top:80rpx;margin-bottom:70rpx;'>
+                <view class='price_q {{clear_pr==index? "pc":""}}' data-min='{{item.min_price}}' data-max='{{item.max_price}}' wx:for='{{prc}}' bindtap='price_choice' data-index='{{index}}'>
+                  ￥{{item.min_price}}-{{item.max_price}}
+                </view>
+              </view>
+              <text>星级</text>
+              <view class='' style='padding-bottom:30rpx;'>
+                <view style='line-height:28rpx;padding:10rpx 0;' class='price_q {{ star_px==index? "pc":""}}' data-text='{{item}}' wx:for='{{star}}' bindtap='star_prc' data-index='{{index}}'>
+                  {{item}}
+                </view>
+              </view>
+            </view>
+          </block>
+          <!-- 价格排序end -->
+
+          <!-- 筛选 -->
+          <block wx:if='{{dit==1}}'>
+            <view style="display:{{dit==1 ? 'block':'none' }}">
+              <view class='flex address_region'>
+                <!-- 一 -->
+                <view class='flex-grow-0 address_region1'>
+                  <scroll-view scroll-y style='height:500rpx;'>
+                    <view class="ar_region {{index==dist_avt?'dist_left':''}}" wx:for='{{dis_list}}' data-index='{{index}}' bindtap='dist'>{{item}}</view>
+                  </scroll-view>
+                </view>
+                <!-- 二 -->
+                <view class='flex-grow-0 address_region1' style='width:255rpx;'>
+                  <scroll-view scroll-y style='height:500rpx;'>
+                    <view class='flex-grow-1 address_region2'>
+                      <view data-index='{{index}}' data-kl='{{dist_avt}}' class="flex-y-center box-pack-between {{index==hotel_two?'dist_left_color':''}}" bindtap='dist_hotel_two' wx:for='{{dist_hotel}}'>
+                        <text>{{item}}</text>
+                      </view>
+                    </view>
+                  </scroll-view>
+                </view>
+                <!-- 三  -->
+                <block wx:if='{{lt}}'>
+                  <block wx:for='{{list_hotel}}' wx:for-item='l' wx:for-index='index'>
+                    <view class='flex-grow-0 address_region1' style='width:300rpx;'>
+                      <scroll-view scroll-y style='height:500rpx;'>
+                        <view class='flex-grow-1 address_region2'>
+                          <view class='flex-y-center box-pack-between' wx:for='{{l.list}}' wx:for-index='index_two'>
+                            <text>{{item.name}}</text>
+                            <view class='rond flex-y-center flex-x-center' data-name='{{item.name}}' bindtap='check_three' data-id='{{index_two}}' id='{{index}}'>
+                              <text class='iconfont icon-gou' wx:if='{{item.click==1}}'></text>
+                            </view>
+                          </view>
+                        </view>
+                      </scroll-view>
+                    </view>
+                  </block>
+                </block>
+                <block wx:else>
+                  <view class='flex-grow-0 address_region1' style='width:300rpx;'>
+                    <scroll-view scroll-y style='height:500rpx;'>
+                      <view class='flex-grow-1 address_region2'>
+                        <view class='flex-y-center box-pack-between' wx:for='{{cate_list}}' wx:for-index='index_two'>
+                          <text>{{item.name}}</text>
+                          <view class='rond flex-y-center flex-x-center' data-name='{{item.name}}' bindtap='check_three_two' data-kl='{{dist_avt}}' data-hotel='{{hotel_two}}' data-index='{{index_two+1}}' data-id='{{index_two}}' wx:if='{{cate_list}}'>
+                            <text class='iconfont icon-gou' wx:if='{{item.click==1}}'></text>
+                          </view>
+                        </view>
+                      </view>
+                    </scroll-view>
+                  </view>
+                </block>
+              </view>
+            </view>
+          </block>
+          <!-- 距离排序end -->
+        </view>
+      </block>
+    </view>
+
+    <!-- 排序 end-->
+    <view class='title' wx:if="{{jxlist.length>0}}">
+      精选
+    </view>
+    <scroll-view scroll-x class='tj0' style='z-index:0;' wx:if="{{jxlist}}">
+      <view class='tj' wx:for='{{jxlist}}' bindtap='choicenessJdList' data-tag_id='{{item.tag_id}}'>
+        <view class='tj1'>
+          <image src='{{url}}{{item.img}}'></image>
+          <view class='tj2 flex-y-center flex-x-center'>
+            {{item.tag_name}}
+          </view>
+        </view>
+        <view class='tj3'>
+          <!-- 返还 {{item.min}} -->
+          <block wx:if='{{item.max}}'>
+            最高返还 {{item.max}} 家贝
+          </block>
+        </view>
+      </view>
+      <view style='width:50rpx;display:inline-block'>
+      </view>
+    </scroll-view>
+
+    <view wx:if='{{GetADImg.status==1}}'>
+      <view class="header">
+        <image bindtap='go' class="swiperimg" data-index="{{index}}" src="{{GetADImg.logo}}"></image>
+      </view>
+    </view>
+    <view class='title' bindtap="onon">
+      搜索结果
+    </view>
+
+    <!-- 商家的推荐 -->
+    <view bindtap="conlist" wx:if='{{shop_hotel.length>0}}' class="hotel_info flex" data-title='{{item.name}}' data-id="{{item.id}}" wx:for="{{shop_hotel}}">
+      <view class="info_left flex-grow-0">
+          <image src="{{item.ewm_logo}}"></image>
+      </view>
+      <view class="info_right flex-grow-1">
+        <view class='flex-y-center box-pack-between'>
+          <view class="infritbox info_right1 ellipsis">{{item.name}}</view>
+          <view class='reprice'>
+            <text class="ritfont2">¥{{item.zd_money}}</text>
+            <text class="ritfont3">起</text>
+          </view>
+        </view>
+        <view class='right-center'>
+          <view class='flex-y-center'>
+            <view class='flex-grow-1'>
+              <image class='xing' wx:if='{{Number(item.xing)>=1}}' src='../img/images/xingxing.png'></image>
+              <image class='xing' wx:if='{{Number(item.xing)>=2}}' src='../img/images/xingxing.png'></image>
+              <image class='xing' wx:if='{{Number(item.xing)>=3}}' src='../img/images/xingxing.png'></image>
+              <image class='xing' wx:if='{{Number(item.xing)>=4}}' src='../img/images/xingxing.png'></image>
+              <image class='xing' wx:if='{{Number(item.xing)>=5}}' src='../img/images/xingxing.png'></image>
+
+              <!-- <text style='font-size:20rpx;color:#999'>{{item.pl_count}}评论</text> -->
+                
+            </view>
+          </view>
+        </view>
+        <view class="flex_bet info_right2">
+          <view class="flex_center">
+            <image class="iconaddress" src="../img/weizhi.png"></image>
+            <view class="ritfont1">
+              {{item.address}}
+            </view>
+          </view>
+        </view>
+        <view class="info_right2">
+          <view class='info_right3' hidden='{{item.bed==0}}'>
+            <view class="flex-y-center">
+              <image wx:if='{{item.bed!=0}}' class="iconaddress_d" src="../img/images/cutlery3.png"></image>
+              <view class="info_3">
+                <block wx:if='{{item.bed==1}}'>
+                  大床
+                </block>
+                <block wx:if='{{item.bed==2}}'>
+                  双床
+                </block>
+                <block wx:if='{{item.bed==3}}'>
+                  单人床
+                </block>
+                <block wx:if='{{item.bed==4}}'>
+                  多张床
+                </block>
+              </view>
+            </view>
+          </view>
+          <view class='info_right3' hidden='{{item.bed==0}}'>
+            <view class="flex-y-center">
+              <image class="iconaddress_d" src="../img/images/ting.png"></image>
+              <view class="info_3">
+                <block wx:if='{{item.parking==1}}'>
+                  免费停车
+                </block>
+                <block wx:if='{{item.parking==2}}'>
+                  收费停车
+                </block>
+              </view>
+            </view>
+          </view>
+          <view class='info_right3' hidden='{{item.bed==0}}'>
+            <view class="flex-y-center">
+              <image class="iconaddress_d" src="../img/images/cutlery.png"></image>
+              <view class="info_3">
+                <block wx:if='{{item.breakfast==0}}'>
+                  不含早
+                </block>
+                <block wx:if='{{item.breakfast==1}}'>
+                  含早
+                </block>
+              </view>
+            </view>
+          </view>
+          <view class='ritfont1'>
+            <!-- {{item.distance* 1000}}  -->
+            <block wx:if='{{item.juli>=1000}}'>距离你{{item.juli/1000}}km</block>
+            <block wx:else>距离你{{item.juli}}m</block>
+          </view>
+        </view>
+
+        <view class='flex'>
+          <view class='info_right3 flex-grow-1'>
+            <text class='info_right5' wx:for='{{item.tags}}' wx:for-item="ison" wx:key="{{index}}">{{ison.tags_name}}</text>
+            <!-- <view class='info_right5' wx:for='{{5}}'>满减的</view> -->
+          </view>
+          <view class='flex-grow-0' wx:if="{{item.fan_jb > 0}}">
+            <text class='info_right55'>返{{item.fan_jb}}家贝</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 商家的推荐 -->
+
+
+    <view bindtap="conlist" class="hotel_info flex" data-title='{{item.name}}' data-id="{{item.id}}" wx:for="{{hotel}}">
+      <view class="info_left flex-grow-0">
+        <image mode="" src="{{item.ewm_logo}}"></image>
+      </view>
+      <view class="info_right flex-grow-1">
+        <view class='flex-y-center box-pack-between'>
+          <view class="infritbox info_right1">{{item.name}}</view>
+        </view>
+        <view class='flex-y-center'>
+          <view class='flex-grow-1'>
+            <image class='xing' wx:if='{{item.xing>=1}}' src='../img/images/xingxing.png'></image>
+            <image class='xing' wx:if='{{item.xing>=2}}' src='../img/images/xingxing.png'></image>
+            <image class='xing' wx:if='{{item.xing>=3}}' src='../img/images/xingxing.png'></image>
+            <image class='xing' wx:if='{{item.xing>=4}}' src='../img/images/xingxing.png'></image>
+            <image class='xing' wx:if='{{item.xing>=5}}' src='../img/images/xingxing.png'></image>
+            <text style='font-size:10px;color:#999;line-height:10px;'>{{item.pl_count}}人已消费</text>
+          
+        <view class="flex_bet info_right2">
+          <view class="flex_center">
+            
+            <view class="ritfont1">
+              {{item.address}}
+            </view>
+          </view>
+        </view>
+        <!-- <view class="info_right2">
+          <view class='info_right3' hidden='{{item.bed==0}}'>
+            <view class="flex-y-center">
+              <image wx:if='{{item.bed!=0}}' class="iconaddress_d" src="../img/images/cutlery3.png"></image>
+              <view class="info_3">
+                <block wx:if='{{item.bed==1}}'>
+                  大床
+                </block>
+                <block wx:if='{{item.bed==2}}'>
+                  双床
+                </block>
+                <block wx:if='{{item.bed==3}}'>
+                  单人床
+                </block>
+                <block wx:if='{{item.bed==4}}'>
+                  多张床
+                </block>
+              </view>
+            </view>
+          </view>
+          <view class='info_right3' hidden='{{item.bed==0}}'>
+            <view class="flex-y-center">
+              <image class="iconaddress_d" src="../img/images/ting.png"></image>
+              <view class="info_3">
+                <block wx:if='{{item.parking==1}}'>
+                  免费停车
+                </block>
+                <block wx:if='{{item.parking==2}}'>
+                  收费停车
+                </block>
+              </view>
+            </view>
+          </view>
+          <view class='info_right3' hidden='{{item.bed==0}}'>
+            <view class="flex-y-center">
+              <image class="iconaddress_d" src="../img/images/cutlery.png"></image>
+              <view class="info_3">
+                <block wx:if='{{item.breakfast==0}}'>
+                  不含早
+                </block>
+                <block wx:if='{{item.breakfast==1}}'>
+                  含早
+                </block>
+              </view>
+            </view>
+          </view>
+          
+        </view> -->
+        <view class='ritfont1'>
+          <!-- {{item.distance* 1000}}  -->
+          <image class="iconaddress" src="../img/weizhi.png"></image>
+          <block wx:if='{{item.juli>=1000}}'>距离你{{item.juli/1000}}km</block>
+          <block wx:else>距离你{{item.juli}}m</block>
+        </view>
+      </view>
+    </view>
+        <!-- 标签 -->
+        <view class='flex right_bottom'>
+          <view class='info_right3 flex-grow-1'>
+
+             <text class='info_right5' wx:for='{{item.tags}}' wx:for-item="ison" wx:key="{{index}}"wx:if="{{index <= 3}}">{{ison.tags_name}}</text>
+            <!-- <text class='info_right5'>不可啊啊</text>
+            <text class='info_right5'>不可啊啊</text>
+            <text class='info_right5'>不可啊啊</text>
+            <text class='info_right5'>不可啊啊</text> -->
+
+            <!-- <view class='info_right5' wx:for='{{5}}'>满减的</view> -->
+          </view>
+        </view>
+        <view class='priceJb'>
+          <view class='reprice'>
+            <text class="ritfont2">¥{{item.zd_money}}</text>
+            <text class="ritfont3">起</text>
+          </view>
+          <view class='flex-grow-0 backblock' wx:if="{{item.fan_jb!=0}}">
+            <text class='info_right55'>返{{item.fan_jb}}个家贝</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='loding' wx:if="{{hotel.length>0}}">加载中... ...</view>
+
+
+    <view style="width:100%;height:0;"></view>
+    <view class="none_more" wx:if='{{hotel.length<=0}}'>---------------没有更多了---------------</view>
+
+  </view>
+</view>

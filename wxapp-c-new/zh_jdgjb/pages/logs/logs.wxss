@@ -1,0 +1,429 @@
+
+page {
+  height: 100%;
+}
+
+.hender_title {
+  padding: 0 30rpx;
+  /* padding-bottom: 10rpx; */
+  font-size: 52rpx;
+  font-weight: bold;
+}
+
+.home {
+  padding-bottom: 90rpx;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  float: left;
+}
+
+.content_model {
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  margin-top: 100rpx;
+}
+
+.lheader {
+  width: 670rpx;
+  height: 294rpx;
+  font-size: 34rpx;
+  overflow: hidden;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.hydj {
+  border-radius: 30rpx;
+  border:1rpx solid #EF5151;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 125rpx; */
+  color: #EF5151;
+  margin-top: 5rpx;
+  padding: 4rpx 10rpx;
+  margin-right: 6rpx;
+}
+.mine{
+  width: 300rpx;
+  height: 44rpx;
+}
+
+.hydj text {
+  font-size: 20rpx;
+  color: #EF5151;
+}
+
+.hydj image {
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 7rpx;
+}
+
+.logsimg {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  border: 3rpx solid #fff;
+  margin-left: 50rpx;
+  margin-right: 30rpx;
+}
+
+.hjifen {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  right: 0rpx;
+  top: 20rpx;
+  padding: 7rpx;
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+  width: 270rpx;
+  z-index: 3;
+  font-size: 28rpx;
+}
+
+.hjifenimg {
+  width: 45rpx;
+  height: 45rpx;
+  background-color: pink;
+  border-radius: 50%;
+}
+
+.hright {
+  width: 20rpx;
+  height: 30rpx;
+  margin-right: 25rpx;
+}
+
+.logs {
+  background-color: white;
+  padding: 30rpx;
+  font-size: 34rpx;
+}
+
+.logguimg {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 15rpx;
+}
+
+.hguiright {
+  width: 20rpx;
+  height: 30rpx;
+  margin-left: 15rpx;
+}
+
+.lorders {
+  background-color: white;
+  text-align: left;
+  width: 670rpx;
+  margin: 0 auto;
+  font-size: 32rpx;
+}
+
+.lorders  view {
+  padding: 20rpx;
+}
+
+.lorder {
+  background-color: white;
+  margin-top: 20rpx;
+  padding: 20rpx 0rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #666;
+  width: 670rpx;
+  margin: 0 auto;
+  font-size: 24rpx;
+}
+
+.lorder>flex3 {
+  width: 25%;
+}
+
+.lorderimg {
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: 20rpx;
+}
+
+.logfont1 {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.lbanner {
+  /* padding: 0rpx 20rpx; */
+  width: 670rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+
+.lbannerimgs {
+  width: 35rpx;
+  height:29rpx;
+  margin-right: 22rpx;
+  margin-left: 20rpx;
+}
+
+.lbannerimg {
+  width: 20rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+
+.lbanlist {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 20rpx;
+  background-color: white;
+  font-size: 28rpx;
+  margin-bottom: 12rpx;
+  border-radius: 16rpx;
+}
+
+.lbanlist:last-child {
+  border: none;
+}
+
+.lbanlist button {
+  background: none;
+  width: 100%;
+  height: 100%;
+  z-index: 100000000000;
+  margin: 0;
+  padding: 0;
+}
+
+.lbanlist button::after {
+  border: none;
+}
+
+/* .foot {
+  position: fixed;
+  z-index: 100000000000000000;
+  bottom: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-top: 1rpx solid #eee;
+  background-color: white;
+  padding: 15rpx 0rpx 10rpx;
+  font-size: 22rpx;
+} */
+
+.foot {
+  position: fixed;
+  z-index: 99;
+  bottom: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /* border-top: 1rpx solid #eee; */
+  background-color: white;
+  padding: 24rpx 0rpx 21rpx;
+  font-size: 22rpx;
+}
+
+.footbox {
+  width: 50%;
+}
+
+.footban {
+  width: 100%;
+  height: 130rpx;
+}
+
+.footbox>image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.footfont1 {
+  color: #182e8f;
+}
+
+.member_info {
+  width: 100%;
+  height: 150rpx;
+  color: #fff;
+}
+
+.member_info swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.m_info {
+  width: 25%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.m_info image {
+  width: 80rpx;
+  height: 80rpx;
+  background: red;
+  display: block;
+  margin: 20rpx auto 0;
+}
+
+.m_info view {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+
+.fixed {
+  overflow: hidden;
+}
+
+.fixed>view:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: #000;
+  opacity: 0.5;
+}
+
+.authorization {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 50000000;
+}
+
+.authorization button {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+
+.maney_address {
+  font-size: 20rpx;
+  color: #999;
+  padding: 4rpx 0;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.wait{
+  width: 1rpx;
+  height: 56rpx;
+}
+
+.line {
+  width: 400rpx;
+  background: #f1f1f1;
+  height: 2rpx;
+}
+
+.icon-shangjiantou {
+  transform: rotate(90deg);
+  color: #ef9494;
+  font-weight: 800;
+  font-size: 25rpx;
+}
+
+.my_number {
+  font-size: 32rpx;
+  /* margin-right: 15rpx; */
+}
+
+.my_number_maney {
+  width: auto;
+  line-height: 40rpx;
+}
+
+.my_number_maney text:nth-child(1) {
+  display: inline-block;
+  border-radius: 30rpx;
+  color: #3F3F47;
+  padding: 4rpx 10rpx;
+  font-size: 20rpx;
+}
+
+.my_number_maney text:nth-child(2) {
+  display: inline-block;
+  color: #ee6361;
+  font-size: 20rpx;
+}
+
+.maney_right {
+  width: auto;
+  height: 53rpx;
+  margin-right: 25rpx;
+}
+.wallet{
+  display: block;
+  width: 48rpx;
+  height: 53rpx;
+}
+
+.maney_right .icon-shangjiantou {
+  transform: rotate(90deg);
+  color: #ef9494;
+  font-weight: 800;
+  display: block;
+  font-size: 22rpx;
+}
+
+.Signin {
+  width: 100rpx;
+  /* height: 40rpx; */
+  background: #ee6361;
+  font-size: 28rpx;
+  border-radius: 12rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.pos {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(245, 178, 179, 0.5);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 999;
+}
+
+.pos_bg {
+  width: 540rpx;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  text-align: center;
+  /* height: 360rpx; */
+  position: relative;
+}
+
+.btm {
+  width: 226rpx;
+  background: #ec6464;
+  border-radius: 90rpx;
+  line-height: 73rpx;
+  color: #fff;
+  font-size: 28rpx;
+}

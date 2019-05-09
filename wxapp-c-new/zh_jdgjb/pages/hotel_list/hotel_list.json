@@ -1,0 +1,6 @@
+{
+  "navigationBarBackgroundColor": "#f1f1f1",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "贝住酒店列表"
+}

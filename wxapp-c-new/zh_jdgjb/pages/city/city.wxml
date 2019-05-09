@@ -1,0 +1,62 @@
+
+<!-- 点击跳楼 -->
+<scroll-view scroll-y style="height:{{winHeight}}px" scroll-into-view="{{scrollTopId}}" scroll-with-animation scrollTop="{{scrollTop}}" bindtouchstart='disappear'>
+<view class='hender_title'>
+  城市选择
+</view>
+<view class='flex cate'>
+  <view class="cate_box flex-grow-1 " bindtap='indexbox1'>
+    <text class="{{type==0?'cate_box_back':''}}">国内</text>
+  </view>
+  <view class='flex-grow-1'></view>
+  <view class="cate_box flex-grow-1" bindtap='indexbox2'>
+    <text class="{{type==1?'cate_box_back':''}}">国际</text>
+  </view>
+</view>
+
+<view class='city'>
+  <view class='city_title'>定位城市</view>
+  <view class="address {{address? 'adtion':''}}" bindtap='clickfn' data-index='{{index}}' data-text='{{address}}'>
+    {{address}}
+  </view>
+  <!-- <view class='address '>
+    我的位置
+  </view> -->
+  <view class='city_title' wx:if="{{History.length>0}}">历史城市</view>
+  <block wx:for='{{History}}' wx:key="{{index}}">
+    <view class="address {{index==History_type? 'adtion':''}}" bindtap='clickhistory' data-text='{{item.name}}' data-index='{{index}}'>
+      {{item.name}}
+    </view>
+  </block>
+
+  <view class='city_title' wx:if="{{popular.length>0}}">热门城市</view>
+  <block wx:for='{{popular}}' wx:key="{{index}}">
+    <view class="address {{index==Hot_type? 'adtion':''}}" bindtap='clickfn' data-text='{{item.name}}' data-index='{{index}}'>
+      {{item.name}}
+    </view>
+  </block>
+</view>
+<!-- 所有城市 -->
+  <!-- <block wx:for='{{citys}}'> -->
+    <view class='citys'>
+      <block wx:for="{{type==0 ?cityList:national}}" wx:for-index="key" wx:for-item="item"  wx:key="{{index}}">
+        <view class='letter' id="{{key}}" data-text='{{key}}'>{{key}}</view>
+        <block wx:for="{{item}}"  wx:key="{{index}}">
+          <view class='town' data-text="{{item.name}}" data-citycode="{{item.citycode}}" bindtap='clickfn' >{{item.name}}</view>
+        </block>
+      </block>
+    </view>
+  <!-- </block> -->
+  </scroll-view>
+
+  <view class='right_nav' catchtouchmove='silde'>
+    <view bindtap='gotop' class='gotop'>热门\n城市</view>
+    <block wx:for="{{type==0 ?cityList:national}}" wx:for-index="index">
+      <view class='every_letter' id="{{key}}" data-key="{{index}}" catchtouchend="clickLetter"  wx:key="{{key}}" style="{{key==index?'color:gray;':''}}">{{index}}</view>
+    </block>
+  </view>
+
+<!-- 字母块 -->
+<view class='letterBlock' wx:if="{{key}}">
+  {{key}}
+</view>

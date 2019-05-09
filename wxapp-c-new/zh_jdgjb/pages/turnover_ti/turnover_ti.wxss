@@ -1,0 +1,27 @@
+.score_detail {
+  padding: 20rpx 20rpx;
+  background: #fff;
+  font-size: 28rpx;
+  color: #666;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+
+.score_detail>view {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.score_detail>view:nth-child(1) {
+  text-align: left;
+}
+
+.score_detail>view:nth-child(2) {
+  text-align: left;
+}
+
+.no {
+  text-align: center;
+  font-size: 26rpx;
+  color: #999;
+}

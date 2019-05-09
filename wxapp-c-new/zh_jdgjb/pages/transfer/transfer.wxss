@@ -1,0 +1,39 @@
+.success {
+  margin: 0 auto;
+  width: 80%;
+  background: #fff;
+  text-align: center;
+  border-radius: 16rpx;
+  margin-top: 70rpx;
+  font-size: 28rpx;
+  height: 600rpx;
+}
+
+.success_a {
+  font-size: 32rpx;
+  margin-top: 50rpx;
+}
+
+.Progressbg {
+  height: 200rpx;
+  width: 200rpx;
+}
+
+.Group {
+  width: 134rpx;
+  height: 134rpx;
+  margin-top: 50rpx;
+}
+
+.btn {
+  width: 350rpx;
+  background: #ec6464;
+  border-radius: 69rpx;
+  margin: 0 auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin-top: 46rpx;
+  font-size: 32rpx;
+  color: #fff;
+}

@@ -1,0 +1,221 @@
+.hender_title {
+  padding: 0 30rpx;
+  font-size: 52rpx;
+  font-weight: bold;
+}
+
+.order_title {
+  display: flex;
+  padding: 26rpx 40rpx;
+}
+
+.order_title .order_tabClick {
+  background: #ec6464;
+  color: #fff;
+}
+
+.order_title>view {
+  width: 214rpx;
+  text-align: center;
+  line-height: 70rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  color: #ec6464;
+  border-radius: 10rpx;
+  background: #fff;
+  border: 1rpx solid #f1f1f1;
+}
+
+.address1 {
+  background: #fff;
+  width: 670rpx;
+  margin: 0 auto;
+  border-radius: 16rpx;
+  /* height: 310rpx; */
+  padding: 40rpx 0;
+}
+
+.address_one {
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.address_one > view:nth-child(1) {
+  margin: 30rpx 0;
+}
+
+.address_one2 {
+  text-align: left;
+}
+
+.address_one2 {
+  margin: 0 auto;
+  width: 600rpx;
+  padding: 30rpx 0;
+  padding-bottom: 45rpx;
+}
+
+.address_one2 >text:nth-child(1) {
+  padding-right: 30rpx;
+}
+
+.address_one3 {
+  background: #fff;
+  padding: 30rpx 0;
+  width: 400rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.btn {
+  width: 300rpx;
+  background: #ec6464;
+  border-radius: 50rpx;
+  margin: 0 auto;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  /* margin-top: 60rpx; */
+  font-size: 24rpx;
+  display: inline-block;
+  color: #fff;
+  margin: 0 10rpx;
+}
+
+.btt {
+  width: 380rpx;
+  background: #ec6464;
+  /* border-radius: 16rpx; */
+  margin: 0 auto;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin-top: 60rpx;
+  font-size: 24rpx;
+  color: #fff;
+  border-radius: 60rpx;
+}
+
+.model {
+  /* position: fixed;
+  top: 0; */
+  background: #ec6464;
+  height: 100%;
+  width: 100%;
+}
+
+.model_mima {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  /* position: absolute;
+  bottom: 0; */
+}
+
+.model_a image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+page .wallets-password {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+page .wallets-password .input-content-wrap {
+  position: absolute;
+  top: 255rpx;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 600rpx;
+  margin-left: -300rpx;
+  background: #fff;
+  border-radius: 20rpx;
+}
+
+page .wallets-password .input-content-wrap .top {
+  height: 90rpx;
+  border-bottom: 2rpx solid #ddd;
+  padding: 0 10rpx;
+}
+
+page .wallets-password .input-content-wrap .top .close {
+  font-size: 44rpx;
+  color: #999;
+  font-weight: 100;
+}
+
+page .wallets-password .input-content-wrap .top .forget {
+  color: #00a2ff;
+  font-size: 22rpx;
+}
+
+page .wallets-password .input-content-wrap .actual_fee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  height: 100rpx;
+  margin: 0 23rpx;
+  border-bottom: 2rpx solid #ddd;
+}
+
+page .wallets-password .input-content-wrap .actual_fee span {
+  font-size: 24rpx;
+}
+
+page .wallets-password .input-content-wrap .actual_fee text {
+  font-size: 36rpx;
+}
+
+page .wallets-password .input-content-wrap .input-password-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150rpx;
+}
+
+page .wallets-password .input-content-wrap .input-password-wrap .password_dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000;
+  box-sizing: border-box;
+  width: 90rpx;
+  height: 90rpx;
+  border: 2rpx solid #ddd;
+  border-left: none 0;
+}
+
+page .wallets-password .input-content-wrap .input-password-wrap .password_dot:nth-child(1) {
+  border-left: 2rpx solid #ddd;
+}
+
+page .wallets-password .input-content-wrap .input-password-wrap .password_dot i {
+  background: #000;
+  border-radius: 50%;
+  width: 20rpx;
+  height: 20rpx;
+}
+
+page .wallets-password .input-content {
+  position: absolute;
+  opacity: 0;
+  left: -100%;
+  top: 600rpx;
+  background: #f56;
+  z-index: -999;
+}
+
+page .wallets-password .input-content.active {
+  z-index: -99;
+}

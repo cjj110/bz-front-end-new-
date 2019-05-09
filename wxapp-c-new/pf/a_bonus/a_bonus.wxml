@@ -1,0 +1,71 @@
+<!--index.wxml-->
+<view class='profit1 flex-y-center'>
+  <view class='profit11 flex'>
+    <view class='flex-grow-1' bindtap='my_profit'>
+      <view class='profit1_left'>
+        <text class='profit1_left_1'>可提现{{user.ktx}}元</text>
+      </view>
+      <view class='profit1_left_center'>
+        <view class='profit1_left_center1'>
+          <text>{{user.ktx}}</text>
+          <text>元</text>
+        </view>
+        <view class='profit1_left_center2'>
+          现金
+        </view>
+      </view>
+    </view>
+    <view class='flex-grow-1'>
+      <view class='profit1_left'>
+        <text class='profit1_left_1' bindtap='index'>马上去花</text>
+      </view>
+      <view class='profit1_left_center'>
+        <view class='profit1_left_center1' style='border-right:none'>
+          <text> {{user.jiabei==null?'0':user.jiabei}}</text>
+          <text>家贝</text>
+        </view>
+        <view class='profit1_left_center2'>
+          家贝
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='box-pack-between profit_record'>
+  <text class='deta'>7日现金记录</text>
+  <navigator hover-class='none' url='../a_list/a_list'>
+    <text class='lk'>提现记录</text>
+  </navigator>
+</view>
+
+<view class="container">
+  <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+</view>
+
+<view class='box-pack-between  cz_ze '>
+  <text></text>
+  <view class='ze flex-y-center' bindtap='a_tx'>
+    <image src='../images/downtx.png'></image>
+    <text>提现</text>
+  </view>
+</view>
+
+<view class='profit_record1 flex-y-center' wx:for='{{mylog}}'>
+  <view class='profit_record2 flex-y-center box-pack-between'>
+    <view class='left flex-y-center'>
+      <block wx:if='{{item.type==1}}'>
+        <image style='width:46rpx;height:30rpx' src='../images/maney2.png'></image>
+        <text>现金分红</text>
+      </block>
+      <block wx:if='{{item.type==2}}'>
+        <image style='width:30rpx;height:30rpx' src='../images/yuan2.png'></image>
+        <text>加贝分红</text>
+      </block>
+    </view>
+    <text>{{item.time}}</text>
+    <text>{{item.money}} {{item.type==1?'元':'家贝'}} </text>
+  </view>
+</view>
+
+<view class="none_more">---------------没有更多了---------------</view>

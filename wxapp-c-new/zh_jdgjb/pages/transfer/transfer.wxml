@@ -1,0 +1,35 @@
+<!-- <view class='hcontent'>
+  <view>
+    订单已经成功转让到转让广场
+  </view>
+  <view class='gou'>
+    <image src='../img/images/gou.png'></image>
+  </view>
+  <view style='font-size:26rpx;'>
+    请耐心等待
+  </view>
+</view>
+
+<view class='transfer btn'>
+  订单转让
+</view>
+ -->
+
+<view class='success'>
+
+  <image class='Group' src='../img/images/Group.png'></image>
+
+  <view class='success_a'>
+    订单已经成功转让到转让广场
+  </view>
+
+  <!-- <view style='font-size:28rpx;color:#999;padding:0 40rpx;'>
+    请耐心等待
+  </view> -->
+
+  <view class='btn' bindtap='bf'>
+    确认
+  </view>
+
+
+</view>

@@ -1,0 +1,76 @@
+<view class='hender_title'>
+  转赠
+</view>
+
+<view class='address_one'>
+  <view class='address_one1 '>
+    <view class="list ">
+      <block wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
+        <view bindtap="click" data-text='{{item.pay_price}}' class="one flex-x-center {{selected==index?'active':''}}" data-index="{{index}}">
+          <view class="flex-x-center one-1">{{item.pay_price}}</view>
+        </view>
+      </block>
+      <!-- <view class="one flex-x-center {{selected==index?'active':''}}" data-index="{{index}}">
+        <view class="flex-x-center one-1">
+          <input placeholder='输入金额' style='color:#fff'></input>
+        </view>
+      </view> -->
+    </view>
+    <view>
+      点选转赠家贝数量，收取手续费1%，最少1家贝
+    </view>
+  </view>
+
+  <view class='trabsfer'>
+    输入转赠到账手机号
+  </view>
+
+  <view class='address_one1'>
+    <view class='trabsfer_one2'>
+      <input wx:if='{{wallets_password_flag==false}}' type='digit' placeholder='请输入手机号' bindinput='tel'></input>
+    </view>
+  </view>
+  <view class='btn' bindtap='pay'>
+    确认转账
+  </view>
+</view>
+
+<view class='model' wx:if="{{wallets_password_flag}}">
+  <view class='model_mima'>
+    <view class="wallets-password">
+      <view class="input-content-wrap">
+        <view class="top flex-y-center box-pack-between">
+          <view class="close"></view>
+          <view class="txt">请输入交易密码以进入钱包</view>
+          <view catchtap="modify_password" class="forget"></view>
+        </view>
+        <!-- <view class="actual_fee">
+          <span>￥</span>
+          <text>{{actual_fee/100}}</text>
+        </view> -->
+        <view catchtap="set_Focus" class="input-password-wrap">
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=1}}"></i>
+          </view>
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=2}}"></i>
+          </view>
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=3}}"></i>
+          </view>
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=4}}"></i>
+          </view>
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=5}}"></i>
+          </view>
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=6}}"></i>
+          </view>
+        </view>
+      </view>
+      <input bindinput="set_wallets_password" class="input-content" password type="number" focus="{{isFocus}}" maxlength="6" />
+    </view>
+  </view>
+
+</view>

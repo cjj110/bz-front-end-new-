@@ -1,0 +1,39 @@
+<!-- 成功 -->
+<view class='success' wx:if='{{id==1}}'>
+  <view class='main' style="background-color:;">
+    <image class='Group' src='../images/Group.png'></image>
+  </view>
+  <view class='success_tip'>
+    <block>您已经提现申请成功！</block>
+  </view>
+  <view class='success_tips'>
+    <block>由于腾讯对微信商家的支付规则限制 目前只能麻烦用户您添加“贝住小助手”微信号
+    </block>
+  </view>
+
+  <view class='shop_code'>
+    <image src='../images/shop_code.jpg'></image>
+  </view>
+
+  <navigator open-type='redirect' url='/pf/a_bonus/a_bonus' class='btn'>
+    确认
+  </navigator>
+
+</view>
+
+
+<!-- 失败 -->
+<view class='success' wx:if='{{id==0}}'>
+  <view class='main' style="background-color:;">
+    <image class='Group' src='../images/fail.png'></image>
+  </view>
+  <view class='success_tip'>
+    <block>网络问题导致</block>
+  </view>
+  <view class='success_tips'>
+    <block>提现失败</block>
+  </view>
+  <navigator open-type='redirect' url='../my_profit/my_profit' class='btn'>
+    确认
+  </navigator>
+</view>

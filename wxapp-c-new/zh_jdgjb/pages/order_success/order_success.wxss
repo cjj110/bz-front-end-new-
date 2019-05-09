@@ -1,0 +1,21 @@
+.success {
+  margin: 0 auto;
+  width: 80%;
+  background: #fff;
+  text-align: center;
+  border-radius: 16rpx;
+  padding-top: 28rpx;
+  padding-bottom: 36rpx;
+  margin-top: 70rpx;
+  font-size: 28rpx;
+}
+
+.success_a {
+  padding-bottom: 20rpx;
+  font-size: 36rpx;
+}
+
+.Progressbg {
+  height: 200rpx;
+  width: 200rpx;
+}

@@ -1,0 +1,45 @@
+<!-- 公共 -->
+<view class="order_info" bindtap='order_info' data-id='{{order_info.id}}'>
+  <view class="rel ">
+    <image mode="aspectFill" src="{{order_info.room_logo}}" style="width:100%;height:100%;border-radius:10rpx;"></image>
+  </view>
+  <view class="info ">
+    <view class='flex'>
+      <view class='clamp2 flex-grow-1' style='padding-right:20rpx'>{{order_info.seller_name}}</view>
+      <view class='flex-grow-0' style='font-size:26rpx;color:#EC6464'>
+        ￥{{order_info.total_cost}}
+      </view>
+    </view>
+    <view class='clamp2'>
+      {{order_info.room_type}}
+    </view>
+    <view style='font-size:24rpx;color:#919191'>入住时间：{{order_info.arrival_time}} </view>
+    <view class='flex' style='font-size:24rpx;color:#919191'>
+      <view> 离店时间：{{order_info.departure_time}}</view>
+      <view style='margin-left:30rpx'>共{{order_info.days}}晚 </view>
+    </view>
+  </view>
+</view>
+<!-- 公共end -->
+
+
+<view class='order_info'>
+  退订返还：￥{{pr}}元
+</view>
+
+<view class='order_info'>
+  <p class='box-pack-between' style='display:flex;'>
+    <text class='flex-grow-0'> 退订说明：</text>
+    <input bindinput='desc' placeholder-style='color:#ec6464' placeholder='选填' style='text-align:right;'></input>
+  </p>
+</view>
+
+<view class='ddd' style='text-align: center;'>
+  <view class='check'>
+    贝住先行垫付退款，但转让订单有助于维护信誉评级。
+  </view>
+  <view class='flex-x-center box-pack-between' style='margin:0 10rpx;margin-top:40rpx;'>
+    <view class='btm' bindtap='btnconcans' style='background:#ec6464'>取消</view>
+    <button bindtap='apply' data-id='{{order_info.id}}' class='btm'> 确认退订</button>
+  </view>
+</view>

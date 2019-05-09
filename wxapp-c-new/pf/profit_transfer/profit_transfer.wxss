@@ -1,0 +1,192 @@
+.address_one {
+  font-size: 24rpx;
+  margin: 0 40rpx;
+}
+
+.address_one_page .flex-grow-1 {
+  height: 150rpx;
+}
+
+.address_one .address_one1 {
+  margin: 30rpx 0;
+  text-align: center;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx 0;
+}
+
+.one {
+  width: 154rpx;
+  border-radius: 50rpx;
+  padding: 10rpx 0;
+  margin-right: 12rpx;
+  margin-left: 12rpx;
+  margin-bottom: 24rpx;
+  display: inline-block;
+  background: #febfb9;
+  color: #fff;
+}
+
+.list .active {
+  background: #ec6464;
+}
+
+.trabsfer {
+  color: #999;
+}
+
+.trabsfer_one2 {
+  font-size: 28rpx;
+}
+
+.trabsfer_one3 {
+  text-align: right;
+  color: #febfb9;
+  padding: 20rpx;
+  font-size: 26rpx;
+}
+
+.btn {
+  width: 90%;
+  background: #ec6464;
+  border-radius: 70rpx;
+  margin: 0 auto;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin-top: 200rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.code {
+  position: fixed;
+  left: 0rpx;
+  top: 55%;
+}
+
+.code image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.model {
+  /* position: fixed;
+  top: 0; */
+  background: #ec6464;
+  height: 100%;
+  width: 100%;
+}
+
+.model_mima {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  /* position: absolute;
+  bottom: 0; */
+}
+
+.model_a image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+page .wallets-password {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+page .wallets-password .input-content-wrap {
+  position: absolute;
+  top: 255rpx;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 600rpx;
+  margin-left: -300rpx;
+  background: #fff;
+  border-radius: 20rpx;
+}
+
+page .wallets-password .input-content-wrap .top {
+  height: 90rpx;
+  border-bottom: 2rpx solid #ddd;
+  padding: 0 10rpx;
+}
+
+page .wallets-password .input-content-wrap .top .close {
+  font-size: 44rpx;
+  color: #999;
+  font-weight: 100;
+}
+
+page .wallets-password .input-content-wrap .top .forget {
+  color: #00a2ff;
+  font-size: 22rpx;
+}
+
+page .wallets-password .input-content-wrap .actual_fee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  height: 100rpx;
+  margin: 0 23rpx;
+  border-bottom: 2rpx solid #ddd;
+}
+
+page .wallets-password .input-content-wrap .actual_fee span {
+  font-size: 24rpx;
+}
+
+page .wallets-password .input-content-wrap .actual_fee text {
+  font-size: 36rpx;
+}
+
+page .wallets-password .input-content-wrap .input-password-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150rpx;
+}
+
+page .wallets-password .input-content-wrap .input-password-wrap .password_dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000;
+  box-sizing: border-box;
+  width: 90rpx;
+  height: 90rpx;
+  border: 2rpx solid #ddd;
+  border-left: none 0;
+}
+
+page .wallets-password .input-content-wrap .input-password-wrap .password_dot:nth-child(1) {
+  border-left: 2rpx solid #ddd;
+}
+
+page .wallets-password .input-content-wrap .input-password-wrap .password_dot i {
+  background: #000;
+  border-radius: 50%;
+  width: 20rpx;
+  height: 20rpx;
+}
+
+page .wallets-password .input-content {
+  position: absolute;
+  opacity: 0;
+  left: -100%;
+  top: 600rpx;
+  background: #f56;
+  z-index: -999;
+}
+
+page .wallets-password .input-content.active {
+  z-index: -99;
+}

@@ -1,0 +1,171 @@
+<view class='hender_title'>
+  订单详情
+</view>
+
+<view class="home">
+  <view class="header">
+    <view class="hcontent">
+      <view class="flex_bet hconbox">
+        <view class='' style='width:100%'>
+          <view class="hcfont1 flex">
+            <text>订单</text>
+            <view class="osecfont2" wx:if="{{order_info.status==-1}}">已关闭</view>
+            <view class="osecfont2" wx:if="{{order_info.status==1}}">待付款</view>
+            <view class="osecfont2" wx:if="{{order_info.status==2}}">待审核</view>
+            <view class="osecfont2" wx:if="{{order_info.status==10}}">待入住</view>
+            <view class="osecfont2" wx:if="{{order_info.status==3}}">已取消</view>
+            <view class="osecfont2" wx:if="{{order_info.status==4}}">已完成</view>
+            <view class="osecfont2" wx:if="{{order_info.status==5}}">待评价</view>
+            <view class="osecfont2" wx:if="{{order_info.status==6}}">退款中</view>
+            <view class="osecfont2" wx:if="{{order_info.status==7&&order_info.yj_cost!=0}}">退款成功(包括押金)</view>
+            <view class="osecfont2" wx:if="{{order_info.status==7&&order_info.yj_cost==0}}">退款成功</view>
+            <view class="osecfont2" wx:if="{{order_info.status==8}}">拒绝退款,待入住</view>
+            <view class="osecfont2" wx:if="{{order_info.status==9}}">拒绝入住</view>
+          </view>
+
+          <view class="hcfont2">{{order_info.seller_name}}{{order_info.room_type}}</view>
+          <view class="hcfont2 gobyndsingle">
+            订单号：{{order_info.order_no}}
+          </view>
+          <view class="hcfont2 gobyndsingle">
+            预订人：{{order_info.name}}
+          </view>
+          <view class="hcfont2 gobyndsingle">
+            手机号：{{order_info.tel}}
+          </view>
+          <view class="hcfont2 gobyndsingle box-pack-between">
+            <text>入住时间：{{order_info.arrival_time}}-{{order_info.departure_time}}</text>
+            <text>共{{order_info.days}}晚</text>
+          </view>
+          <view class="hcfont2 gobyndsingle box-pack-between">
+            <view class="osecfont1">订单支付金额 ¥{{order_info.total_cost}}</view>
+            <!-- <text>费用明细</text> -->
+          </view>
+        </view>
+        <!-- <view bindtap="sele_address" class="hcfont2 gobyndsingle">
+          地址：{{order_info.seller_address}}
+        </view> -->
+        <!-- <image class="ordizhi" src="../../img/more.png"></image> -->
+      </view>
+      <!-- 
+      <view class="icontent">
+        <view class="flex3 iconleft">
+          <view class="iconfont1" style="color:{{color}}">{{order_info.arrival_time}}</view>
+          <view>入住日期</view>
+        </view>
+        <view class="flex3 iconrit">
+          <view class="iconfont1" style="color:{{color}}">{{order_info.departure_time}}</view>
+          <view>退房日期</view>
+        </view>
+      </view> -->
+    </view>
+  </view>
+
+
+
+  <view class='arrival_time box-pack-between'>
+    <text>到店时间：{{order_info.arrival_time}} {{order_info.dd_time}}前</text>
+    <text>扫码入住</text>
+  </view>
+
+  <view class='code' wx:if='{{bath}}' bindtap='coded'>
+    <image mode="aspectFill" src="data:image/png;base64,{{bath}}" style="width:200rpx;height:200rpx;"></image>
+  </view>
+
+  <view class='hcontent box-pack-between flex-y-center' style='padding:20rpx 20rpx;'>
+    <view class='address'>
+      <view>
+        {{order_info.seller_address}}
+      </view>
+      <view bindtap='phone' class='flex tel box-pack-between flex-y-center' style='width:410rpx;'>
+        <text>酒店前台:{{order_info.seller.tel}}</text>
+        <image src='../img/tel.png'></image>
+      </view>
+    </view>
+    <view class='map box-pack-between flex-y-center' bindtap='map' data-name='{{order_info.seller_name}}' data-address='{{order_info.seller_address}}' data-text='{{order_info.coordinates}}'>
+      <image src='../img/mapss.png'></image>
+    </view>
+  </view>
+
+  <view class='tips' wx:if="{{order_info.status==10}}">
+    温馨提醒：如需开发票，入住时和酒店前台沟通办理
+  </view>
+
+
+  <view class="osecfoot"></view>
+
+  <view class="orderfoot flex flex-y-center">
+    <button open-type='contact' class='' style='width:30%'>
+      联系贝住
+    </button>
+    <view class='' style='width:15%'>
+      <image class="jiantou_right" src='../img/images/jiantou_right.png'></image>
+    </view>
+
+    <view class='flex-x-center' style='width:50%;'>
+
+      <view class='btn' wx:if='{{order_info.status==3}}' style='background:#f1f1f1;color:#999;'>
+        订单已取消
+      </view>
+
+      <view class='btn' style='background:#febfb9' wx:if='{{order_info.status==10 || order_info.status==8}}' bindtap='apply' data-id='{{order_info.id}}' data-type="1">
+        退订
+      </view>
+
+      <view class='btn' wx:if='{{order_info.status==10 || order_info.status==8}}' bindtap='transfer'>
+        订单转让
+      </view>
+
+      <view class='btn' wx:if='{{order_info.status==11}}' data-id='{{order_info.id}}' bindtap='ZhuanCancle'>
+        撤销转让
+      </view>
+
+      <view class='btn' wx:if='{{order_info.status==2}}'>
+        等待审核
+      </view>
+
+      <!-- <view class='btn' wx:if='{{order_info.status==8}}'>
+        退款失败
+      </view> -->
+
+    </view>
+  </view>
+</view>
+
+<view class="fixed" wx:if="{{code==true}}">
+  <view bindtap="code" class="ab"></view>
+  <view class="code ab udlr">
+    <image mode="aspectFill" src="data:image/png;base64,{{bath}}" style="width:100%;height:100%"></image>
+  </view>
+</view>
+
+<view class='pos flex-y-center' wx:if='{{model}}'>
+  <view class='pos_bg'>
+    <view style='padding:40rpx 0' wx:if='{{confirm_d}}'>
+      <view class='flex pos_in flex-x-center' style='font-size:32rpx;font-weight:700'>
+        您确定要把订单转让到广场？
+      </view>
+      <view style='padding:0rpx 0;color:#999'>*转让成功后你将不能入住</view>
+      <view class='flex-x-center box-pack-between' style='margin:0 10rpx;margin-top:40rpx;'>
+        <view class='btm' bindtap='btnconcans' style='background:#febfb9'>取消</view>
+        <button openType="getUserInfo" data-order='{{order_info.id}}' class='btm' bindtap='confirmb'> 确认</button>
+      </view>
+    </view>
+    <view style='padding:40rpx 0' wx:else>
+      <view class='flex pos_in flex-x-center'>
+        <view class='flex'>
+          <text>￥</text>
+          <input type='number' maxlength='7' class='pos_put' bindinput='pirce'></input>
+          <text>转让此订单</text>
+        </view>
+      </view>
+
+      <view class='flex-x-center box-pack-between' style='margin:0 10rpx;margin-top:40rpx;'>
+        <view class='btm' bindtap='btnconcans' style='background:#febfb9'>取消</view>
+        <button openType="getUserInfo" class='btm' bindtap='btnconfirm'> 确认</button>
+      </view>
+
+
+    </view>
+  </view>
+</view>

@@ -1,0 +1,61 @@
+.success {
+  margin: 0 auto;
+  width: 90%;
+  background: #fff;
+  text-align: center;
+  border-radius: 16rpx;
+  padding-top: 105rpx;
+  padding-bottom: 105rpx;
+  margin-top: 70rpx;
+  font-size: 28rpx;
+  /* line-height: 100rpx; */
+}
+
+.Group {
+  width: 154rpx;
+  height: 154rpx;
+}
+
+.success_a {
+  padding-bottom: 20rpx;
+  font-size: 36rpx;
+}
+
+.Progressbg {
+  height: 200rpx;
+  width: 200rpx;
+}
+
+.success_tip {
+  font-size: 32rpx;
+}
+
+.success_tips {
+  color: #999;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20rpx 0;
+}
+
+.btn {
+  background: #ec6464;
+  color: #fff;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 70rpx;
+}
+
+.shop_code {
+  text-align: center;
+}
+
+.shop_code image {
+  width: 250rpx;
+  height: 250rpx;
+}

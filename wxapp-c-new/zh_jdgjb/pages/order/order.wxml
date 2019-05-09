@@ -1,0 +1,147 @@
+<view class='hender_title'>
+ 全部订单
+</view>
+
+
+<view class="container">
+  <view class="order_title flex-y-center box-pack-between">
+    <view wx:for='{{titel}}' data-index='{{index}}' class="swiper-tab-list {{ index == activeIndex ?'order_tabClick' : ''}}" bindtap="tabClick">
+      {{item}}
+    </view>
+  </view>
+
+  <view class="order_list">
+    <view class='tie' wx:if="{{activeIndex==1 && order_list.length>0}}">
+      15分钟未支付则关闭
+    </view>
+    <view class='tie' wx:if="{{activeIndex==3 && order_list.length>0}}">
+      您本季度一共可以给出{{total}}票好评或差评，请真实评价
+    </view>
+    <!-- bindtap="order_info"  -->
+    <view data-text='{{item.status}}' data-id="{{item.id}}" wx:for="{{order_list}}">
+      <!-- 公共 -->
+      <view class="order_info" bindtap='order_info' data-id='{{item.id}}'>
+        <view class="rel ">
+          <image mode="aspectFill" src="{{item.room_logo}}" style="width:100%;height:100%;border-radius:10rpx;"></image>
+        </view>
+        <view class="info ">
+          <view class='flex'>
+            <view class='clamp2 flex-grow-1' style='padding-right:20rpx'>{{item.seller_name}}</view>
+            <view class='flex-grow-0' style='font-size:26rpx;color:#EC6464'>
+              ￥{{item.total_cost}}
+            </view>
+          </view>
+          <view class='clamp2'>
+            {{item.room_type}}
+          </view>
+          <view>入住时间：{{item.arrival_time}} </view>
+          <view class='flex'>
+            <view> 离店时间：{{item.departure_time}}</view>
+            <view style='margin-left:30rpx'>共{{item.days}}晚 </view>
+          </view>
+        </view>
+      </view>
+      <!-- 公共end -->
+
+      <view class="order_state rel flex">
+        <view class='flex-grow-1'>
+        </view>
+
+        <view class="flex-grow-1" style='text-align:right;'>
+          <view wx:if="{{item.status==1}}">
+            <view class='canqu' catchtap='cancel_order' data-room_id='{{item.room_id}}' data-id='{{item.id}}'>取消订单</view>
+
+            <view class='btn' wx:if='{{item.is_zhuan==1}}' data-pay='{{item.total_cost}}' catchtap='payment_t' data-id='{{item.id}}' data-seller_id='{{item.seller_id}}' data-room_id='{{item.room_id}}'>待付款</view>
+
+            <view class='btn' catchtap='payment' wx:else data-id='{{item.id}}' data-seller_id='{{item.seller_id}}' data-room_id='{{item.room_id}}'>待付款</view>
+          </view>
+
+          <block wx:if='{{item.status==2}}'>
+            <text data-text='{{item.status}}' style='font-size:22rpx;color:#999'> 订单已付款,等待审核中</text>
+            <view class='btn' bindtap="" data-id="{{item.id}}" data-type="1">
+              待审核
+            </view>
+          </block>
+
+
+
+          <block wx:if='{{item.status==3}}'>
+            <text data-text='{{item.status}}' style='font-size:22rpx;color:#999'> 订单已取消</text>
+          </block>
+          <block wx:if='{{item.status==4}}'>
+            <text data-text='{{item.status}}' style='font-size:22rpx;color:#999'> 订单已完成</text>
+          </block>
+
+          <block wx:if='{{item.status==5}}'>
+            <text data-text='{{item.status}}' style='font-size:22rpx;color:#999'> 订单已入住</text>
+            <!-- <view class='canqu' style=''>
+              删除订单
+            </view> -->
+            <view class='btn' catchtap='go_eveluate' data-id='{{item.id}}' data-sellerid='{{item.seller_id}}'>
+              评价
+            </view>
+          </block>
+
+          <block wx:if='{{item.status==6}}'>
+            <text data-text='{{item.status}}' style='font-size:22rpx;color:#999'> 订单已申请退款，等待审核中</text>
+            <view class='btn' data-id="{{item.id}}" bindtap='CancelApplyOrder'>
+              撤销退款
+            </view>
+          </block>
+
+          <block wx:if='{{item.status==-1}}'>
+            <text data-text='{{item.status}}' style='font-size:22rpx;color:#999'> 订单已关闭</text>
+          </block>
+
+
+          <block wx:if='{{item.status==7}}'>
+            <text data-text='{{item.status}}' style='font-size:22rpx;color:#999'> 已成功退订，交易关闭</text>
+          </block>
+
+          <block wx:if='{{item.status==8}}'>
+            <text data-text='{{item.status}}' style='font-size:22rpx;color:#999'> 审核不通过，拒绝退订</text>
+            <view class='btn' style=''>
+              待入住
+            </view>
+          </block>
+
+          <block wx:if='{{item.status==9}}'>
+            <text data-text='{{item.status}}' style='font-size:22rpx;color:#999'>拒绝入住</text>
+          </block>
+
+          <block wx:if='{{item.status==10}}'>
+            <text data-text='{{item.status}}' style='font-size:22rpx;color:#999'> 订单已通过,等待您的入住</text>
+            <view class='btn' bindtap='order_info' data-id='{{item.id}}' data-type="1">
+              转让/退订
+            </view>
+          </block>
+
+          <block wx:if='{{item.status==11}}'>
+            <text data-text='{{item.status}}' style='font-size:22rpx;color:#999'> 订单已转让到，转让广场</text>
+            <view class='btn' bindtap='ZhuanCancle' data-id='{{item.id}}'>
+              撤销转让
+            </view>
+          </block>
+
+          <!-- <view class='btn' wx:if="{{item.status==3}}">已取消</view>
+          <view class='btn' wx:if="{{item.status==4}}">已完成</view>
+          <view class='' wx:if="{{item.status==5}}">
+            <view class='canqu'>删除订单</view>
+            <view class='btn' catchtap="go_eveluate" data-id="{{item.id}}"> 评价</view>
+          </view>
+          <view class='btn' wx:if="{{item.status==6}}">申请退款中</view>
+          <view class='btn' wx:if="{{item.status==7}}">退款成功</view>
+          <view class='btn' wx:if="{{item.status==8}}">拒绝退款</view>
+          <view class='btn' wx:if="{{item.status==9}}">拒绝入住</view> -->
+
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="none_order" wx:if="{{order_list.length==0}}">
+    <image mode="aspectFill" src="../img/meiyoudingdan.png"></image>
+    <view>暂无订单</view>
+  </view>
+
+</view>

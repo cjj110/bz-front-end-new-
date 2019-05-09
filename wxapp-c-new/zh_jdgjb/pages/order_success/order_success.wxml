@@ -1,0 +1,22 @@
+<view class='success'>
+
+
+
+{{countdownNum}}
+
+<view class='main' style="background-color:;">
+  <canvas style="width: 120px; height: 120px;margin:0 auto;margin-top:30rpx" canvas-id="secondCanvas"></canvas>
+</view>
+
+  <view class='success_a'>
+    恭喜
+  </view>
+
+  <view>
+    您已经成功下单
+  </view>
+  <view>
+    请耐心等待酒店客服确认订单
+  </view>
+</view>
+

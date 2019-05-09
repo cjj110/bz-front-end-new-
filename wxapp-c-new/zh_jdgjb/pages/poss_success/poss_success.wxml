@@ -1,0 +1,55 @@
+<view class='success'>
+  <view>
+    成功支付转让的订单！
+  </view>
+  <view class=''>
+    <image class='Group' src='../img/images/gou1.png'></image>
+  </view>
+</view>
+
+
+<view class='success1'>
+
+  <view class='ellipsis'>
+    深圳精品酒店深圳精品酒店深圳精品酒店深圳精品酒店深圳精品酒店深圳精品酒店
+  </view>
+
+  <view>
+    订单用户流转:文子→李愿
+  </view>
+
+  <view class='box-pack-between'>
+    <text> 入住时间： 2018年07月30日-07月31日 </text>
+    <text>共1晚</text>
+  </view>
+
+  <view class='box-pack-between'>
+    <text> 到店时间：2018年07月30日-07月31日前</text>
+    <text>扫码入住</text>
+  </view>
+
+  <view class='code'>
+    <image src='http://img5.imgtn.bdimg.com/it/u=3822861145,99109360&fm=26&gp=0.jpg'></image>
+  </view>
+</view>
+
+<view class='poss_address'>
+  <view class='poss_address1 box-pack-between flex-y-center'>
+    <view class='poss_address_left flex-grow-1'>
+      <view>
+        {{address}}
+      </view>
+      <view class='flex-y-center'>
+        <text> 酒店前台：{{hotel_tel}}</text>
+        <image src='../img/images/phone.png'></image>
+      </view>
+    </view>
+    <view class='poss_address_right flex-grow-0' bindtap='map'>
+      <image src='http://img2.imgtn.bdimg.com/it/u=1654937742,1393289912&fm=26&gp=0.jpg'></image>
+    </view>
+  </view>
+</view>
+
+<navigator url='../logs/logs' class='bottom_price flex-y-center flex-x-center'>
+  <view class='btn'>确定</view>
+</navigator>

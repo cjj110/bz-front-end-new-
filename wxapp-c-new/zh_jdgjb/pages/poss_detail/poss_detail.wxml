@@ -1,0 +1,86 @@
+<view>
+  <view class='poss_detail'>
+
+    <view class='poss_detail1'>
+      <view class='poss_stetle'>
+        订单待入驻
+      </view>
+      <view class='box-pack-between'>
+        <view class='ellipsis' style='width:80%;'>{{order_info.seller_name}}{{order_info.room_type}}</view>
+        <text>*{{order_info.days}}</text>
+      </view>
+      <view>
+        订单号:{{order_info.order_no}}
+      </view>
+      <view>
+        入住时间:{{order_info.arrival_time}}-{{order_info.departure_time}}
+      </view>
+      <view>
+        订单待支付金额:{{order_info.newtotal_cost}}元
+      </view>
+      <view>
+        原订单入住人:{{order_info.user.name}}
+      </view>
+      <view>
+        手机号:{{order_info.user.tel}}
+      </view>
+      <view>
+        原订单来自平台用户:{{order_info.user.name}}
+      </view>
+      <view>
+        原订单来自:贝住平台
+
+      </view>
+    </view>
+  </view>
+
+  <view class='box-pack-between time'>
+    <text>到店时间：{{order_info.arrival_time}} {{order_info.dd_time}}前</text>
+    <text>扫码入住</text>
+  </view>
+
+  <view class='flex time' style='padding-top:0;'>
+    <view class='flex-grow-0'>订单声明：</view>
+    <view class='flex-grow-1' style='color:#999;padding-right:50px;'>请放心购买转发广场上的其他平台订单， 如果购买订单后， 到店入住时发现订单不存在或订单欺诈行为， 则会获得, 订单等额人民币的赔偿， 赔偿金在裁定订单欺诈后5个工作日 内下发到用户账户中。 *币住保持最终解释权
+    </view>
+  </view>
+
+  <view class='poss_address'>
+    <view class='poss_address1 box-pack-between flex-y-center'>
+      <view class='poss_address_left flex-grow-1'>
+        <view>
+          {{order_info.seller_name}}
+        </view>
+        <view class='flex-y-center'>
+          <text> 酒店前台：{{order_info.seller.tel}}</text>
+          <image src='../img/images/phone.png'></image>
+        </view>
+      </view>
+      <view class='poss_address_right flex-grow-0' bindtap='map'>
+        <image src='../img/mapss.png'></image>
+      </view>
+    </view>
+  </view>
+
+
+  <view style='height:130rpx;'>
+  </view>
+
+  <view class="bottom_price">
+
+
+    <view bindtap="see_price" class="rel heji">
+      <view>
+        <view>支付订单</view>
+      </view>
+      <view>￥{{order_info.newtotal_cost}}元</view>
+    </view>
+
+    <view class='flex-y-center flex-x-center' style='background:#fff'>
+      <button bindtap="pay" data-id='{{order_info.id}}' class="button1" style="background:#EC6464" data-pay='{{order_info.newtotal_cost}}'>支付订单</button>
+    </view>
+
+  </view>
+
+
+</view>

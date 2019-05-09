@@ -1,0 +1,170 @@
+.order_title {
+  /* height: 120rpx; */
+  display: flex;
+  /* border: 2rpx solid #c6c6c6; */
+  padding: 26rpx 40rpx;
+}
+
+.order_title .order_tabClick {
+  background: #ec6464;
+  color: #fff;
+}
+
+.order_title>view {
+  width: 160rpx;
+  text-align: center;
+  line-height: 70rpx;
+  height: 70rpx;
+  font-size: 20rpx;
+  box-sizing: border-box;
+  color: #ec6464;
+  border-radius: 10rpx;
+  background: #fff;
+  border: 1rpx solid #f1f1f1;
+}
+
+.weuibaron {
+  color: orange;
+  border-bottom: 2rpx solid orange;
+}
+
+.order_list {
+  width: 100%;
+  height: auto;
+}
+
+.order_list>view {
+  /* width: 95%; */
+  height: auto;
+}
+
+.order_state {
+  margin: 26rpx 46rpx;
+}
+
+.order_info {
+  /* width: 95%; */
+  height: 100%;
+  /* margin: 0 auto 0; */
+  padding: 0 16rpx;
+  padding-top: 32rpx;
+  padding-bottom: 35rpx;
+  background: #fff;
+  margin: 26rpx 46rpx;
+  border-radius: 8rpx;
+}
+
+.order_info>view {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.order_info>view:nth-child(1) {
+  width: 192rpx;
+  height: 190rpx;
+  margin-right: 26rpx;
+}
+
+.order_info>view:nth-child(2) {
+  width: 65%;
+  height: 200rpx;
+}
+
+.order_info>view:nth-child(3) {
+  width: 100%;
+  height: 100rpx;
+  border-top: 2rpx solid #f9f9f9;
+}
+
+.hotel_logo {
+  width: 90%;
+  height: 180rpx;
+  left: 0;
+  border-radius: 15rpx;
+}
+
+.info>view {
+  /* width: 100%; *//* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
+}
+
+.info>view:nth-child(1) {
+  /* height: 60rpx; */
+  line-height: 40rpx;
+  font-size: 28rpx;
+  /* margin-bottom: 30rpx; */
+}
+
+.info>view:nth-child(2) {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.info>view:nth-child(3) {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.info>view:nth-child(4) {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.order_state .flex-grow-1 text{
+  margin-right: 10rpx
+}
+
+.order_state>view view {
+  display: inline-block;
+  /* vertical-align: middle;
+
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 30rpx;  */
+}
+
+.order_state>view view:nth-child(1) {
+  /* border-right: 2rpx solid #e5e5e5;
+  color: orange; */
+}
+
+.order_state>view view:nth-child(2) {
+  /* color: #999; */
+}
+
+.canqu {
+  /* border: 1rpx solid #ec6464; */
+  font-size: 22rpx;
+  border-radius: 40rpx;
+  width: 142rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #fff;
+  background: #febfb9;
+}
+
+.btn {
+  text-align: center;
+  width: 142rpx;
+  line-height: 53rpx;
+  font-size: 20rpx;
+  box-sizing: border-box;
+  border-radius: 50rpx;
+  background: #ec6464;
+  color: #fff;
+  margin-left: 20rpx;
+}
+
+.tie {
+  color: #ec6464;
+  font-size: 24rpx;
+  margin: 26rpx 46rpx;
+}

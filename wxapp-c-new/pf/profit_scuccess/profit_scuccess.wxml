@@ -1,0 +1,17 @@
+<!-- 成功 -->
+<view class='success'>
+  <view class='main' style="background-color:;">
+    <image class='Group' src='../images/Group.png'></image>
+  </view>
+  <view class='success_tip'>
+    <block wx:if='{{a}}'>您已经充值成功！</block>
+    <block wx:else>您已成功转赠家贝</block>
+  </view>
+  <view class='success_tips'>
+    <block wx:if='{{a}}'>家贝将马上充值到您的以太坊数字资产钱包地址</block>
+    <block wx:else>家贝将马上转赠到您指定的账户</block>
+  </view>
+  <navigator open-type='redirect' url='../my_profit/my_profit' class='btn'>
+    确定
+  </navigator>
+</view>

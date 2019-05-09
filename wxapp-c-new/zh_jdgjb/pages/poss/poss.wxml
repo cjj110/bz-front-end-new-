@@ -1,0 +1,115 @@
+
+<view class='hender_title'>
+  转让广场
+</view>
+
+<view class="flex3">
+  <view class="indexbox flex-y-center">
+    <view class="icontent">
+      <view class="iconleft">
+        <view class="iconfont1" bindtap='checkInDate'>
+          <!-- <picker bindchange="checkInDate" end="{{end}}" mode="date" start="{{start}}"> -->
+          <view class="">{{checkInDate}} </view>
+          <!-- </picker> -->
+        </view>
+      </view>
+
+      <view class="iconrit">
+        <view class="iconfont1" bindtap='checkInDate'>
+          <!-- <picker bindchange="bindDateChange2" end="{{end}}" mode="date" start="{{start}}"> -->
+          <view class="">{{checkOutDate}}</view>
+          <!-- </picker> -->
+        </view>
+      </view>
+    </view>
+
+    <view class=''>
+      <view class="iconnum">{{time}}天</view>
+    </view>
+    <view class="isearch  flex-y-center flex-x-center">
+      <!-- <view class="flex_center flex-y-center flex-x-center"> -->
+        <input class='iinput' bindconfirm='search' value='{{search_value}}' confirm-type='search' bindinput='search_input' placeholder="酒店名称/位置......" type="text"></input>
+      <!-- </view> -->
+    </view>
+  </view>
+</view>
+
+<view bindtap='hotel' class='poss flex' wx:for='{{hotel}}' data-index='{{index}}' data-id="{{item.id}}">
+  <view class=''>
+    <image class='poss_left' src="{{item.room_logo}}"></image>
+  </view>
+  <view class='poss_right flex-grow-1'>
+    <view class='poss1 clamp2'>
+      转让：{{item.seller_name}}
+    </view>
+    <view class='poss1 clamp2'>
+      {{item.room_type}}
+      <block wx:if='{{item.room_detail.breakfast==0}}'>
+        不含早
+      </block>
+      <block wx:if='{{item.room_detail.breakfast==1}}'>
+        含早
+      </block>
+      {{item.num}}间 {{item.days}}晚
+    </view>
+
+    <view class='poss2'>
+      入住时间：{{item.arrival_time}} 至 {{item.departure_time}} 共{{item.days}}晚
+    </view>
+
+    <view class='poss3'>
+      {{item.seller_address}}
+    </view>
+
+    <view class='mg'>
+      <view class='root_t'>
+        <block wx:if='{{item.room_detail.bed==0}}'>
+
+        </block>
+
+
+        <block wx:if='{{item.room_detail.bed==1}}'>
+          大床
+        </block>
+
+        <block wx:if='{{item.room_detail.bed==2}}'>
+          双床
+        </block>
+        <block wx:if='{{item.room_detail.bed==3}}'>
+          单人床
+        </block>
+        <block wx:if='{{item.room_detail.bed==4}}'>
+          多张床
+        </block>
+      </view>
+
+
+      <view class='root_t'>
+        <block wx:if='{{item.room_detail.breakfast==0}}'>
+          不含早
+        </block>
+        <block wx:if='{{item.room_detail.breakfast==1}}'>
+          含早
+        </block>
+      </view>
+
+      <text>￥{{item.newtotal_cost}}元</text>
+    </view>
+
+
+
+  </view>
+</view>
+
+
+<!-- <view class='add'>
+
+  <view class='add1 flex-y-center flex-x-center'>
+    <image src='../img/images/add.png'></image>
+  </view>
+
+</view> -->
+
+
+
+<view class="none_more" wx:if="{{none_more==true}}">---------------没有更多了---------------</view>

@@ -1,0 +1,61 @@
+<view class='hender_title'>
+  邀请注册
+</view>
+
+<view style='margin:30rpx 0'>
+  <view class='invitation'>
+    <view class='invitation1'>
+      <view class='force'>
+        本周算力
+      </view>
+      <view class='num'>
+        {{suan}}x
+      </view>
+      <view class='flex-x-center profit '>
+        <view class='profit1'>
+          {{zong}}家贝
+          <view> 总收益</view>
+        </view>
+        <view class='line'>
+        </view>
+        <view class='profit2'>
+          家贝 {{yao}}
+          <view> 被邀请人贡献</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<navigator class='flex-y-center my_invita box-pack-between' url='../invitation_ma/invitation_ma'>
+  <view class='m_code'>我的邀请码</view>
+
+  <view class='flex-y-center m_code'>
+    <image class='code' src='../img/images/code.png'></image>
+    <image class='jiantou_right' src='../img/images/jiantou_right.png'></image>
+  </view>
+</navigator>
+
+
+<view class='flex-y-center my_detail my_invita box-pack-between' style='  margin-top: 42rpx;'>
+  <view class='' style='width:50%'>已邀请人</view>
+  <view style='width:20%;text-align:right;'>时间</view>
+  <view style='width:30%;text-align:right'>贡献</view>
+</view>
+
+
+<view class='my_detailc'>
+
+  <view class='flex-y-center my_detail my_invita adc box-pack-between' wx:for='{{list}}'>
+    <view class='flex-y-center' style='width:50%'>
+      <view class='my_detailimg'>
+        <image wx:if='{{item.img}}' src='{{item.img}}'></image>
+        <image wx:else src='../img/wechat.png'></image>
+      </view>
+      <view class='text-more'>{{item.name}}</view>
+    </view>
+    <view style='width:20%;text-align:right;'>{{item.time}}</view>
+    <view style='width:30%;text-align:right'>{{item.score}}家贝</view>
+  </view>
+
+</view>

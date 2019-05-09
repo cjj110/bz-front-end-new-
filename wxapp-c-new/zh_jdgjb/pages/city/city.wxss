@@ -1,0 +1,134 @@
+.hender_title {
+  padding: 0 30rpx;
+  font-size: 52rpx;
+  font-weight: bold;
+  padding-bottom: 30rpx;
+}
+
+.cate {
+  margin: 30rpx 50rpx;
+}
+
+.cate_box {
+  text-align: center;
+  font-size: 32rxp;
+}
+
+.cate_box  .cate_box_back {
+  border-bottom: 5rpx solid #999;
+  padding: 0 10rpx;
+  padding-bottom: 10rpx;
+}
+
+.cate_box text {
+  border-bottom: 5rpx solid #f6f7f9;
+  padding: 0 10rpx;
+  padding-bottom: 10rpx;
+}
+
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+
+.address {
+  /* width: 180rpx; */
+  height: 70rpx;
+  border: 2rpx solid #EF5151;
+  color: #EF5151;
+  border-radius: 40rpx;
+  display: inline-block;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 0 25rpx;
+}
+
+
+.city .adtion {
+  background: #ec6464;
+  color: #fff;
+}
+
+.city {
+  margin: 0 30rpx;
+}
+
+.city_title {
+  padding: 20rpx 0;
+  font-size: 24rpx;
+}
+.citys{
+  margin-top: 2rpx;
+  width: 100%;
+}
+.letter{
+  width: 100%;
+  height:50rpx;
+  background-color:#EFEFEF;
+  padding-left: 40rpx;
+  text-align: left;
+  color: #3F3F47;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  box-sizing: border-box;
+  }
+.town{
+  width: 100%;
+  height: 75rpx;
+  border-bottom: 1rpx solid #C6C6C6;
+  line-height: 75rpx;
+  color: #24253D;
+  padding-left: 40rpx;
+  font-size: 28rpx;
+  font-family:PingFang SC;
+  box-sizing: border-box;
+}
+.right_nav{
+  width:40rpx;
+  background:#C6C6C6;
+  border-radius:20rpx;
+  position: fixed;
+  right: 0;
+  top: 18%;
+  padding: 28rpx 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.letterBlock{
+  width: 120rpx;
+  height: 120rpx;
+  position: fixed;
+  top: 20%;
+  right: 80rpx;
+  background-color: #C6C6C6;
+  color: white;
+  font-size: 32rpx;
+  font-weight: 600;
+  text-align: center;
+  line-height: 120rpx;
+}
+.every_letter, .gotop{
+  width: 100%;
+  height: 34rpx;
+  padding-top: 3rpx;
+  text-align: center;
+  line-height: 34rpx;
+  margin: 5rpx auto 0;
+  color: white;
+  font-size: 25rpx;
+}
+.status{
+  color: black;
+}
+.gotop{
+  width: 100%;
+  /* word-break: keep-all; */
+  line-height: 20rpx;
+  font-size: 18rpx;
+  margin-bottom: 5rpx;
+}

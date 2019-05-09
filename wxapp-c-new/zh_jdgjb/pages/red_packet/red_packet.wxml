@@ -1,0 +1,138 @@
+<view class='hender_title'>
+  数字资产钱包地址
+</view>
+
+<view class="order_title flex-y-center box-pack-between">
+  <view wx:for='{{title}}' data-index='{{index}}' class="swiper-tab-list {{ index == activeIndex ?'order_tabClick' : ''}}" bindtap="tabClick">
+    {{item}}
+  </view>
+</view>
+
+<view>
+  <view class='address_one'>
+    <block wx:if='{{activeIndex==0}}'>
+      <view style='font-size:32rpx;'>以下钱包非常重要</view>
+      <view class='address_one2 flex-x-center'>
+        <view style='width:200rpx;'>妥善保存</view>
+        <view>请妥善保存你的数字资产钱包地址，否则无法接收 他人转账 </view>
+      </view>
+    </block>
+
+    <block wx:if='{{activeIndex==1||activeIndex==2}}'>
+      <view style='font-size:32rpx;' wx:if='{{activeIndex==1}}'>以下私钥非常重要</view>
+      <view style='font-size:32rpx;' wx:if='{{activeIndex==2}}'>
+        以下助记词非常重要
+      </view>
+      <view class='address_one2 flex-x-center'>
+        <view style='width:20%;'>切勿泄露</view>
+        <view style='width:80%'>一旦泄露将丢失钱包内的数字资产 </view>
+      </view>
+
+      <view class='address_one2 flex-x-center'>
+        <view style='width:20%;'>切勿丢失</view>
+        <view style='width:80%'>我们不会保存你的钱包数据，丢失将无法找回钱包内的数字资产
+        </view>
+      </view>
+
+      <view class='address_one2 flex-x-center'>
+        <view style='width:20%;'>离线保存</view>
+        <view style='width:80%' wx:if='{{activeIndex==1}}'>请复制粘贴加密私钥到安全,离线的地方保存,请勿使用邮箱、记事本、网盘、聊天工具等保存。
+        </view>
+        <view style='width:80%' wx:if='{{activeIndex==2}}'>请手抄助记词到安全,离线的地方保存,请勿使用邮箱、记事本、网盘、聊天工具等保存。
+        </view>
+      </view>
+
+      <view class='address_one2 flex-x-center'>
+        <view style='width:40%;'>请勿使用网络传输 </view>
+        <view style='width:60%'>请勿通过网络传输你的私钥
+        </view>
+      </view>
+    </block>
+
+
+    <view class='address1 flex-y-center flex-x-center'>
+      <view class=''>
+
+        <view class='address_one3 flex-y-center'>
+
+          <block wx:if='{{activeIndex==0}}'>
+            <textarea wx:if='{{wallets_password_flag==false}}' placeholder='请点击按钮生成以太坊数字资产钱包地址' style='width:100%;height:100%' value='{{walletAddr}}'></textarea>
+          </block>
+          <block wx:if='{{activeIndex==1}}'>{{walletPrivateKey}}</block>
+          <block wx:if='{{activeIndex==2}}'>{{walletMnemonic}}</block>
+        </view>
+
+        <view class='flex' style='text-align:center;' wx:if='{{activeIndex==0}}'>
+          <view class='flex-grow-1'>
+            <view class='btn' bindtap='maney'>
+              生成钱包地址
+            </view>
+          </view>
+          <view class='flex-grow-1' bindtap='copyTBL' data-text='{{walletAddr}}'>
+            <view class='btn'>
+              复制钱包地址
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+
+
+  <view class='btt' bindtap='binding' wx:if='{{activeIndex==0}}'>
+    确认绑定钱包地址
+  </view>
+
+  <view class='btt' bindtap='copyTBLs' data-text='{{walletPrivateKey}}' wx:if='{{activeIndex==1}}' style='width:670rpx;'>
+    复制私钥
+  </view>
+
+  <view class='btt' wx:if='{{activeIndex==2}}' style='width:670rpx;'>
+    确认手抄助记词
+  </view>
+
+</view>
+
+
+
+<view class='model'>
+  <view class='model_mima'>
+    <view wx:if="{{wallets_password_flag}}" class="wallets-password">
+      <view class="input-content-wrap">
+        <view class="top flex-y-center box-pack-between">
+          <view class="close"></view>
+          <view class="txt">请输入交易密码以进入数字资产钱包地址</view>
+          <view catchtap="modify_password" class="forget"></view>
+        </view>
+        <!-- <view class="actual_fee">
+          <span>￥</span>
+          <text>{{actual_fee/100}}</text>
+        </view> -->
+        <view catchtap="set_Focus" class="input-password-wrap">
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=1}}"></i>
+          </view>
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=2}}"></i>
+          </view>
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=3}}"></i>
+          </view>
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=4}}"></i>
+          </view>
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=5}}"></i>
+          </view>
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=6}}"></i>
+          </view>
+        </view>
+      </view>
+      <input bindinput="set_wallets_password" class="input-content" password type="number" focus="{{isFocus}}" maxlength="6" />
+    </view>
+  </view>
+
+</view>

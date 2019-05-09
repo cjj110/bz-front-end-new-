@@ -1,0 +1,60 @@
+<view class='henderxd_title'>
+  会员活动中心
+</view>
+
+<view class='invitation'>
+  <view>
+    <block wx:if="{{level_name==null}}">
+      初始会员
+    </block>
+    <block wx:else>
+      {{level_name}}
+    </block>
+  </view>
+  <view class='in_2'>
+    <text>{{score}}</text>
+    <text>个任务</text>
+  </view>
+  <view>
+    累计完成
+  </view>
+</view>
+
+<view style='margin-top: 66rpx;'>
+  <view style='margin-left:70rpx;margin-bottom: 28rpx;font-size:32rpx;font-weight:700'>日常活动</view>
+  <view class='daily_activi box-pack-between flex-y-center' wx:for='{{richang}}' data-id='{{item.id}}'>
+    <view class='flex-y-center flex-grow-0'>
+      <text>{{item.title}}</text>
+      <text class='iconfont icon-gou-shi gou1' wx:if='{{item.user_status==0}}'></text>
+      <text class='iconfont icon-gou-shi gou1' style='color:#999' wx:elif='{{item.user_status==1}}'></text>
+    </view>
+
+    <view class='flex-grow-0 flex-y-center'>
+      <text>{{item.score}}家贝</text>
+      <view class='receive_d'>
+        <text class='receive' style='background:#ec6464' wx:if='{{item.user_status==0}}' bindtap='receive1' data-uniacid='{{item.uniacid}}' data-id='{{item.id}}'>领取</text>
+        <text class='receive' wx:if='{{item.user_status==1}}' data-id='{{item.id}}'>已领取</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view style='margin-top: 66rpx;margin-bottom:15rpx;' wx:if='{{huiyuan}}'>
+  <view style='margin-left:70rpx;margin-bottom: 28rpx;font-size:32rpx;font-weight:700'>会员活动</view>
+  <view class='daily_activi box-pack-between flex-y-center' wx:for='{{huiyuan}}'>
+    <view class='flex-y-center flex-grow-0'>
+      <text>{{item.title}}</text>
+      <text class='iconfont icon-gou-shi gou1' wx:if='{{item.user_status==0}}'></text>
+      <text class='iconfont icon-gou-shi gou1' style='color:#999' wx:elif='{{item.user_status==1}}'></text>
+    </view>
+    <view class='flex-grow-0 flex-y-center'>
+      <text>{{item.score}}家贝</text>
+      <view class='receive_d'>
+        <text class='receive' wx:if='{{item.user_status==0}}' bindtap='receive1' uniacid data-id='{{item.id}}'>领取</text>
+        <text class='receive' wx:if='{{item.user_status==1}}' bindtap='receive1' data-id='{{item.id}}'>已领取</text>
+        <text class='receive' style='background:#999' wx:if='{{item.user_status==2}}' bindtap='receive1' data-id='{{item.id}}'>未达成</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+page {
+  background: rgba(233, 99, 99, 0.4);
+}
+
+.invitation {
+  width: 448rpx;
+  height: 448rpx;
+  /* border-radius: 50%; */
+  /* border: 6rpx solid #ec6464; */
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.invitation camera {
+  height: 100%;
+  width: 100%;
+  /* border-radius: 50%; */
+}
+
+.btn {
+  width: 670rpx;
+  background: #ec6464;
+  border-radius:76rpx;
+  margin: 0 auto;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin-top: 36rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.shex {
+  text-align: center;
+  font-size: 24rpx;
+}

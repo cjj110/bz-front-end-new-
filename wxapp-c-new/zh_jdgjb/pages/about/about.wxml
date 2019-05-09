@@ -1,0 +1,22 @@
+<view class='hender_title'>
+  意见反馈
+</view>
+<view class='xxs'>
+  <view class="conts">
+    <textarea class="areas" placeholder-style='font-size:24rpx' placeholder='建设性意见将得到更多奖励~' minlength="{{min}}" maxlength="{{max}}" bindinput="inputs">
+      <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text>
+    </textarea>
+  </view>
+  <view class='conts_phone flex-y-center'>
+    <input bindinput="conts_input" type='number' value='{{phone}}' placeholder='输入手机号接收反馈结果'></input>
+  </view>
+  <view class='box-pack-between ' style='width:670rpx;margin:0 auto;margin-bottom:68rpx;'>
+    <view></view>
+    <view class='Submission' bindtap='cofim'>提交反馈</view>
+  </view>
+  <view class='text_d'>
+    <view class='text_name'>
+      <rich-text nodes="{{about}}"></rich-text>
+    </view>
+  </view>
+</view>

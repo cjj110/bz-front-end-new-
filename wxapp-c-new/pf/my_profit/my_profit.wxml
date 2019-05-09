@@ -1,0 +1,83 @@
+<!--index.wxml-->
+<view class='hender_title'>
+  数字资产钱包
+</view>
+
+
+<view class='profit1 flex-y-center'>
+  <view class='profit11 flex'>
+    <view class='flex-grow-1' bindtap='my_profit'>
+      <view class='profit1_left'>
+        <text class='profit1_left_1'>约为{{user.rmb}}元</text>
+      </view>
+      <view class='profit1_left_center'>
+        <view class='profit1_left_center1'>
+          <text>{{user.score}}</text>
+          <text>家贝</text>
+        </view>
+        <view class='profit1_left_center2'>
+          我的家贝
+        </view>
+      </view>
+    </view>
+    <view class='flex-grow-1'>
+      <view class='profit1_left'>
+        <text class='profit1_left_1' bindtap='index'>马上去花</text>
+      </view>
+      <view class='profit1_left_center'>
+        <view class='profit1_left_center1' style='border-right:none'>
+          <text>{{user.jrscore}}</text>
+          <text>家贝</text>
+        </view>
+        <view class='profit1_left_center2'>
+          今日家贝
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='box-pack-between profit_record'>
+  <text class='deta'>7日家贝收益</text>
+  <navigator hover-class='none' url='../profit_transaction_record/profit_transaction_record'>
+    <text class='lk'>交易记录</text>
+  </navigator>
+</view>
+
+<view class="container">
+  <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+</view>
+
+<view class='box-pack-between cz_ze '>
+  <view class='cz flex-y-center' bindtap='profit_cz'>
+    <image src='../images/cz.png'></image>
+    <text>充值</text>
+  </view>
+
+  <view class='ze flex-y-center' bindtap='profit_transfer'>
+    <image src='../images/ze.png'></image>
+    <text>转赠</text>
+  </view>
+</view>
+
+
+
+<!-- <view class='profit_record1 flex-y-center'>
+  <view class='profit_record2 flex-y-center box-pack-between'>
+    <view class='left flex-y-center'>
+      <image src='../images/11.png'></image>
+      <view>
+        <text>0加贝</text>
+        <view style='color:#ec6464'>UKJHJK</view>
+      </view>
+    </view>
+
+    <view class='right'>
+      <text>QSasdsdasf</text>
+      <view>-16%</view>
+    </view>
+
+  </view>
+
+
+</view> -->

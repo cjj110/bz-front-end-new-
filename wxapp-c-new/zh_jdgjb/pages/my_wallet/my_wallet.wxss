@@ -1,0 +1,116 @@
+.bg {
+  height: 300rpx;
+  width: 100%;
+  background: #fecac5;
+  background: -moz-linear-gradient(right, #fecac5 0%, #ff9786 0%, #fecac5 100%, #ff9786 100%);
+  background: -webkit-linear-gradient(right, #fecac5 0%, #ff9786 0%, #fecac5 100%, #ff9786 100%);
+  background: linear-gradient(to left, #fecac5 0%, #ff9786 0%, #fecac5 100%, #ff9786 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fecac5', endColorstr='#ff9786', GradientType=1);
+}
+
+.ca {
+  background: #fff;
+  width: 636rpx;
+  height: 184rpx;
+  margin: 0 auto;
+  border-radius: 12rpx;
+  text-align: center;
+}
+
+.ca .flex-grow-1 {
+  font-size: 24rpx;
+  width: 40%;
+  text-align: center;
+  padding: 0 20rpx;
+}
+
+.ca .flex-grow-0 {
+  font-size: 28rpx;
+  width: 30%;
+}
+
+.jtt {
+  width: 140rpx;
+  height: 6rpx;
+}
+
+.bg_maney {
+  background: #fff;
+  width: 670rpx;
+  height: 284rpx;
+  margin: 0 auto;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  margin-top: 50rpx;
+}
+
+.maney1 {
+  padding-top: 40rpx;
+}
+
+.maney_ip {
+  border-bottom: 1rpx solid #ff9786;
+  padding: 20rpx 0;
+}
+
+.tix {
+  text-align: center;
+  margin: 20rpx 0;
+}
+
+.btn {
+  width: 608rpx;
+  background: #ec6464;
+  border-radius: 69rpx;
+  margin: 0 auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin-top: 180rpx;
+  font-size: 32rpx;
+  color: #fff;
+}
+
+.p_wallet {
+  width: 630rpx;
+  background: #fff;
+  height: 98rpx;
+  margin: 0 auto;
+  font-size: 24rpx;
+  border-radius: 12rpx;
+  padding: 0 20rpx;
+  color: #999;
+  margin-top: 12rpx;
+}
+
+.p_wallet input {
+  text-align: right;
+}
+
+.p_wallet .jl {
+  font-size: 40rpx;
+  text-align: left;
+}
+
+.detail1 {
+  font-size: 28rpx;
+  padding: 34rpx 0;
+  border-bottom: 1rpx solid #f1f1f1;
+  color: #999;
+  margin-bottom: 30rpx;
+}
+
+.detail {
+  background: #fff;
+  width: 630rpx;
+  height: 456rpx;
+  margin: 0 auto;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  margin-top: 50rpx;
+  padding: 0 20rpx;
+}
+
+.detail .box-pack-between {
+  line-height: 50rpx;
+}

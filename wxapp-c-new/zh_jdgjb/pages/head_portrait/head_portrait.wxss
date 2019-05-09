@@ -1,0 +1,37 @@
+.bg {
+  background: #ec6464;
+  height: 722rpx;
+  text-align: center;
+}
+
+.bg image {
+  width: 640rpx;
+  height: 618rpx;
+  margin: 50rpx 0;
+}
+
+.btn {
+  width: 670rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  margin: 0 auto;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin-top: 60rpx;
+  font-size: 24rpx;
+}
+
+.btns {
+  width: 100%;
+  background: #fff;
+  border-radius: 16rpx;
+  margin: 0 auto;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin-top: 42rpx;
+  position: absolute;
+  bottom: 0;
+  font-size: 24rpx;
+}

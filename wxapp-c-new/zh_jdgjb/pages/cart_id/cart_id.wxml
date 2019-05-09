@@ -1,0 +1,47 @@
+<view>
+  <view class='name flex-y-center'>
+    <view class='flex-y-center box-pack-between' style='padding: 0 40rpx;width:100%;'>
+      <text>个人用户认证</text>
+      <text style='color:#ec6464' wx:if='{{user_info.card_code}}'>已认证</text>
+    </view>
+
+  </view>
+  <view class='name flex-y-center'>
+    <view class='flex-y-center box-pack-between' style='padding: 0 40rpx;width:100%;'>
+      <view class='flex-grow-0'>
+        <text>真实名字</text>
+      </view>
+      <view class='flex-y-center box-pack-between ddd flex-grow-1'>
+        <view>
+        </view>
+        <view class='flex-y-center'>
+          <input value='{{name}}' placeholder="{{user_info.card_code?'请输入修改的名字':'请输入名字'}}" bindblur='bindblur' bindinput='bint_name'></input>
+          <text class='iconfont icon-gou-shi' style="color: {{ name_a?'#EC6464':'' }}"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='name flex-y-center'>
+    <view class='flex-y-center box-pack-between' style='padding: 0 40rpx;width:100%;'>
+      <view class='flex-grow-0'>
+        <text>身份证号码</text>
+      </view>
+      <view class='flex-y-center box-pack-between flex-grow-1 ddd'>
+        <view></view>
+        <view class='flex-y-center'>
+          <input type='idcard' placeholder="{{user_info.card_code?'请输入修改的身份证号码':'请输入身份证号码'}}" bindblur='bindbb' bindinput='bint_card'></input>
+          <!-- <image class='shangchuan' src='../img/shangchuan.png'></image> -->
+          <text class='iconfont icon-gou-shi' style="color: {{ name_d?'#EC6464':'' }}"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='btn' bindtap='btn'>
+    保存
+  </view>
+
+
+</view>

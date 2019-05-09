@@ -1,0 +1,46 @@
+<view class="top-handle">
+  <!-- <view bindtap="doDay" class="prev" data-key="left">
+    <image src="{{__wxapp_img.register.left.url}}"></image>
+  </view> -->
+  {{currentDate}}
+  <!-- <view bindtap="doDay" class="next" data-key="right">
+    <image src="{{__wxapp_img.register.right.url}}"></image>
+  </view> -->
+</view>
+<!-- <view class="week">
+  <view class="weeks-day" wx:for="{{weeks}}">{{item.day}}</view>
+</view> -->
+
+<view class="box-flex">
+
+  <view class="flex-item" wx:for="{{currentDayList}}" wx:for-index="key" wx:for-item="vo" wx:key="{{key}}">
+    <block wx:if="{{vo.is_re==1}}">
+      <view bindtap="selectDay" class="item-content {{!selectCSS}}" data-day="{{vo.date}}" wx:if="{{currentDay!=vo.date}}">
+        <view>{{vo.date}}</view>
+        <image class="re_pic" src="/zh_jdgjb/pages/img/sign_gou.png"></image>
+      </view>
+
+    </block>
+    <block wx:else>
+      <view bindtap="selectDay" class="item-content {{!selectCSS}}" data-day="{{vo.date}}" wx:if="{{currentDay!=vo.date}}">
+        {{vo.date}}
+      </view>
+    </block>
+    <block wx:if="{{vo.is_re==1}}">
+      <view bindtap="selectDay" class="item-content {{selectCSS}}" data-day="{{vo.date}}" wx:if="{{currentDay==vo.date}}">
+        <view>{{vo.date}}</view>
+        <image class="re_pic" src="/zh_jdgjb/pages/img/sign_gou.png"></image>
+      </view>
+    </block>
+    <block wx:else>
+      <view bindtap="selectDay" class="item-content {{selectCSS}}" data-day="{{vo.date}}" wx:if="{{currentDay==vo.date}}">
+        {{vo.date}}
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class='' style='text-align:center;padding:20rpx'>
+  连续签到：
+  <text style='color:#ec6464'>+{{score}}家贝</text>
+</view>

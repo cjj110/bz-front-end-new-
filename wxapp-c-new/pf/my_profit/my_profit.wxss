@@ -1,0 +1,141 @@
+/**index.wxss**/
+
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.profit1 {
+  width: 662rpx;
+  height: 232rpx;
+  background: #ff9786;
+  border-radius: 16rpx;
+  margin: 0 auto;
+  color: #fff;
+  background: -moz-linear-gradient(top, #ff9786 0%, #ff9a8a 50%, #fecac5 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ff9786 0%, #ff9a8a 50%, #fecac5 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ff9786 0%, #ff9a8a 50%, #fecac5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9786', endColorstr='#fecac5', GradientType=0); /* IE6-9 */
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.profit11 {
+  width: 100%;
+}
+
+.profit1_left {
+  text-align: right;
+  padding: 0 20rpx;
+}
+
+.profit1_left_1 {
+  font-size: 20rpx;
+  background: #febfb9;
+  color: #fff;
+  width: 114rpx;
+  border-radius: 25rpx;
+  padding: 3rpx 8rpx;
+}
+
+.profit1_left_center {
+  margin: 0 auto;
+}
+
+.profit1_left_center1 {
+  border-right: 0.5rpx solid #f1f1f1;
+  text-align: center;
+}
+
+.profit1_left_center1 text:nth-child(1) {
+  font-size: 56rpx;
+}
+
+.profit1_left_center1 text:nth-child(2) {
+}
+
+.profit1_left_center2 {
+  text-align: center;
+}
+
+.profit_record {
+  width: 670rpx;
+  margin: 0 auto;
+  padding: 20rpx 0;
+}
+
+.deta {
+  font-size: 32rpx;
+}
+
+.lk {
+  border-radius: 40rpx;
+  /* background: #ec6464; */
+  text-align: center;
+  color: #ec6464;
+  font-size: 20rpx;
+  padding: 8rpx 20rpx;
+}
+
+.container {
+  width: 100%;
+  height: 300rpx;
+  border-bottom: 1rpx solid #febfb9;
+}
+
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.profit_record1 {
+  width: 670rpx;
+  height: 120rpx;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 16rpx;
+}
+
+.profit_record2 {
+  padding: 0 20rpx;
+  width: 100%;
+  font-size: 26rpx;
+}
+
+.left image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 10rpx;
+}
+
+.right {
+  text-align: right;
+}
+
+.cz_ze {
+  width: 600rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.cz_ze view {
+  border-radius: 40rpx;
+  background: #ec6464;
+  text-align: center;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 8rpx 30rpx;
+}
+
+.cz image {
+  width: 32rpx;
+  height: 30rpx;
+  margin-right: 4rpx;
+}
+
+.ze image {
+  width: 40rpx;
+  height: 22rpx;
+  margin-right: 4rpx;
+}

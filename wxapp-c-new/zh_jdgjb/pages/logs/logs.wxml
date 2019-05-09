@@ -1,0 +1,218 @@
+<view class='hender_title'>
+  {{title}}
+</view>
+<!-- {{hg}} -->
+<view style='height:115%;overflow:{{hidden}}; width:100%;'>
+  <view class="home">
+    <view class="lheader flex_center">
+      <image class="logsimg" src="{{userInfo.img}}"></image>
+      <view style='width:62%;'>
+        <!-- <view class='flex'>
+          <view class="hydj">
+            <text>{{}}信用极好</text>
+          </view>
+          <view class="hydj">
+            <text>{{level_name}}</text>
+          </view>
+        </view> -->
+        <view class='flex-y-center box-pack-between' style='padding:4rpx 0;'>
+          <view class='flex'>
+            <view class='flex' bindtap='person_information'>
+              <!-- <open-data bindgetuserinfo="bindgetuserinfo" formType="submit" openType="getUserInfo" type="userNickName"></open-data> -->
+              <text>{{userInfo.name}}</text>
+              <text class='iconfont icon-shangjiantou'></text>
+            </view>
+          </view>
+          <view class='Signin' style="background:{{code==3?'#febfb9':'#ec6464'}}" bindtap="{{code==3?'':'calendarSign'}}">
+            {{code==3?'已签到':'签到'}}
+          </view>
+        </view>
+
+        <!-- <view class='maney_address flex'>
+          数字资产钱包地址：
+          <block wx:if='{{userInfo.wallet}}'>{{userInfo.wallet}}</block>
+          <block wx:else>未生成</block>
+        </view> -->
+        
+        <view class='maney_address flex'>
+          <view class='wait' wx:if="{{!level_name}}"></view>
+          <view class="hydj" wx:if="{{level_name}}">
+            <text>{{level_name}}</text>
+          </view>
+        </view>
+
+        <!-- <view class='line'></view> -->
+
+        <view class='flex box-pack-between' style='padding-top:20rpx;'>
+          <view class='flex mine'>
+            <view class='my_number'>{{userInfo.score}}
+            </view>
+            <view class='my_number_maney'>
+              <text>家贝</text>
+              <text>约{{userInfo.rmb}}元</text>
+            </view>
+          </view>
+          <view hover-class='none' bindtap='my_profit' class='maney_right flex-y-center'>
+            <image class='wallet' src='../img/images/wallet.png'></image>
+            <!-- <text>钱包</text>
+            <text class='iconfont icon-shangjiantou'></text> -->
+          </view>
+        </view>
+      </view>
+      <!-- <view bindtap="score_detail" class="flex_bet hjifen">
+      <image class="hjifenimg" src="../img/kefu.png"></image>
+      <view>{{score}}积分</view>
+      <image class="hright" src="../img/images/jiantou_right.png"></image>
+    </view> -->
+    </view>
+
+    <view class='lorders '>
+      <view>我的订单</view>
+    </view>
+
+    <view class="lorder">
+      <view bindtap="mine_order" class="flex3" data-index="0">
+        <image class="lorderimg" src="../img/images/order1.png"></image>
+        <view>全部订单</view>
+      </view>
+      <view bindtap="mine_order" class="flex3" data-index="1">
+        <image class="lorderimg" src="../img/images/order2.png"></image>
+        <view>待付款</view>
+      </view>
+      <view bindtap="mine_order" class="flex3" data-index="2">
+        <image class="lorderimg" src="../img/images/order3.png"></image>
+        <view>处理中</view>
+      </view>
+      <view bindtap="mine_order" class="flex3" data-index="3">
+        <image class="lorderimg" src="../img/images/order4.png"></image>
+        <view>评价</view>
+      </view>
+    </view>
+
+    <view class="lbanner">
+      <view hover-class='none' bindtap='a_bonus' class="lbanlist">
+        <view class='flex-y-center'>
+          <image class='lbannerimgs' src=' ../img/images/fenhong.png'></image>
+          <view>分红</view>
+        </view>
+        <image class="lbannerimg" src="../img/images/jiantou_right.png"></image>
+      </view>
+
+      <navigator url='/zh_jdgjb/pages/card_coupon/card_coupon' hover-class='none' class="lbanlist">
+        <view class='flex-y-center'>
+          <image class='lbannerimgs' src=' ../img/images/kaquan.png'></image>
+          <view>我的卡券</view>
+        </view>
+        <image class="lbannerimg" src="../img/images/jiantou_right.png"></image>
+      </navigator>
+
+      <navigator hover-class='none' url='../invitation/invitation' class="lbanlist">
+        <view class='flex-y-center'>
+          <image class='lbannerimgs' src=' ../img/images/yaoqing.png'></image>
+          <view>邀请注册</view>
+        </view>
+        <image class="lbannerimg" src="../img/images/jiantou_right.png"></image>
+      </navigator>
+
+      <navigator hover-class='none' url='../member_activity/member_activity?level_name={{level_name}}' class="lbanlist">
+        <view class='flex-y-center'>
+          <image class='lbannerimgs' src=' ../img/images/huiyuan.png'></image>
+          <view>会员活动</view>
+        </view>
+        <image class="lbannerimg" src="../img/images/jiantou_right.png"></image>
+      </navigator>
+      
+      <view hover-class='none' bindtap='red_packet' class="lbanlist">
+        <view class='flex-y-center'>
+          <image class='lbannerimgs' src=' ../img/images/shuzi.png'></image>
+          <view>数字资产钱包地址</view>
+        </view>
+        <image class="lbannerimg" src="../img/images/jiantou_right.png"></image>
+      </view>
+
+      <!-- <navigator hover-class='none' url='../cart_id/cart_id' class="lbanlist">
+        <view class='flex-y-center'>
+          <image class='lbannerimgs' src=' ../img/images/my(3).png'></image>
+          <view>实名认证</view>
+        </view>
+        <image class="lbannerimg" src="../img/images/jiantou_right.png"></image>
+      </navigator> -->
+
+      <!-- <navigator hover-class='none' url='../follow/follow' class="lbanlist">
+        <view class='flex-y-center'>
+          <image class='lbannerimgs' src=' ../img/images/yj.png'></image>
+          <view>关注官网活动</view>
+        </view>
+        <image class="lbannerimg" src="../img/images/jiantou_right.png"></image>
+      </navigator> -->
+
+      <navigator hover-class='none' url='../about/about?my=0' class="lbanlist">
+        <view class='flex-y-center'>
+          <image class='lbannerimgs' src=' ../img/images/fankui1.png'></image>
+          <view>向贝住反馈意见</view>
+        </view>
+        <image class="lbannerimg" src="../img/images/jiantou_right.png"></image>
+      </navigator>
+
+      <!-- <navigator hover-class='none' url='../shop_land/shop_land' class="lbanlist">
+        <view class='flex-y-center'>
+          <image class='lbannerimgs' src=' ../img/images/fankui.png'></image>
+          <view>商家入口</view>
+        </view>
+        <image class="lbannerimg" src="../img/images/jiantou_right.png"></image>
+      </navigator> -->
+    </view>
+    <!-- <view class='content_model' wx:if='{{date}}' bindtap='modelx'>
+      <view class="content">
+        <view class="register">
+          <include src="../../commons/calendar/calendar"></include>
+        </view>
+      </view>
+    </view> -->
+    <view bindtap="copyright" class="copyright">
+      <image mode="aspectFill" src="{{url}}{{platform.bq_logo}}"></image>
+      {{platform.bq_name}}
+    </view>
+    <view class='foot_d'>
+      <view class='box-pack-between flex-y-center'>
+        <!-- <view></view>
+        <view class='may flex-y-center flex-x-center'>
+          <view class='flex-y-center flex-x-center'>
+            <image src='../img/may.png'></image>
+            产生收益中...
+          </view>
+          <view class='may_pos'>
+            <image src='../img/sanjiaoxing-down.png'></image>
+          </view>
+        </view>
+        <view></view> -->
+      </view>
+
+      <view class="foot">
+        <view bindtap='home' class="footbox flex3">
+          <image src="../img/images/nav/Home.png"></image>
+        </view>
+        <view bindtap='profit' class="footbox flex3">
+          <image src="../img/images/nav/Currency.png"></image>
+        </view>
+        <view bindtap="wode" class="footbox flex3">
+          <image src="../img/images/nav/my1.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- model -->
+<view class='pos flex-y-center' wx:if='{{model}}'>
+  <view class='pos_bg'>
+    <view style='padding:40rpx 0'>
+      <view class=''>授权提醒</view>
+      <view style='padding:40rpx 0;color:#ec6464'>将获取你的昵称，头像信息</view>
+      <view class='flex-x-center ' style='margin:0 60rpx;'>
+        <button openType="getUserInfo" class='btm' bindgetuserinfo='bindGetUserInfo' open-type="getUserInfo"> 确认</button>
+      </view>
+    </view>
+  </view>
+</view>

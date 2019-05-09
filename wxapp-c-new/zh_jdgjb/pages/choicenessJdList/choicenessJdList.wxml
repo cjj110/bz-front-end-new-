@@ -1,0 +1,173 @@
+<!-- <view bindtap="conlist" class="hotel_info flex" data-id="{{item.id}}" wx:for="{{hotel}}">
+  <view class="info_left flex-grow-0">
+    <image mode="" src="{{item.ewm_logo}}"></image>
+  </view>
+  <view class="info_right flex-grow-1">
+    <view class='flex-y-center'>
+      <view class="infritbox info_right1 ellipsis">{{item.name}}</view>
+      <view>
+        <text class="ritfont2">¥</text>
+        <text class="ritfont3">{{item.zd_money}}起</text>
+      </view>
+    </view>
+    <view class='flex-y-center'>
+      <view class='flex-grow-1'>
+        <image class='xing' wx:if='{{Number(item.xing)>=1}}' src='../img/images/xingxing.png'></image>
+        <image class='xing' wx:if='{{Number(item.xing)>=2}}' src='../img/images/xingxing.png'></image>
+        <image class='xing' wx:if='{{Number(item.xing)>=3}}' src='../img/images/xingxing.png'></image>
+        <image class='xing' wx:if='{{Number(item.xing)>=4}}' src='../img/images/xingxing.png'></image>
+        <image class='xing' wx:if='{{Number(item.xing)>=5}}' src='../img/images/xingxing.png'></image>
+        <!-- <text style='font-size:20rpx;color:#999'>{{item.pl_count}}评论</text> -->       
+      <!-- </view>
+    </view>
+
+    <view class="flex_bet info_right2">
+      <view class="flex_center">
+        <image class="iconaddress" src="../img/didian.png"></image>
+        <view class="ritfont1">{{item.address}}</view>
+      </view>
+    </view>
+
+    <view class="info_right2">
+      <view class='info_right3'>
+        <view class="flex-y-center">
+          <image class="iconaddress_d" src="../img/images/cutlery3.png"></image>
+          <view class="info_3">{{item.wake}}</view>
+        </view>
+      </view>
+      <view class='info_right3'>
+        <view class="flex-y-center">
+          <image class="iconaddress_d" src="../img/images/cutlery2.png"></image>
+          <view class="info_3">{{item.foods}}</view>
+        </view>
+      </view>
+      <view class='info_right3'>
+        <view class="flex-y-center">
+          <image class="iconaddress_d" src="../img/images/cutlery.png"></image>
+          <view class="info_3">{{item.breakfast}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='flex'>
+      <view class='info_right3 flex-grow-1'> -->
+        <!-- <text class='info_right5'>促销</text> -->
+        <!-- <text class='info_right5'>返10toke</text> -->
+      <!-- </view>
+      <view class='flex-grow-0'>
+        <text class='info_right55'>返{{item.fan_jb}}家贝</text>
+      </view>
+    </view>
+  </view>
+</view> -->
+
+
+<!-- 前一页复制过来 -->
+<view bindtap="conlist" class="hotel_info flex" data-title='{{item.name}}' data-id="{{item.id}}" wx:for="{{hotel}}">
+      <view class="info_left flex-grow-0">
+        <image mode="" src="{{item.ewm_logo}}"></image>
+      </view>
+      <view class="info_right flex-grow-1">
+        <view class='flex-y-center box-pack-between'>
+          <view class="infritbox info_right1">{{item.name}}</view>
+        </view>
+        <view class='flex-y-center'>
+          <view class='flex-grow-1'>
+            <image class='xing' wx:if='{{item.xing>=1}}' src='../img/images/xingxing.png'></image>
+            <image class='xing' wx:if='{{item.xing>=2}}' src='../img/images/xingxing.png'></image>
+            <image class='xing' wx:if='{{item.xing>=3}}' src='../img/images/xingxing.png'></image>
+            <image class='xing' wx:if='{{item.xing>=4}}' src='../img/images/xingxing.png'></image>
+            <image class='xing' wx:if='{{item.xing>=5}}' src='../img/images/xingxing.png'></image>
+            <text style='font-size:10px;color:#999;line-height:10px;'>{{item.pl_count}}人已消费</text>
+          
+        <view class="flex_bet info_right2">
+          <view class="flex_center">
+            
+            <view class="ritfont1">
+              {{item.address}}
+            </view>
+          </view>
+        </view>
+        <!-- <view class="info_right2">
+          <view class='info_right3' hidden='{{item.bed==0}}'>
+            <view class="flex-y-center">
+              <image wx:if='{{item.bed!=0}}' class="iconaddress_d" src="../img/images/cutlery3.png"></image>
+              <view class="info_3">
+                <block wx:if='{{item.bed==1}}'>
+                  大床
+                </block>
+                <block wx:if='{{item.bed==2}}'>
+                  双床
+                </block>
+                <block wx:if='{{item.bed==3}}'>
+                  单人床
+                </block>
+                <block wx:if='{{item.bed==4}}'>
+                  多张床
+                </block>
+              </view>
+            </view>
+          </view>
+          <view class='info_right3' hidden='{{item.bed==0}}'>
+            <view class="flex-y-center">
+              <image class="iconaddress_d" src="../img/images/ting.png"></image>
+              <view class="info_3">
+                <block wx:if='{{item.parking==1}}'>
+                  免费停车
+                </block>
+                <block wx:if='{{item.parking==2}}'>
+                  收费停车
+                </block>
+              </view>
+            </view>
+          </view>
+          <view class='info_right3' hidden='{{item.bed==0}}'>
+            <view class="flex-y-center">
+              <image class="iconaddress_d" src="../img/images/cutlery.png"></image>
+              <view class="info_3">
+                <block wx:if='{{item.breakfast==0}}'>
+                  不含早
+                </block>
+                <block wx:if='{{item.breakfast==1}}'>
+                  含早
+                </block>
+              </view>
+            </view>
+          </view>
+          
+        </view> -->
+        <!-- <view class='ritfont1'> -->
+          <!-- {{item.distance* 1000}}  -->
+          <!-- <image class="iconaddress" src="../img/weizhi.png"></image>
+          <block wx:if='{{item.juli>=1000}}'>距离你{{item.juli/1000}}km</block>
+          <block wx:else>距离你{{item.juli}}m</block>
+        </view> -->
+      </view>
+    </view>
+        <!-- 标签 -->
+        <view class='flex right_bottom'>
+          <view class='info_right3 flex-grow-1'>
+
+             <text class='info_right5' wx:for='{{item.tags}}' wx:for-item="ison" wx:key="{{index}}"wx:if="{{index <= 3}}">{{ison.tags_name}}</text>
+            <!-- <text class='info_right5'>不可啊啊</text>
+            <text class='info_right5'>不可啊啊</text>
+            <text class='info_right5'>不可啊啊</text>
+            <text class='info_right5'>不可啊啊</text> -->
+
+            <!-- <view class='info_right5' wx:for='{{5}}'>满减的</view> -->
+          </view>
+        </view>
+        <view class='priceJb'>
+          <view class='reprice'>
+            <text class="ritfont2">¥{{item.zd_money}}</text>
+            <text class="ritfont3">起</text>
+          </view>
+          <view class='flex-grow-0 backblock' wx:if="{{item.fan_jb!=0}}">
+            <text class='info_right55'>返{{item.fan_jb}}个家贝</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+<view style="width:100%;height:0;"></view>
+
+<view class="none_more" wx:if="{{none_more==true}}">---------------没有更多了---------------</view>

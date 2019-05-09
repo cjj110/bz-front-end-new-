@@ -1,0 +1,15 @@
+<!-- 失败  wx:if='{{}}'-->
+<view class='success'>
+  <view class='main' style="background-color:;">
+    <image class='Group' src='../images/fail.png'></image>
+  </view>
+  <view class='success_tip'>
+    <block wx:if='{{a}}'>您已经充值成功！</block>
+    <block wx:else>充值家贝失败，请重试 如果重复扣款，将在3个工作日内返还到原账户
+    </block>
+  </view>
+
+  <navigator open-type='redirect' url='../my_profit/my_profit' class='btn'>
+    重新下单
+  </navigator>
+</view>

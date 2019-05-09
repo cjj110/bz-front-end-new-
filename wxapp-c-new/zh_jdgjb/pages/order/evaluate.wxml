@@ -1,0 +1,70 @@
+<view class="head rel">
+  <view class='flex-y-center'>
+    <view>
+      描述相符：
+    </view>
+
+    <view class='flex-y-center'>
+
+      <view class='flex-grow-1 flex' bindtap="chooseicon" data-=''>
+
+        <icon class="{{ curHdIndex>'0'? 'cur iconfont icon-xingxing' : 'iconfont icon-xingxing' }}" data-id="1">
+        </icon>
+        <icon class="{{ curHdIndex>'1'? 'cur iconfont icon-xingxing' : 'iconfont icon-xingxing' }}" data-id="2">
+        </icon>
+        <icon class="{{ curHdIndex>'2'? 'cur iconfont icon-xingxing' : 'iconfont icon-xingxing' }}" data-id="3">
+        </icon>
+        <icon class="{{ curHdIndex>'3'? 'cur iconfont icon-xingxing' : 'iconfont icon-xingxing' }}" data-id="4">
+        </icon>
+        <icon class="{{ curHdIndex>'4'? 'cur iconfont icon-xingxing' : 'iconfont icon-xingxing' }}" data-id="5">
+        </icon>
+      </view>
+    </view>
+  </view>
+
+
+
+
+  <view class='evaluate_number flex-y-center box-pack-between'>
+    <text>您最多可以一次性给{{total}}个差评/好评</text>
+    <view>
+      <text style='color:#ec6464' bindtap='reduce'>-</text>
+      <text style='padding:0 20rpx;'>{{numbers}}</text>
+      <text style='color:#ec6464' bindtap='add'>+</text>
+    </view>
+  </view>
+
+  <view class='text_textarea'>
+    <textarea bindinput="textarea" maxlength="500" placeholder="居住体验符合你的期待吗？说说优点和美中不足的地方吧"></textarea>
+    <view class="abb">{{length}}/300</view>
+  </view>
+</view>
+
+<view class='box-pack-between success_name'>
+  <view class='flex-y-center'>
+    <icon wx:if='{{chenk}}' bindtap='show' style='padding-right:10rpx;' type="success" color="#ec6464" size="15" class=''></icon>
+    <icon wx:else class='' bindtap='hidden' style='padding-right:10rpx;' type="success" color="#cccccc" size="18"></icon>
+    <text>匿名</text>
+  </view>
+  <view>
+    你的评价能帮到其他小伙伴喔
+  </view>
+</view>
+
+<view>
+
+  <view class="evaluate_img rel" wx:for="{{imgArray1}}">
+    <image class="evaluate" mode="aspectFill" src="{{item}}"></image>
+    <view bindtap="delete" class="ab delete" data-index="{{index}}">
+      <image class="ab" mode="aspectFill" src="../img/delete.png"></image>
+    </view>
+  </view>
+
+  <view bindtap="img_array" class="add_img rel">
+    <image class="" mode="aspectFill" src="../img/images/eve.png"></image>
+    <view>添加图片</view>
+  </view>
+
+</view>
+
+<button bindtap="submit">发布</button>

@@ -1,0 +1,317 @@
+.sf {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #000;
+  padding-top: 40rpx;
+  background: #f6f7f9;
+}
+
+.bg {
+  height: 400rpx;
+  width: 100%;
+}
+
+.sf_img {
+  width: 140rpx;
+  height: 140rpx;
+}
+
+.King {
+  padding-bottom: 25rpx;
+  font-size: 32rpx;
+  padding-top: 20rpx;
+  width: 590rpx;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.work {
+  font-size: 30rpx;
+  text-align: left;
+  border-bottom: 1rpx solid#f1f1f1;
+  margin: 0 auto;
+  background: #fff;
+  height: 100rpx;
+  width: 590rpx;
+  border-radius: 16rpx;
+  margin-bottom: 12rpx;
+  color: #000;
+}
+
+.work input {
+  padding-left: 38rpx;
+  font-size: 28rpx;
+}
+
+.work_code {
+  width: 128rpx;
+  height: 44rpx;
+  background: #ec6464;
+  font-size: 20rpx;
+  border-radius: 40rpx;
+  margin-right: 34rpx;
+  color: #fff;
+}
+
+.work_yj {
+  height: 48rpx;
+  width: 46rpx;
+  /* margin-right: 34rpx; */
+}
+
+.input_text {
+  color: #ccc;
+}
+
+button {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  line-height: 50rpx;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+button::after {
+  content: none;
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.btn {
+  color: #fff;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+  margin: 0 auto;
+  margin-top: 184rpx;
+  text-align: center;
+  line-height: 85rpx;
+  width: 554rpx;
+  border-radius: 68rpx;
+  background-color: #febfb9;
+}
+
+.land {
+  font-size: 28rpx;
+  padding-top: 100rpx;
+}
+
+.mask {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.jump {
+  width: 580rpx;
+  border-radius: 36rpx;
+  background-color: rgba(255, 255, 255, 1);
+  margin: 0 auto;
+  margin-top: 150rpx;
+}
+
+.mask_bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+.jump_p {
+  width: 100%;
+  height: 120rpx;
+  border-top-left-radius: 21rpx;
+  border-top-right-radius: 21rpx;
+  background-color: rgba(125, 55, 227, 1);
+  text-align: center;
+  line-height: 120rpx;
+  color: #fff;
+}
+
+.catt {
+  margin-bottom: 20rpx;
+  padding-right: 15rpx;
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #d1b4ff;
+  padding: 20rpx 0;
+}
+
+.colors {
+  background-color: rgba(125, 55, 227, 1);
+}
+
+.btn_comfir {
+  color: #fff;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+  margin: 0 auto;
+  margin-top: 60rpx;
+  text-align: center;
+  line-height: 85rpx;
+  width: 300rpx;
+  border-radius: 20rpx;
+  background-color: rgba(149, 84, 250, 1);
+}
+
+.tip {
+  font-size: 24rpx;
+  text-align: center;
+  padding-top: 85rpx;
+  line-height: 50rpx;
+}
+
+.pos {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 999;
+}
+
+.poss {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background: rgba(153, 153, 153, 0.5);
+  filter: blur(5px);
+}
+
+.pos_bg {
+  width: 480rpx;
+  height: 340rpx;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 16rpx;
+  font-size: 28rpx;
+  text-align: center;
+  position: relative;
+}
+
+.btm {
+  width: 296rpx;
+  background: #ec6464;
+  border-radius: 90rpx;
+  line-height: 88rpx;
+  color: #fff;
+  font-size: 28rpx;
+  margin: 0 auto;
+  /* margin-left: 12rpx; */
+}
+
+.work_qu {
+  /* padding-left: 10rpx; */
+  font-size: 28rpx;
+}
+
+.work_qu image {
+  width: 43rpx;
+  height: 38rpx;
+}
+
+.work_line {
+  height: 32rpx;
+  background: rgb(51, 51, 51);
+  width: 3rpx;
+}
+
+.phone_error {
+  font-size: 20rpx;
+  color: #ec6464;
+  text-align: left;
+  margin: 0 auto;
+  width: 590rpx;
+  margin-top: 15.2rpx;
+  margin-bottom: 28rpx;
+}
+
+.pos_in {
+  font-size: 40rpx;
+}
+
+.pos_in_text {
+  font-size: 32rpx;
+}
+
+/* 领取劵 */
+
+.coupon_d {
+  width: 608rpx;
+  /* height: 610rpx; *//* background: #fff; */
+  margin: 0 auto;
+  border-radius: 16rpx;
+  text-align: center;
+  position: relative;
+  padding-bottom: 100rpx;
+}
+
+.copunimg {
+  width: 408rpx;
+  height: 176rpx;
+  margin: 0 auto;
+  position: relative;
+  color: #ec6464;
+  margin-top: 66rpx;
+}
+
+.copunimg image {
+  width: 100%;
+  height: 100%;
+}
+
+.coupon_in {
+  font-size: 52rpx;
+  font-weight: bold;
+  color: #fff;
+}
+
+.coupon_ing {
+  font-size: 32rpx;
+  color: #fff;
+}
+
+.copunname {
+  width: 408rpx;
+  height: 176rpx;
+  position: absolute;
+  top: 0;
+}
+
+.copunadd {
+  font-size: 48rpx;
+  padding-left: 15rpx;
+}
+
+.copunright {
+  font-size: 32rpx;
+  line-height: 44rpx;
+}
+
+.copunright_text {
+  font-size: 16rpx;
+}

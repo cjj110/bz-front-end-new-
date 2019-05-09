@@ -1,0 +1,79 @@
+<view>
+  <view class='address_one'>
+    <view class='address_one1 '>
+      <view class='flex-y-center address_one_page' style='padding-bottom:50rpx;'>
+        <view class='flex-grow-1'>
+          <view class='flex-y-bottom addressprice'>
+            <view class='flex-y-bottom text'>
+              <text>￥</text>
+            </view>
+            <input maxlength='5' type='digit' style='width:200rpx;' bindinput='mgd' placeholder='输入提现金额' placeholder-style='font-size:28rpx' style='font-size:60rpx;'>{{jb}}</input>
+          </view>
+        </view>
+        <view class='flex-grow-0 adddres_center' style='margin:0 30rpx;'>
+          <image src='../images/jt.png'></image>
+        </view>
+        <view class='flex-grow-1'>
+          <view class='flex-y-bottom flex-x-center addressprice'>
+            <view class='flex-y-bottom text'>￥</view>
+            <input maxlength='5' value='{{md}}' disabled='true' type='digit' bindinput='mgd' placeholder='' placeholder-style='font-size:28rpx' style='font-size:60rpx;'>{{md}}</input>
+          </view>
+        </view>
+      </view>
+      <view class='box-pack-between price_bottom'>
+        <view class='flex-grow-1'>现金分红总额</view>
+        <view class='flex-grow-0'></view>
+        <view class='flex-grow-1'>微信钱包</view>
+      </view>
+    </view>
+    <view class='address_one2'>
+      <text>提现的现金将汇入您的微信钱包,可提现金额{{ktx}}元</text>
+    </view>
+    <!-- <view class='address_one3 flex-y-center flex-x-center'>
+      {{crad_bank}}{{crad_account}}
+    </view> -->
+  </view>
+  <view class='btt' bindtap='pay'>
+    确认提现
+  </view>
+</view>
+
+<view class='model'>
+  <view class='model_mima'>
+    <view wx:if="{{wallets_password_flag}}" class="wallets-password">
+      <view class="input-content-wrap">
+        <view class="top flex-y-center box-pack-between">
+          <view class="close" bindtap='gb'>×</view>
+          <view class="txt">请输入交易密码以进行订单支付</view>
+          <view catchtap="modify_password" class="forget"> </view>
+        </view>
+        <!-- <view class="actual_fee">
+          <span>￥</span>
+          <text>{{actual_fee/100}}</text>
+        </view> -->
+        <view catchtap="set_Focus" class="input-password-wrap">
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=1}}"></i>
+          </view>
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=2}}"></i>
+          </view>
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=3}}"></i>
+          </view>
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=4}}"></i>
+          </view>
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=5}}"></i>
+          </view>
+          <view class="password_dot">
+            <i wx:if="{{wallets_password.length>=6}}"></i>
+          </view>
+        </view>
+      </view>
+      <input bindinput="set_wallets_password" class="input-content" password type="number" focus="{{isFocus}}" maxlength="6" />
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,273 @@
+page {
+  /* background-color: white; */
+}
+
+.header {
+  width: 100%;
+  position: relative;
+  margin-top: 30rpx;
+}
+
+.hcontent {
+  background-color: white;
+  width: 85%;
+  padding: 25rpx 24rpx;
+  margin: 0 auto;
+  z-index: 5;
+  /* box-shadow: 0rpx 5rpx 5rpx 5rpx #eee; */
+  border-radius: 10rpx;
+}
+
+.tips {
+  width: 85%;
+  margin: 0 auto;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+
+.hcfont1 {
+  font-size: 40rpx;
+}
+
+.hcfont2 {
+  /* color: #999; */
+  width: 614rpx;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+}
+
+.arrival_time {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 24rpx;
+  margin-top: 52rpx;
+  margin-bottom: 72rpx;
+}
+
+.ordizhi {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.code {
+  text-align: center;
+  /* margin-bottom: 30rpx; */
+}
+
+.code image {
+  width: 250rpx;
+  height: 250rpx;
+  margin-bottom: 40rpx;
+}
+
+.icontent {
+  display: flex;
+  padding-top: 30rpx;
+  font-size: 26rpx;
+  border-top: 1rpx solid #eee;
+  position: relative;
+  margin-top: 20rpx;
+}
+
+.iconleft {
+  width: 49.5%;
+  border-right: 1rpx solid #eee;
+}
+
+.iconrit {
+  width: 49.5%;
+}
+
+.iconfont1 {
+  font-size: 36rpx;
+  color: #172a97;
+  margin-bottom: 30rpx;
+}
+
+.osection {
+  /* margin-top: 120rpx; */
+}
+
+.osecnei {
+  display: flex;
+  padding: 15rpx 20rpx;
+}
+
+.osecnei>view:nth-child(1) {
+  color: #999;
+  width: 180rpx;
+}
+
+.osecfont1 {
+  /* color: #e75119; */
+}
+
+.jiantou_right {
+  width: 12rpx;
+  height: 22rpx;
+  margin-left: 20rpx;
+}
+
+.osecfont2 {
+  /* color: #e75119; */
+}
+
+.address {
+  font-size: 24rpx;
+}
+
+.osecfoot {
+  width: 100%;
+  height: 150rpx;
+}
+
+.orderfoot {
+  display: flex;
+  position: fixed;
+  color: #000;
+  width: 100%;
+  z-index: 10;
+  bottom: 0rpx;
+  left: 0rpx;
+  text-align: center;
+  height: 114rpx;
+  background: #fff;
+}
+
+.btn {
+  text-align: center;
+  width: 300rpx;
+  line-height: 68rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  border-radius: 100rpx;
+  background: #ec6464;
+  color: #fff;
+  margin-left: 20rpx;
+  margin-right: 10rpx;
+}
+
+.ofbutton, .ofbox {
+  width: 50%;
+  text-align: center;
+  line-height: 120rpx;
+}
+
+.ofbox {
+  background-color: #e0e0e0;
+  font-size: 34rpx;
+}
+
+.ofbutton {
+  border: none;
+  background-color: #e75119;
+  border-radius: 0rpx;
+  color: white;
+}
+
+.fixed>view:nth-child(1) {
+  background: #000;
+  opacity: 0.5;
+}
+
+.fixed>view:nth-child(2) {
+  background: #fff;
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.tel image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.map image {
+  width: 114rpx;
+  height: 90rpx;
+}
+
+button {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  line-height: 50rpx;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+button::after {
+  content: none;
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.tip {
+  font-size: 24rpx;
+  text-align: center;
+  padding-top: 132rpx;
+  line-height: 50rpx;
+}
+
+.pos {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(245, 178, 179, 0.5);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 999;
+}
+
+.pos_bg {
+  width: 540rpx;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  text-align: center;
+  /* height: 360rpx; */
+  position: relative;
+  height: 320rpx;
+}
+
+.btm {
+  width: 226rpx;
+  background: #ec6464;
+  border-radius: 90rpx;
+  line-height: 73rpx;
+  color: #fff;
+  font-size: 28rpx;
+  margin: 0 auto;
+}
+
+.pos_in {
+  font-size: 28rpx;
+  margin-top: 30rpx;
+}
+
+.pos_put {
+  font-size: 40rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+  width: 200rpx;
+}

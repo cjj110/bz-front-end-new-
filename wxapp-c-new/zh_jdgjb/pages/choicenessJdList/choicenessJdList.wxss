@@ -1,0 +1,169 @@
+.hotel_info {
+  height: 318rpx;
+  width: 94%;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
+
+.hotel_info:nth-last-child(2) {
+  border-bottom: none;
+}
+
+.xing {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 10rpx;
+}
+
+.info_3 {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.info_right3 {
+  height: 65rpx;
+  /* margin-right: 20rpx; */
+  margin-top: 6rpx;
+}
+.right_bottom{
+  width:63%;
+  height: auto;
+}
+.backblock{
+  height: 21rpx;
+  line-height: 21rpx;
+  text-align: right;
+  /* margin-right: 28rpx; */
+}
+.priceJb{
+  height: 67rpx;
+  position: absolute;
+  top: 74%;
+  left: 60%;
+  text-align: right;
+}
+
+
+
+.timg {
+  width: 100%;
+  height: 500rpx;
+  position: fixed;
+  top: 500rpx;
+}
+
+.timg image {
+  width: 176rpx;
+  height: 276rpx;
+}
+
+.info_left {
+  height: 100%;
+  width: 37.85%;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.info_left image {
+  display: block;
+  width: 120%;
+  height: 100%;
+}
+
+.iconaddress {
+  width: 20rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}
+
+.iconaddress_d {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}
+
+.info_right {
+  margin-left: 3%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  position:relative;
+}
+
+.infritbox {
+  /* margin-top: 10rpx; */
+}
+
+.info_right1 {
+  width: 83%;
+  font-size: 32rpx;
+  color: #000;
+  font-weight: 600;
+}
+.info_right >.flex-y-center{
+  width: 100%;
+  height: auto;
+  /* margin-bottom: -10rpx; */
+}
+
+.ritfont1 {
+  color: #999;
+  width: 290rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.ritfont2 {
+  display: inline-block;
+  width: 106rpx;
+  font-size: 36rpx;
+  color: #ec6464;
+  font-weight: 600;
+}
+
+.ritfont3 {
+  display: inline-block;
+  width: 22rpx;
+  color: #ec6464;
+  font-size: 10px;
+  margin-left: 8rpx;
+  font-weight: 800;
+}
+
+.info_right2 {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  color: #555;
+  font-size: 10px;
+}
+
+.info_right5 {
+  border: 1rpx solid #EF5151;
+  border-radius: 20rpx;
+  color: #EF5151;
+  font-size: 10px;
+  line-height: 10px;
+  margin-right: 7rpx;
+  padding: 3rpx 8rpx;
+  margin-bottom: 5rpx;
+  display: inline-block;
+}
+.info_right55 {
+  color: #ec6464;
+  font-size: 8px;
+}
+
+.none_more {
+  width: 100%;
+  padding: 20rpx 0;
+  font-size: 24rpx;
+  color: #ccc;
+  text-align: center;
+}

@@ -1,0 +1,110 @@
+/* pages/dateSelect/dateSelect.wxss */
+
+.date-day {
+  display: flex;
+  padding: 5px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.day {
+  padding-bottom: 30rpx;
+}
+
+.bgitem {
+  color: #ec6464;
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+  /* line-height: 60rpx; *//* background: #febfb9; */
+}
+
+page .active .item-days .day {
+  background: #ec6464;
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+  line-height: 60rpx;
+  color: #fff;
+  font-size: 24rpx;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.date-day .active {
+  /* color: #fff; */
+}
+
+.bgitem .item-days .day {
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+  line-height: 60rpx;
+  /* color: #fff; */
+  font-size: 24rpx;
+  margin-bottom: 30rpx;
+  /* background: #febfb9; */
+  padding: 0;
+}
+
+.date-day.unavailable {
+  color: #aaa;
+}
+
+.date-week {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 5px;
+}
+
+.week {
+  /* color: #099fde; */
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-days {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+}
+
+.bgwhite {
+  /* background-color: #fff; */
+}
+
+.dateList {
+  margin: 0 40rpx;
+}
+
+.head {
+  background: #ec6464;
+  border-radius: 40rpx;
+  color: #fff;
+  font-size: 24rpx;
+  /* width: 94%; */
+  height: 64rpx;
+  margin: 40rpx;
+}
+
+.date-year-month {
+  font-size: 24rpx;
+  color: #febfb9;
+  text-align: center;
+}
+
+.headr {
+  /* margin: 0 20rpx; */
+}
+
+page {
+  background: #fff;
+}

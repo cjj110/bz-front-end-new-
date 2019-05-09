@@ -1,0 +1,15 @@
+<view class="score_detail box-pack-between" wx:for="{{score_detail}}" wx:key="*this">
+  <view class='score_detail_z flex-y-center'>
+    <block>
+      <image src='../images/z_line.png'></image>
+      <text>{{item.note}}</text>
+    </block>
+  </view>
+  <view>{{item.time}}</view>
+  <view>{{item.money}}
+    <block>元</block>
+  </view>
+</view>
+<view class='no'>
+  ------没有更多了------
+</view>

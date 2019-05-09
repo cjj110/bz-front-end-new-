@@ -1,0 +1,10 @@
+<view class='hender_title'>
+  {{title}}
+</view>
+<view class='content_model' bindtap='modelx'>
+  <view class="content">
+    <view class="register">
+      <include src="../../commons/calendar/calendar"></include>
+    </view>
+  </view>
+</view>

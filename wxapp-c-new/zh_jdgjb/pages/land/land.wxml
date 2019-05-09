@@ -1,0 +1,113 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <image class='bg' src='{{bg}}'></image>
+  <view class='sf'>
+    <view class='King' wx:if='{{text}}'>
+      <text>{{text}} 邀请您注册</text>
+    </view>
+    <view class='work flex-y-center' style='width:526rpx;padding: 0 32rpx;'>
+      <view class='work_qu flex-y-center flex-grow-0'>
+        <picker bindchange="bindPickerChange" name='{{area[index].id}}' range-key="{{'name'}}" value="{{index}}" range="{{area}}">
+          <text wx:if='{{index<=-1}}'>中国+86</text>
+          <view wx:else class="picker"> {{area[index].name}} </view>
+        </picker>
+        <image src='../img/images/xia.png'></image>
+        <view class='work_line'></view>
+      </view>
+      <view class='flex-grow-1 flex-y-center box-pack-between'>
+        <input class='flex-grow-1' bindinput="inputBlur" value='{{value_phone}}' name='king1' placeholder='请输入绑定手机号' type='number' placeholder-class='input_text'></input>
+        <image bindtap='work_phone' wx:if='{{phoneword}}' data-text='{{is_phone}}' class='work_yj' src='../img/images/gb.png'></image>
+      </view>
+    </view>
+    <view class='phone_error flex-y-center' hidden='{{phone_error}}'>
+      <view class=''>
+        输入的手机号码错误
+      </view>
+    </view>
+    <view class='work flex-y-center'>
+      <view class='flex-grow-1'>
+        <input class='' bindinput='code_ma' value='{{code_name}}' name='king2' placeholder='请验证码' placeholder-class='input_text'></input>
+      </view>
+      <view wx:if='{{isShow}}' style='background:#ddd;' class='flex-grow-0 work_code  flex-y-center flex-x-center'>
+        <text>倒计时{{remain}}s</text>
+      </view>
+      <view wx:else class='flex-grow-0 work_code flex-y-center flex-x-center' bindtap='getCode'>
+        <text>获取验证码</text>
+      </view>
+    </view>
+    <!-- 
+    <view class='work flex-y-center'>
+      <input bindinput='invitation_code' class='flex-grow-1' placeholder-class='input_text' maxlength="20" placeholder='请输入邀请码（可以不填）' name='king3'></input>
+      <image style='margin-right: 34rpx; ' bindtap='work_look' wx:if='{{passwordlook}}' data-text='{{is_blok}}' class='work_yj' src='../img/images/yj.png'></image>
+    </view> -->
+    <!--  -->
+    <button class='btn' data-dd='{{index}}' data-ddd='{{code_name}}' data-d='{{phone_error}}' formType="{{phone_error&&code_id>-1&&code_name?'submit':''}}" style="background-color:{{phone_error&&code_id>-1&&code_name?'#ec6464':''}}">确认</button>
+  </view>
+</form>
+
+<view class='tip'>
+  <view>
+    绑定手机即送现金，可提现
+  </view>
+  <navigator hover-class='none' url='../cart_id/cart_id' style='color:#91929e'>
+    完成实名认证，立享住店优惠
+  </navigator>
+</view>
+
+<view class='pos flex-y-center' wx:if='{{model}}'>
+  <view class='pos_bg'>
+    <view style='padding:40rpx 0'>
+      <view class='flex pos_in flex-x-center'>
+        {{mg_title}}
+      </view>
+      <view class='pos_in_text'>{{msg}}</view>
+      <view class='flex-x-center box-pack-between' style='margin:0 10rpx;margin-top:40rpx;'>
+        <view class='btm' bindtap='btnconcans'>确定</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='poss' wx:if='{{classmaney}}'>
+
+</view>
+
+<!-- 分红 -->
+<view class='pos flex-y-center' wx:if='{{classmaney}}'>
+  <view class='coupon_d'>
+    <view style='padding:40rpx 0'>
+      <view class='flex coupon_in flex-x-center'>
+        绑定成功！
+      </view>
+      <view class='coupon_ing'>
+        1元现金已放到你的"分红账号"中
+      </view>
+      <view class='copunimg'>
+        <image src='../img/images/copun.png'></image>
+        <view class='flex copunname'>
+          <view class='copunadd'>
+            +
+          </view>
+          <view class='' style='padding-top:18rpx;border-right:1rpx solid #f1f1f1;padding-right:20rpx;'>
+            <view style='font-size:80rpx;line-height:104rpx;'>
+              1.0
+            </view>
+            <view style='font-size:32rpx;line-height:32rpx;'>
+              人民币
+            </view>
+          </view>
+          <view class='copunright' style='padding-top:32rpx;padding-left:20rpx;'>
+            <view>可提现劵</view>
+            <view>需实名用户</view>
+            <view class='copunright_text'>最终解释权,归贝住科技</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='flex-x-center box-pack-between' style='margin:0 10rpx;margin-top:40rpx;margin-top:56px;'>
+        <view class='btm' bindtap='btnconcanss' style='background:#febfb9'>先去逛逛</view>
+        <view class='btm' bindtap='btnname' style='margin-left:12rpx;'>实名认证去提现</view>
+      </view>
+
+    </view>
+  </view>
+</view>

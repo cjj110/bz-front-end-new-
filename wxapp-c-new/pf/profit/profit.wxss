@@ -1,0 +1,355 @@
+.hendimg{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 40rpx;
+}
+.hender_title {
+  padding: 0 30rpx;
+  /* padding-bottom: 10rpx; */
+  font-size: 52rpx;
+  font-weight: bold;
+}
+.profit1 {
+  width: 662rpx;
+  height: 232rpx;
+  background: #ff9786;
+  border-radius: 16rpx;
+  margin: 0 auto;
+  color: #fff;
+  background: -moz-linear-gradient(top, #ff9786 0%, #ff9a8a 50%, #fecac5 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ff9786 0%, #ff9a8a 50%, #fecac5 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ff9786 0%, #ff9a8a 50%, #fecac5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9786', endColorstr='#fecac5', GradientType=0); /* IE6-9 */
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.profit11 {
+  width: 100%;
+}
+
+.profit1_left {
+  text-align: right;
+  padding: 0 20rpx;
+}
+
+.profit1_left_1 {
+  font-size: 20rpx;
+  background: #febfb9;
+  color: #fff;
+  width: 114rpx;
+  border-radius: 25rpx;
+  padding: 3rpx 8rpx;
+}
+
+.profit1_left_center {
+  margin: 0 auto;
+}
+
+.profit1_left_center1 {
+  border-right: 0.5rpx solid #f1f1f1;
+  text-align: center;
+}
+
+.profit1_left_center1 text:nth-child(1) {
+  font-size: 56rpx;
+}
+
+.profit1_left_center1 text:nth-child(2) {
+}
+
+.profit1_left_center2 {
+  text-align: center;
+}
+
+/* .foot {
+  position: fixed;
+  z-index: 99;
+  bottom: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-top: 1rpx solid #eee;
+  background-color: white;
+  padding: 15rpx 0rpx 10rpx;
+  font-size: 22rpx;
+} */
+
+.foot {
+  position: fixed;
+  z-index: 99;
+  bottom: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-top: 1rpx solid #eee;
+  background-color: white;
+  padding: 24rpx 0rpx 21rpx;
+  font-size: 22rpx;
+}
+
+
+.footbox {
+  width: 50%;
+}
+
+.footban {
+  width: 100%;
+  height: 340rpx;
+}
+
+.footbox>image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.footfont1 {
+  color: #182e8f;
+}
+
+.content {
+  position: absolute;
+}
+
+.container {
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 300rpx;
+  color: #fff;
+}
+
+.content1 {
+  width: 250rpx;
+  background: #febfb9;
+  height: 90rpx;
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+  text-align: center;
+  line-height: 90rpx;
+}
+
+.content2 {
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 50%;
+  background: #ec6464;
+  position: absolute;
+  top: -30rpx;
+  color: #fff;
+}
+
+.content22 {
+  width: 170rpx;
+  background: #febfb9;
+}
+
+.content3 {
+  width: 250rpx;
+  background: #febfb9;
+  height: 90rpx;
+  border-top-right-radius: 50rpx;
+  border-bottom-right-radius: 50rpx;
+  text-align: center;
+  line-height: 90rpx;
+  background: -moz-linear-gradient(right, #febfb9 0%, #ff9a8a 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(right, #febfb9 0%, #ff9a8a 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #febfb9 0%, #ff9a8a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#febfb9', endColorstr='#fecac5', GradientType=0); /* IE6-9 */
+}
+
+.spliter {
+  width: 100%;
+  height: 20px;
+}
+
+/************以下为具体实现************/
+
+.wave {
+  position: relative;
+  width: 300rpx;
+  height: 300rpx;
+  text-align: center;
+  font-size: 28rpx;
+  margin: 0 auto;
+}
+
+.wave .circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+/* 波纹效果 */
+
+.wave.ripple .circle {
+  width: calc(100% - 6px); /* 减去边框的大小 */
+  height: calc(100% - 6px); /* 减去边框的大小 */
+  border: 3px solid #fff;
+}
+
+.wave.ripple .circle:first-child {
+  animation: circle-opacity 2s infinite;
+}
+
+.wave.ripple .circle:nth-child(2) {
+  animation: circle-opacity 2s infinite;
+  animation-delay: 0.3s;
+}
+
+.wave.ripple .circle:nth-child(3) {
+  animation: circle-opacity 2s infinite;
+  animation-delay: 0.6s;
+}
+
+.wave.ripple .circle:nth-child(4) {
+  animation: circle-opacity 2s infinite;
+  animation-delay: 0.8s;
+}
+
+.wave.ripple .circle:nth-child(5) {
+  animation: circle-opacity 2s infinite;
+  animation-delay: 1s;
+}
+
+.wave.ripple .circle:nth-child(6) {
+  animation: circle-opacity 2s infinite;
+  animation-delay: 1.2s;
+}
+
+.wave.ripple.danger {
+  color: red;
+}
+
+.wave.ripple.danger .circle {
+  border-color: red;
+}
+
+.wave.ripple.warning {
+  color: orange;
+}
+
+.wave.ripple.warning .circle {
+  border-color: orange;
+}
+
+/* 波动效果 */
+
+/* 
+.wave.solid .circle {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+.wave.solid .circle:first-child {
+  animation: circle-opacity 2s infinite;
+}
+
+.wave.solid.danger {
+  color: red;
+}
+
+.wave.solid.danger .circle {
+  background: red;
+}
+
+.wave.solid.warning {
+  color: orange;
+}
+
+.wave.solid.warning .circle {
+  background: orange;
+} */
+
+@keyframes circle-opacity {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.profit_page {
+  background: #fff;
+  height: 120rpx;
+  font-size: 32rpx;
+  width: 670rpx;
+  margin: 0 auto;
+  border-radius: 16rpx;
+  padding: 0 20rpx;
+  margin-bottom: 12rpx;
+}
+
+.profit_page_right image {
+  width: 82rpx;
+  height: 98rpx;
+}
+
+.profit_page_right {
+  position: relative;
+}
+
+.profit_page_num {
+  position: absolute;
+  width: 82rpx;
+  height: 80rpx;
+  top: 0;
+  text-align: center;
+  font-size: 40rpx;
+}
+
+.profit_page_right2 {
+  font-size: 40rpx;
+  text-align: center;
+}
+
+.profit_page_right3 {
+  width: 82rpx;
+  text-align: center;
+  font-size: 40rpx;
+}
+
+.profit_page_right2 image {
+  width: 34rpx;
+  height: 42rpx;
+}
+
+.profit_page_right4 {
+  height: 40rpx;
+  padding-bottom: 25rpx;
+}
+
+.profit_center_text {
+  text-align: center;
+  font-size: 40rpx;
+}
+
+.profit_Record {
+  position: absolute;
+  height: 300rpx;
+  width: 100%;
+  top: 0;
+  text-align: right;
+  font-size: 30rpx;
+  z-index: 999;
+}
+
+.nav_profit {
+  background: -moz-linear-gradient(right, #febfb9 0%, #ff9a8a 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(right, #febfb9 0%, #ff9a8a 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #febfb9 0%, #ff9a8a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#febfb9', endColorstr='#fecac5', GradientType=0); /* IE6-9 */
+}

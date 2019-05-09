@@ -1,0 +1,95 @@
+.conts {
+  margin: 0 40rpx;
+  height: auto;
+  border: 1rpx soldi red;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  background: #fff;
+}
+
+.areas {
+  height: 300rpx;
+  font-size: 26rpx;
+  border: 1rpx solid gains0boro;
+  padding-top: 15rpx;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  padding-bottom: 30rpx;
+  width: 91%;
+  padding: 12rpx;
+}
+
+.currentWordNumber {
+  font-size: 24rpx;
+  color: gray;
+  position: absolute;
+  right: 0rpx;
+  bottom: 0rpx;
+}
+
+.hint {
+  font-size: 28rpx;
+  position: absolute;
+  top: 120rpx;
+  left: 30rpx;
+  color: #f60;
+}
+
+.xxs {
+  text-align: center;
+}
+
+.xx {
+  width: 300rpx;
+  height: 52rpx;
+  margin: 60rpx 0;
+}
+
+.conts_phone {
+  background: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 0 40rpx;
+  margin-bottom: 30rpx;
+  text-align: left;
+}
+
+.conts_phone input {
+  padding: 0 20rpx;
+  width: 100%;
+}
+
+.title {
+  padding: 20rpx 0;
+  font-size: 32rpx;
+}
+
+.Submission {
+  width: 286rpx;
+  border-radius: 40rpx;
+  background: #ec6464;
+  line-height: 80rpx;
+  color: #fff;
+}
+
+.text_d {
+  background: #fff;
+  margin: 0 40rpx;
+  border-radius: 16rpx;
+}
+
+.text_name {
+  text-align: left;
+  padding: 30rpx;
+  font-size: 32rpx;
+}
+
+.phone {
+  text-align: center;
+  font-size: 24rpx;
+  margin-top: 100rpx;
+  margin: 0 40rpx;
+  border-radius: 16rpx;
+}

@@ -1,0 +1,28 @@
+<view class="score_detail flex-y-center" wx:for="{{score_detail}}" wx:key="*this">
+
+
+  <image style='height:50rpx;width:80rpx;margin-right:10rpx' src='../img/tix.jpg'></image>
+
+  <view wx:if='{{item.state==1}}'>
+    提现处理中
+  </view>
+
+  <view wx:if='{{item.state==2}}'>
+    提现成功
+  </view>
+
+  <view wx:if='{{item.state==3}}'>
+    提现失败
+  </view>
+
+  <view>{{item.time}}</view>
+
+  <view style='text-align: right;'>{{item.tx_cost}}</view>
+
+</view>
+
+
+
+<view class='no' wx:if='{{score_detail.length<=0}}'>
+  -----没有更多了-----
+</view>

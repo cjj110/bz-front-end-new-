@@ -1,0 +1,71 @@
+<view class="order_title flex-y-center box-pack-between">
+  <view wx:for='{{titel}}' data-index='{{index}}' class="swiper-tab-list {{ index == activeIndex ?'order_tabClick' : ''}}" bindtap="tabClick">
+    {{item}}
+  </view>
+</view>
+
+<view class='flex-y-center box-pack-between order_title_xcx'>
+  <view class=' flex-grow-1 flex-y-center'>
+    <view class='border-left'>
+      <input bindinput='search' placeholder='请输入优惠劵码'></input>
+    </view>
+  </view>
+  <view class='flex-grow-0' bindtap='exchange'>
+    <view class='border-right'>兑换</view>
+  </view>
+</view>
+
+<view class='copunimg' style="color:{{activeIndex==0? '#ec6464':'#dedede'}}" wx:for='{{cp}}'>
+  <image src="{{activeIndex==0?rightdata.youhu_pic:rightdata.youhu_pic1}}"></image>
+  <view class='flex copunname'>
+    <!-- <view class='copunadd'>+</view> -->
+    <view class='' style='padding-top:32rpx;border-right:1rpx dashed #ccc;padding-right:30rpx;'>
+      <view style="font-size:{{numlength>=3?'40':'95'}}rpx;line-height:104rpx;">
+        {{item.money}}
+      </view>
+      <view style='font-size:28rpx;line-height:50rpx;text-align:right;'>
+        人民币
+      </view>
+    </view>
+    <view class='copunright' style='padding-top:30rpx;padding-left:40rpx;font-size:40rpx;'>
+      <view class='ellipsis'>现金抵用劵</view>
+      <!-- <view style='font-size:30rpx;'>无门槛</view> -->
+      <view class='copunright_text'>{{item.time}}-{{item.endtime}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='model_xcx flex-y-center flex-x-center' bindtap='back' wx:if='{{exe}}'>
+  <view class='model'>
+    <image wx:if='{{!sceen}}' src='../img/images/fail.png'></image>
+    <view class='model-c'>
+      <block wx:if='{{sceen}}'>
+        <view style='padding-top:90rpx;padding-bottom:38rpx;'>
+          恭喜，兑换成功
+        </view>
+      </block>
+      <block wx:else>
+        <view>
+          {{responseMessage}}
+        </view>
+      </block>
+    </view>
+    <view class='back' catchtap="{{sceen?'home':'back'}}">
+      {{sceen?'马上去订酒店':'返回' }}
+    </view>
+  </view>
+</view>
+
+<view class='no-more' wx:if='{{cp.length<=0}}'>
+  <image src="../img/images/no-more.png"></image>
+  <view>
+    暂无优惠劵
+  </view>
+  <view>
+    关注公众号以及参与活动获得优惠劵
+  </view>
+</view>
+
+<!-- <view class='no' style='padding:20rpx 0.'>
+  ------没有更多了-------
+</view> -->

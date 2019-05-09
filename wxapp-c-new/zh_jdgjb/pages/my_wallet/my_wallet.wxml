@@ -1,0 +1,101 @@
+<view class='bg flex-y-center '>
+
+  <view class='ca flex-x-center flex-y-center'>
+    <view class='flex flex-y-center' style='width:100%;'>
+      <view class='flex-grow-0' style='width:30%;'>
+        总资产
+      </view>
+      <view class='flex-grow-1' style='width:30%;'>
+        <view style='height:18rpx;'>金额</view>
+        <image class='jtt' src='../img/images/jtt.png'></image>
+        <view>实时到账</view>
+      </view>
+      <view class='flex-grow-0' style='width:40%;'>
+        {{crad_bank}}
+      </view>
+    </view>
+  </view>
+</view>
+
+<form bindreset="formReset" bindsubmit="formSubmit" reportSubmit="true">
+  <view class='bg_maney' wx:if='{{q==2}}'>
+    <view style='padding:0 34rpx;'>
+      <view class='box-pack-between maney1'>
+        <text>金额</text>
+        <text>可提现金额:￥{{price}}</text>
+      </view>
+      <view class='maney_ip flex-y-center' style='font-size:40rpx'>
+        <text>￥</text>
+        <input bindinput="bindblur" value="" placeholder='输入金额'></input>
+      </view>
+      <!-- <view class='tix'>
+      今天还可以提现几次
+    </view> -->
+    </view>
+  </view>
+
+
+  <block wx:if='{{q==2}}'>
+    <view class='p_wallet flex-y-center box-pack-between' style='margin-top:46rpx;'>
+      <text class='flex-grow-0'>收款人</text>
+      <input class='flex-grow-1' maxlength="-1" value='{{crad_name}}' name="name" placeholder='收款人'></input>
+    </view>
+
+    <view class='p_wallet flex-y-center box-pack-between'>
+      <text class='flex-grow-0'>收款银行</text>
+      <input class='flex-grow-1' name="account_number" value='{{crad_bank}}' placeholder='收款银行'></input>
+    </view>
+
+    <view class='p_wallet flex-y-center box-pack-between'>
+      <text class='flex-grow-0'>收款账号</text>
+      <input class='flex-grow-1' value='{{crad_account}}' name="account_number_two" placeholder='收款账号'></input>
+    </view>
+  </block>
+
+
+  <block wx:if='{{q==1}}'>
+    <view class='detail'>
+      <view class='detail1'>
+        详情
+      </view>
+      <view class='box-pack-between'>
+        <text>金额</text>
+        <text>{{sj_cost}}</text>
+      </view>
+      <view class='box-pack-between'>
+        <text>收款人</text>
+        <text>{{name}}</text>
+      </view>
+
+      <view class='box-pack-between'>
+        <text>收款卡号</text>
+        <text>{{zh}}</text>
+      </view>
+
+      <view class='box-pack-between'>
+        <text>收款银行</text>
+        <text>{{username}}</text>
+      </view>
+
+      <view class='box-pack-between'>
+        <text>付款</text>
+        <text>资产</text>
+      </view>
+      <!-- <view class='box-pack-between'>
+        <text>交易金额</text>
+        <text>1000.00</text>
+      </view> -->
+    </view>
+  </block>
+
+  <button class='btn' formType="submit" wx:if='{{q==2}}'>
+    下一步
+  </button>
+</form>
+<button class='btn' bindtap='bit' wx:if='{{q==1}}'>
+  完成
+</button>
+
+
+
+<!-- 输入密码 -->

@@ -1,0 +1,41 @@
+<view class='hender_title'>
+  我的邀请码
+</view>
+<view class='ma'>
+  <view class='mad'>
+    <view class='name_a'>
+      <view class='name'>
+        <image class='bg' src='{{userd.bg_img}}' style='width:600rpx;height:600rpx;'></image>
+        <view class='flex-y-center' style='padding:30rpx;position: absolute;'>
+          <image class='user_img' src='{{userd.head_img}}'></image>
+          <text>{{userd.name}}</text>
+        </view>
+      </view>
+      <view class='flex box-pack-between name2'>
+        <view class='flex' style='padding:40rpx;width:100%;'>
+          <view class='flex-grow-1'>
+            <view wx:for='{{d}}'>
+              {{item}}
+            </view>
+          </view>
+          <view class='flex-grow-0'>
+            <image class='hoter' src='{{userd.code_img}}'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view>
+  <button class='btn' open-type='share'>分享</button>
+  <view class='btn' bindtap='saveShareImg'>下载到手机相册</view>
+  <view class='btn' bindtap='canves'>取消</view>
+</view>
+
+<!-- <view style='height:1000px;'>
+</view> -->
+
+<view class='poste_boxd'>
+  <canvas canvas-id="myCanvasd" id='canvas-containerd' style="width:1200rpx; height: 1528rpx;" />
+</view>

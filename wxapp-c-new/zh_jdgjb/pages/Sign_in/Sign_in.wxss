@@ -1,0 +1,18 @@
+@import "../../commons/calendar/calendar.wxss";
+
+.hender_title {
+  padding: 0 30rpx;
+  font-size: 52rpx;
+  font-weight: bold;
+}
+
+.content_model {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  margin-top: 100rpx;
+}

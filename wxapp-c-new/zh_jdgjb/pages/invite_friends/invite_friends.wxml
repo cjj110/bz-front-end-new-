@@ -1,0 +1,186 @@
+<view class='hender_title'>
+  {{rightdata.jieli_name}}
+</view>
+
+<view class='pages' style="overflow:{{model||rule||relay?'hidden':''}}">
+  <view class='invite'>
+    <image mode='' src='{{user.img1}}'></image>
+  </view>
+  <view class='container_invite'>
+    <view class='container_invite_title'>
+      <image src='{{user.img}}'></image>
+    </view>
+    <view style='height:80rpx;'>
+    </view>
+    <view>
+      {{user.name}}
+    </view>
+    <view class='container_invite_target' style="text-align:{{istoo==false?'left':''}}">
+      接力目标{{popmaney}}元
+    </view>
+    <view class='container_invite_targetimg' wx:if='{{istoo}}'>
+      <image src='{{rightdata.jielipic}}'></image>
+    </view>
+    <view class='time' style="text-align:{{istoo==false?'left':''}}">
+      <text>活动剩余时间：{{difftime}}</text>
+    </view>
+    <view>
+      <view class='flex-y-center'>
+        <view class='invite_at '>
+          <view class='line' style="width:{{width}}">
+          </view>
+          <view class='inat_lines'>
+            <view class='inat_d' style="width:{{width}}px">
+              <!-- 主颜色 -->
+              <view class='line_bg' style='width:{{li}}px'></view>
+              <!-- 主颜色 -->
+            </view>
+          </view>
+          <view class='inat_lines'>
+            <view class='lines flex' style="width:{{width}}px">
+              <!-- <view class='flex-grow-1'>0 </view> -->
+              <view class='box-pack-between' wx:for-index='index' style='width:{{width/qujian.length}}px' wx:for='{{qujian}}'>
+                <text decode="{{true}}" wx:if='{{index==0}}'> &ensp;0</text>
+                <text wx:else></text>
+                <text></text>
+                <text>{{item}}</text>
+              </view>
+              <!-- <view bindtap='ry_coupon' class='ry_coupon' wx:if='{{user.status==1}}'>领取接力劵</view> -->
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='box-pack-between' style='padding:0 15rpx;margin-top:20rpx;'>
+        <view class='maney'>
+          已接力{{user.money}}元
+        </view>
+        <view bindtap='ry_coupon' class='ry_coupon' wx:if='{{user.status==1&&user.uid==user_id}}'>领取接力劵</view>
+      </view>
+    </view>
+
+    <block wx:if='{{user_id==user.uid}}'>
+      <button open-type="share" class='go'>
+        好友给我接接力
+      </button>
+      <button bindtap='saveShareImg' class='go'>
+        下载到手机相册
+      </button>
+      <!-- 
+      <button bindtap='saveindex' class='go'>
+        马上去订酒店
+      </button> -->
+    </block>
+    <block wx:else>
+      <button class='go' bindtap='go'>
+        这个接力我帮定了!
+      </button>
+    </block>
+    <!-- <view class='goter'>
+      新用户参与接力，立返36加贝
+    </view> -->
+  </view>
+
+  <view class='box-pack-between rules'>
+    <view></view>
+    <view class='rule' bindtap='rule'>规则</view>
+  </view>
+  <view class='relay_list flex-y-center flex-x-center'>
+    <view class='flex-grow-1'>
+      给力好友
+    </view>
+    <view class='flex-grow-1'>
+      接力金额
+    </view>
+  </view>
+
+  <view class='relay_list flex-y-center' wx:for='{{userlist}}'>
+    <view class='relay_lists flex-y-center'>
+      <view class='flex-grow-1 flex-y-center'>
+        <view class='relay_list_img flex-y-center'>
+          <image wx:if='{{item.img}}' src='{{item.img}}'></image>
+          <image wx:else src='../img/wechat.png'></image>
+        </view>
+        <view class='relayshare ellipsis'>
+          <block>{{item.name}} </block>
+        </view>
+      </view>
+      <view class='flex-grow-1 box-pack-between'>
+        <text>接力</text>
+        <text>￥{{item.money}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='but flex-y-center flex-x-center'>
+    <image src='{{rightdata.homepic1}}'></image>
+    <text>没有更多了</text>
+  </view>
+
+  <!-- 接力成功-->
+  <view class='pos' wx:if='{{model}}'>
+    <view class='pos_bg'>
+      <view class='pos_hoor'>
+        <image class='' src='../img/hooraydribz@3x.png'></image>
+        <view class='pos_hoor_ab'>
+          恭喜你为自己接力{{count_money}}元
+        </view>
+      </view>
+      <view class='pos_newss' style='width:100%'>
+        <view class='pos_news'>
+          <image class='' src='../img/news.png'></image>
+          <view class='pos_news_ab'>同时帮朋友接力{{money}}元</view>
+        </view>
+      </view>
+      <view style='height:100rpx;'></view>
+      <view class='pos_less flex-x-center flex-y-center' bindtap='close'>
+        查看我的进度
+      </view>
+    </view>
+  </view>
+
+  <!-- 接力券 -->
+  <view class='pos' wx:if='{{relay}}'>
+    <view class='pos_tips'>
+      <view>
+        你的接力劵已经放入您的卡劵包
+      </view>
+      <view style='padding-bottom:40rpx;'>
+        *快去使用吧
+      </view>
+      <view>
+        <view class='box-pack-between' style='padding:0 50rpx;'>
+          <view class='goless nte' bindtap='card_coupon'>查看</view>
+          <navigator url='../index/index' class='goto nte'>去使用</navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 规则 -->
+  <view class='pos' wx:if='{{rule}}' style="overflow:{{rule?'hidden':''}}">
+    <view class='pos_rule'>
+      <view class='ruleimg' bindtap='rule_butt'>
+        <image src='../img/images/cha.png'></image>
+      </view>
+      <view style='font-size:45rpx;'>接力好朋友</view>
+      <scroll-view scroll-y style='height:800rpx;'>
+        <view style='padding:0 50rpx;'>
+          <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
+        </view>
+      </scroll-view>
+      <view class='box-pack-between'>
+        <view class='rule_butt' bindtap='rule_butt'>看完了 参加接力</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<button class='continerdd' wx:if='{{!user_id}}' open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber" plain='true'></button>
+<view class='poste_boxd'>
+  <canvas canvas-id="myCanvasd" id='canvas-containerd' style="width:1200rpx; height: 1528rpx;" />
+</view>
+<view class='kf_d'>
+  <view hover-class='none' bindtap='index' class='kf flex-y-center flex-x-center'>
+    <image class='' src='../img/images/nav/Home1.png'></image>
+  </view>
+</view>

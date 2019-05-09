@@ -1,0 +1,35 @@
+<view class='hender_title'>
+  关注官方活动
+</view>
+
+<view class='code'>
+  <!-- <image class='code_img' src='{{wxdyh_img}}'></image> -->
+  <block wx:for='{{arr}}' wx:for-index='index'>
+    <image class='code_img' wx:if='{{index==0}}' bindtap="imgYu" data-list="{{arr}}" data-src="{{arr[0]}}" wx:for-item="dImg" src="{{arr[0]}}"></image>
+  </block>
+  <view class='cid'>
+    官方订阅号，限时进行各项福利
+  </view>
+</view>
+
+<view class='flex codes box-pack-between '>
+  <view>
+    <block wx:for='{{arr}}' wx:for-index='index'>
+      <image class='code_img1' wx:if='{{index==1}}' bindtap="imgYu" data-list="{{arr}}" data-src="{{arr[1]}}" wx:for-item="dImg" src="{{arr[1]}}"></image>
+    </block>
+    <view>官方微信群1</view>
+  </view>
+  <view>
+    <block wx:for='{{arr}}' wx:for-index='index'>
+      <image class='code_img1' wx:if='{{index==2}}' bindtap="imgYu" data-list="{{arr}}" data-src="{{arr[2]}}" wx:for-item="dImg" src="{{arr[2]}}"></image>
+    </block>
+    <view>官方微信群1</view>
+  </view>
+</view>
+
+<view class='code2'>
+  <view>
+    任何投诉和反馈，均可
+  </view>
+  扫一扫加入官方微信群，与官方运营一对一沟通
+</view>
